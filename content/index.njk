@@ -1,0 +1,35 @@
+---
+eleventyNavigation:
+  key: "Start"
+  order: 1
+  url: "/#"
+title: "Start"
+---
+{% block content %}
+  {% set navItems = collections.all | eleventyNavigation | sort(false, false, "order") %}
+{% for item in navItems | head(6) %}
+    <section id="{{ item.key | slug }}">
+      {% if item.key != "Start" %}
+        {% set entry = collections.all | findByUrl(item.url) %}
+        {% if entry %}
+          {{ entry.templateContent | safe }}
+        {% else %}
+          <p>Error: Content not found for URL {{ item.url }}</p>
+        {% endif %}
+      {% else %}
+<style>{% include "css/banner.css" %}</style>
+<div class="banner-section">
+  <div class="banner-text">
+    <h1>POWERING <strong>THE TRUST LAYER</strong> FOR RECOMMERCE</h1>
+    <p>Esmia makes every device tell a verifiable story of its origin, condition, and lifecycle — permanently stamped on an immutable ledger. We are building the global infrastructure for digital product passports on the blockchain, fueling the circular economy at scale.</p>
+    <a href="https://app.Esmia.com/" target="_blank" class="banner-button">Enter Protocol</a>
+  </div>
+  <div class="banner-image">
+    <img src="/images/banner-img.svg" alt="Esmia Illustration" />
+  </div>
+</div>        
+      {% endif %}
+    </section>
+  {% endfor %}
+
+{% endblock %}

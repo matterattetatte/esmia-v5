@@ -45,11 +45,6 @@
   background-color: #009c87;
 }
 
-.banner-image {
-  position: relative;
-  background-image: url('/img/background.jpg');
-}
-
 .banner-image img {
   width: 100%;
   height: auto;

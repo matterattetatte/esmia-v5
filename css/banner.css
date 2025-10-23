@@ -8,10 +8,9 @@
   z-index: -1;
 }
 
-.banner-section picture {
-  max-width: 95%;
-  margin: 0 auto;
+.banner-section img {
   filter: brightness(30%);
+  margin-bottom: -10px;
 }
 
 .banner-text {

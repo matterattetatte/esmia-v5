@@ -7,7 +7,6 @@ const eleventyNavigation = {
 };
 ---
 
-<section id="roadmap">
 <h2>Roadmap</h2>
 <h3>Digital Product Passport Solution</h2>
 <h3>Core Features of the Esmia Infrastructure</h3>
@@ -15,5 +14,3 @@ const eleventyNavigation = {
 
 
 TODO: ROADMAP!!
-
-</section>

@@ -64,9 +64,6 @@ body {
 html {
 	overflow-y: scroll;
 }
-body {
-	padding: 0 10%;
-}
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden:not(:focus):not(:active) {
@@ -118,10 +115,6 @@ a[href]:visited {
 	color: var(--text-color-link-visited);
 }
 
-main,
-footer {
-	padding: 1rem;
-}
 main :first-child {
 	margin-top: 0;
 }
@@ -199,7 +192,7 @@ code {
 /* Header */
 header {
   color: var(--color-primary);
-	padding: 2rem 10%;
+	padding: 2rem 8rem;
     position: fixed;
 	top: 0;
 	left: 0;
@@ -389,11 +382,39 @@ header.scrolled {
   top: 8px;
 }
 
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+section {
+	padding: 3rem 8rem;
+}
+
+[aria-hidden="true"] {
+  visibility: hidden;
+}
+
+h1, h2 {
+	color: var(--color-primary);
+}
+
+footer {
+	text-align: center;
+	color: var(--color-text-muted);
+	margin-top: 4rem;
+	background: var(--color-surface);
+}
+
+
+
+
 /* Show hamburger on small screens */
 @media (max-width: 768px) {
 	header {
-	padding: 1rem 10%;
+	padding: 1rem 8rem;
 	}
+
   .nav {
     display: none;
     flex-direction: column;
@@ -418,21 +439,11 @@ header.scrolled {
   .nav.open {
     display: flex;
   }
-}
+	section {
+	padding: 1rem 1rem;
+	}
+   #mission .flex {
+	flex-wrap: wrap;
+   }
 
-.flex {
-	display: flex;
-	justify-content: space-between;
-}
-
-section {
-	padding: 3rem 2rem;
-}
-
-[aria-hidden="true"] {
-  visibility: hidden;
-}
-
-h2 {
-	color: var(--color-primary);
 }

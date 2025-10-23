@@ -44,7 +44,8 @@
 
 		<header class="flex">
 			<a href="/" class="home-link">
-              <img id="main-logo" src="" />
+              {# <img id="main-logo" src="" /> #}
+			  ESMIA HB
 			</a>
 
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
@@ -116,9 +117,6 @@
 
     updateActiveNav(); // initial highlight
     window.addEventListener('hashchange', updateActiveNav); // update on navigation
-
-	document.getElementById('main-logo').src = "/img/main-logo.webp"
-
 
 	window.addEventListener('scroll', function() {
 		const navbar = document.querySelector('header');

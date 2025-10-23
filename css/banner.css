@@ -1,13 +1,5 @@
-.banner-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4rem 2rem;
-  gap: 2rem;
-}
-
-.banner-text {
-  max-width: 50%;
+.banner-image picture {
+  position: absolute;
 }
 
 .banner-text h1 {
@@ -38,7 +30,7 @@
 
 .banner-image {
   position: relative;
-  animation: MoveUpDown 2s linear infinite;
+  background-image: url('/img/background.jpg');
 }
 
 .banner-image img {
@@ -47,11 +39,6 @@
 }
 
 @media (max-width: 768px) {
-  .banner-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .banner-text {
     max-width: 100%;
     text-align: center;
@@ -66,16 +53,4 @@
     border-radius: 0;
     box-shadow: none;
   }
-}
-
-
-
-@keyframes MoveUpDown {
-    0%,
-    100% {
-        top: 0
-    }
-    50% {
-        top: 10px
-    }
 }

@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="icon" type="image/png" href="/img/favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Esmia - Esmia — Blockchain Trust Layer for the EU Digital Product Passport (2027)</title>
+		<meta name="description" content="Verifiable DPP records using EVM L1 + IPFS + Glacier to anchor lifecycle data.">
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+:root {
+  --font-family: "Montserrat", -apple-system, system-ui, sans-serif; /* Headings: Montserrat */
+  --font-family-body: "Heebo", -apple-system, system-ui, sans-serif; /* Body: Heebo Light */
+  --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+
+  /* Accent Colors (Spanish-inspired with Valencian blue) */
+  --color-primary: #D4A017;           /* Spanish Gold, inspired by the flag */
+  --color-primary-alt: #003087;       /* Valencian Blue, from the regional flag */
+  
+  /* Accent Gradient (blend of Spanish and Valencian tones) */
+  --color-accent-gradient: linear-gradient(90deg, #D4A017 10%, #003087 90%);
+
+  /* Text Colors (adjusted for Spanish warmth) */
+  --color-text: #F4E4BC;              /* Warm off-white, inspired by Spanish architecture */
+  --color-text-muted: #A67B5B;        /* Muted earthy tone, reminiscent of Spanish terracotta */
+
+  /* Background & Surface Colors (Spanish night sky with Valencian influence) */
+  --color-bg: #1A252F;                /* Dark blue-gray, evoking a Spanish night */
+  --color-surface: #2E4057;           /* Deeper blue, inspired by Valencian sea */
+  --color-surface-light: #4A647A;     /* Lighter Valencian blue shade */
+  --color-surface-gradient: linear-gradient(145deg, #003087, #2E4057);
+
+  /* Icon / Element Colors (Spanish flair with blue accents) */
+  --color-icon: #F4E4BC;              /* Warm off-white for icons */
+  --color-icon-bg: #A67B5B;           /* Earthy background for icons */
+
+  /* Borders & Shadows (Spanish elegance) */
+  --color-border: #8B4513;            /* Rich brown, inspired by Spanish woodwork */
+  --color-shadow: rgba(139, 69, 19, 0.25); /* Soft shadow from border color */
+
+  /* Gradients (Spanish sunset and Valencian sea) */
+  --gradient-primary: linear-gradient(135deg, #D4A017, #F4A261); /* Spanish gold to orange */
+  --gradient-surface: linear-gradient(135deg, rgba(0, 48, 135, 0.4), rgba(46, 64, 87, 0.4)); /* Valencian blue tones */
+  --gradient-card: linear-gradient(145deg, #8B4513, #4A647A); /* Brown to light blue */
+
+  /* Semantic / Status Colors (Spanish vibrancy) */
+  --color-success: #32CD32;           /* Lime green, a lively Spanish green */
+  --color-warning: #FFA500;           /* Spanish orange, vibrant and warm */
+  --color-error: #FF4040;             /* Red, inspired by Spanish passion */
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--color-text);
+    scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--color-bg);
+}
+
+html {
+	overflow-y: scroll;
+}
+body {
+	padding: 0 10%;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+.links-nextprev > * {
+	flex-grow: 1;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+
+#main {
+	margin-top: 16rem;
+	margin-bottom: 2rem;
+}
+
+/* Header */
+header {
+    position: fixed;
+	top: 0;
+	left: 0;
+	padding: 0 10%;
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	background: var(--color-tertiary);
+	z-index: 10;
+	width: 100%;
+
+  background: transparent; /* Initial state */
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Base nav */
+.nav {
+	display: flex;
+	/* gap: 0.5em 1em; */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-transform: uppercase;
+}
+
+
+/* Background style when scrolling */
+header.scrolled {
+  background: var(--color-bg);
+  box-shadow: 0 2px 4px var(--color-shadow);
+  color: #F2F0F4; /* Heading color */
+}
+
+.nav-item {
+	display: inline-block;
+	position: relative; /* for pseudo-element */
+}
+
+.nav-item a[href] {
+	text-decoration: none;
+	color: white; /* adjust as needed */
+	position: relative;
+}
+
+/* Underline effect */
+.nav-item a[href]::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -12px; /* distance from text */
+	width: 100%;
+	height: 4px; /* thickness of the line */
+	background-color: white;
+	opacity: 0; /* hidden by default */
+	transform: opacity(0);
+	transform-origin: center;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item a[href]:hover::after,
+.nav-item a[href].active::after {
+	opacity: 1;
+	transform: opacity(0);
+}
+/* Active page */
+.nav-item a[href][aria-current="page"]::after {
+	opacity: 1;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+
+/* Base styles */
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.nav-item a {
+	padding: 0 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Mobile styles */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle .hamburger {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  position: relative;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s;
+}
+
+.nav-toggle .hamburger::before {
+  top: -8px;
+}
+
+.nav-toggle .hamburger::after {
+  top: 8px;
+}
+
+/* Show hamburger on small screens */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-item {
+    margin: 0;
+    text-align: center;
+  }
+
+  .nav-item a {
+    padding: 1rem;
+    display: block;
+    width: 100%;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+section {
+	padding: 6rem 2rem;
+}
+
+[aria-hidden="true"] {
+  visibility: hidden;
+}
+.post {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-metadata,
+.post-date,
+.post-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.post-metadata li,
+.post-date,
+.post-tags strong {
+  display: inline;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.post-metadata a,
+.post-tags a {
+  color: var(--color-text-muted) !important;
+  text-decoration: none;
+}
+
+.post-tags {
+  display: inline;
+}
+
+.post-tags a {
+  margin-left: 0.25rem;
+}
+
+.post-share {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  gap: 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.post-share li {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 .0rem; 
+}
+
+.post-share a {
+  color: var(--color-icon);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.post-share a:hover {
+  background: var(--color-primary);
+  color: var(--color-text);
+  border-color: var(--color-primary);
+}
+
+/* Featured image styling */
+.post-hero {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.post-hero img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px var(--color-shadow);
+}
+.post-hero figcaption {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}</style>
+		
+	</head>
+	<body>
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header class="flex">
+			<a href="/" class="home-link">
+              
+			  ESMIA HB
+			</a>
+			<nav>
+  <h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+  <ul class="nav">
+      <li class="nav-item">	  
+        <a href="/#">
+          Start
+        </a>
+      </li>
+      <li class="nav-item">	  
+        <a href="/#mission">
+          Mission
+        </a>
+      </li>
+      <li class="nav-item">	  
+        <a href="/#faq">
+          FAQ
+        </a>
+      </li>
+      <li class="nav-item">	  
+        <a href="/#onboarding">
+          Onboarding
+        </a>
+      </li>
+      <li class="nav-item">	  
+        <a href="/#roadmap">
+          Roadmap
+        </a>
+      </li>
+      <li class="nav-item">	  
+        <a href="/#solution">
+          Solution
+        </a>
+      </li>
+      <li class="nav-item">	  
+        <a href="/news/">
+          News
+        </a>
+      </li>
+  </ul>
+  <button class="nav-toggle" aria-label="Toggle navigation">
+    <span class="hamburger"></span>
+  </button>
+</nav>
+
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+<article class="post">
+ 
+  <figure class="post-hero">
+    <picture><source type="image/avif" srcset="/.11ty/image/?src=content%2Fimages%2Fnews%2Fdevicepassports-trust-layer.jpg&width=1280&format=avif&via=transform 1280w"><source type="image/webp" srcset="/.11ty/image/?src=content%2Fimages%2Fnews%2Fdevicepassports-trust-layer.jpg&width=1280&format=webp&via=transform 1280w"><img loading="lazy" decoding="async" src="/.11ty/image/?src=content%2Fimages%2Fnews%2Fdevicepassports-trust-layer.jpg&width=1280&format=jpeg&via=transform" alt="Blockchain Trust Layer for the EU Digital Product Passport" width="1280" height="720"></picture>
+    
+  </figure>
+
+
+  <h1 class="post-title" id="esmia-blockchain-trust-layer-for-the-eu-digital-product-passport-2027">Esmia — Blockchain Trust Layer for the EU Digital Product Passport (2027)</h1>
+
+  
+  <ul class="post-metadata">
+    <li><strong>Author:</strong>&nbsp;NewsEditor</li>
+
+    
+      <li>•</li>
+      <li><strong>Category:</strong>&nbsp;
+        <a href="/categories/digital-product-passport/">Digital Product Passport</a>
+      </li>
+    
+
+    
+      <li>•</li>
+      <li><strong>Tags:</strong></li>
+      
+        
+        
+        <li><a class="post-tag" href="/tags/eu-dpp/">#EU-DPP</a></li>
+      
+        
+        
+        <li><a class="post-tag" href="/tags/espr/">#ESPR</a></li>
+      
+        
+        
+        <li><a class="post-tag" href="/tags/blockchain/">#blockchain</a></li>
+      
+        
+        
+        <li><a class="post-tag" href="/tags/recommerce/">#recommerce</a></li>
+      
+        
+        
+        <li><a class="post-tag" href="/tags/device-passport/">#device-passport</a></li>
+      
+    
+
+    
+      <li>•</li>
+      <li>
+        <strong>Date:</strong>&nbsp;
+        <time datetime="2025-10-22">22 October 2025</time>
+      </li>
+    
+  </ul>
+
+  
+  
+  <ul class="post-share" aria-label="Share article">
+    <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=devicepassports-trust-layer&title=Esmia%20%E2%80%94%20Blockchain%20Trust%20Layer%20for%20the%20EU%20Digital%20Product%20Passport%20(2027)" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li>•</li>
+    <li><a href="https://twitter.com/intent/tweet?url=devicepassports-trust-layer&text=Esmia%20%E2%80%94%20Blockchain%20Trust%20Layer%20for%20the%20EU%20Digital%20Product%20Passport%20(2027)" target="_blank" rel="noopener">X</a></li>
+    <li>•</li>
+    <li><a href="mailto:?subject=Esmia%20%E2%80%94%20Blockchain%20Trust%20Layer%20for%20the%20EU%20Digital%20Product%20Passport%20(2027)&body=devicepassports-trust-layer">Email</a></li>
+  </ul>
+
+  <h3 id="executive-summary">Executive Summary</h3>
+<p>Esmia is a blockchain-based infrastructure enabling verifiable digital product passports under the upcoming EU DPP and ESPR regulations. By anchoring device data on-chain using EVM-compatible L1, IPFS, and Glacier hybrid storage, Esmia allows manufacturers, refurbishers, and marketplaces to issue tamper-proof lifecycle records from production to resale.</p>
+ <br>
+  <br>
+<h2 id="context-the-eu-digital-product-passport-dpp">Context: The EU Digital Product Passport (DPP)</h2>
+<p>Starting in 2027, the EU Digital Product Passport will come into effect and step by step effect  electronic products under the Ecodesign for Sustainable Products Regulation (ESPR). Each device must carry a unique, digital, and verifiable record of its origin, components, repairs, and environmental impact.</p>
+<h3 id="the-dpp-aims-to">The DPP aims to:</h3>
+<ul>
+<li>Enable consumers and recyclers to access trustworthy lifecycle data — Provide transparent, verified information about product environmental impact, materials, and end-of-life options to help informed purchasing and disposal decisions.<br>
+<br></li>
+<li>Improve repair, reuse, and recycling rates — Create systems and incentives that extend product lifecycles, reduce waste, and increase the proportion of materials recovered and reused in manufacturing.<br>
+<br></li>
+<li>Support manufacturers in achieving ESG transparency — Help companies track, measure, and communicate their environmental, social, and governance performance across supply chains and product lifecycles.RetryClaude does not have the ability to run the code it generates yet.<br>
+<br></li>
+</ul>
+<h2 id="the-core-problem-data-without-proof">The Core Problem: Data Without Proof</h2>
+<p>Today, lifecycle data is fragmented across grading tools, marketplaces, and service systems. Each stakeholder holds its own truth, leaving buyers, auditors, and regulators unsure what to trust.</p>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unverified grading data</td>
+<td>Reduces resale confidence</td>
+</tr>
+<tr>
+<td>Multiple standards</td>
+<td>Blocks interoperability</td>
+</tr>
+<tr>
+<td>No immutable record</td>
+<td>Enables greenwashing and fraud</td>
+</tr>
+</tbody>
+</table>
+<p>This lack of a verifiable trust layer prevents the circular economy from scaling.</p>
+  <br>
+<h2 id="the-esmia-solution">The Esmia Solution</h2>
+<p>Esmia creates a blockchain-anchored digital product passport, immutable, verifiable, and portable.</p>
+<h3 id="key-components">Key Components</h3>
+<ol>
+<li>
+<p>Blockchain Anchoring (Sonic L1 / EVM compatible)</p>
+<ul>
+<li>Permanent hash records of every lifecycle event</li>
+<li>Decentralized timestamp verification  <br>
+<br></li>
+</ul>
+</li>
+<li>
+<p>IPFS + Glacier Hybrid Storage</p>
+<ul>
+<li>Human-readable metadata stored on decentralized nodes</li>
+<li>Long-term archiving for compliance and audits</li>
+<li>Artifacts solution ready for inspecting the underlying protocol or inspection photos  <br>
+<br></li>
+</ul>
+</li>
+<li>
+<p>API &amp; SDK Integration</p>
+<ul>
+<li>OEMs, service centers, and marketplaces can automatically issue or verify passports via simple endpoints  <br>
+<br></li>
+</ul>
+</li>
+<li>
+<p>Verification Layer</p>
+<ul>
+<li>Anyone can confirm authenticity via the Esmia Explorer or verify() API  <br></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><i style="font-size: 1.5em;">&quot;If it's stamped, it's verified.&quot;</i>
+<br>
+<br></p>
+</blockquote>
+<h2 id="how-it-works">How It Works</h2>
+<ol>
+<li>
+<p>Event Data Signing</p>
+<ul>
+<li>Event data (grading, serial, photo hash, technician ID) is signed locally</li>
+<li>Signature and hash are written to EVM L1 Blockchain <br>
+<br></li>
+</ul>
+</li>
+<li>
+<p>Blockchain Anchoring</p>
+<ul>
+<li>Signature and hash recorded on EVM L1 Blockchain</li>
+<li>Immutable record of every lifecycle event <br>
+<br></li>
+</ul>
+</li>
+<li>
+<p>IPFS + Glacier Hybrid Storage</p>
+<ul>
+<li>Metadata stored on IPFS/Glacier and linked by CID</li>
+<li>Full inspection protocol or photos stored with immutable CID structure</li>
+<li>Not possible to change due to content-addressed storage <br>
+<br></li>
+</ul>
+</li>
+<li>
+<p>Result: Device Record Creation</p>
+<ul>
+<li>Public &quot;Device Record&quot; is created for verification or transfer</li>
+<li>Verifiable traceability across the device's entire lifecycle</li>
+<li>Sensitive or proprietary data remains protected <br></li>
+</ul>
+</li>
+</ol>
+<br>
+ <br>
+<h2 id="use-cases">Use Cases</h2>
+<p>Manufacturers – Create digital passports at production for regulatory compliance.</p>
+<p>EU Importers – Create digital passports at production for regulatory compliance.</p>
+<p>Refurbishers – Prove grading accuracy and repair quality.</p>
+<p>Traders – Prove device quality and condition.</p>
+<p>Spare Part Distributors – Mapping for spare parts, linked to the devices.</p>
+<p>Marketplaces – Build consumer trust via verified listings.</p>
+<p>Auditors/Regulators – Access immutable lifecycle data via blockchain proofs.</p>
+<br>
+<br>
+<h2 id="compliance-mapping">Compliance Mapping</h2>
+<table>
+<thead>
+<tr>
+<th>Regulation</th>
+<th>Esmia Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESPR 2024/2027</td>
+<td>Lifecycle data traceability</td>
+</tr>
+<tr>
+<td>EU DPP Framework</td>
+<td>Unique digital product identifiers</td>
+</tr>
+<tr>
+<td>ISO 14083</td>
+<td>Transport &amp; emissions reporting</td>
+</tr>
+<tr>
+<td>GDPR</td>
+<td>Pseudonymized, off-chain personal data handling</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<h2 id="getting-started">Getting Started</h2>
+<p>Visit <a href="https://Esmia.com">Esmia.com</a> to:</p>
+<ul>
+<li><a href="https://Esmia.com/whitepaper">Read the Technical Whitepaper</a></li>
+<li><a href="https://Esmia.com/api-docs">Request the API / SDK Documentation</a></li>
+<li><a href="mailto:onboarding@Esmia.com">Request OEM, Grading, Sparepart or Marketplace Integration</a></li>
+</ul>
+<br>
+<br>
+<h2 id="faq">FAQ</h2>
+<details>
+<summary><strong>Q1: What is a Digital Product Passport (DPP)?</strong></summary>
+<p>A DPP is a mandatory EU record containing lifecycle and environmental data for each product, designed to make products traceable and sustainable.</p>
+</details>
+<details>
+<summary><strong>Q2: Why use blockchain for DPP compliance?</strong></summary>
+<p>Because blockchain provides immutability and transparency, ensuring lifecycle events cannot be altered after the fact.</p>
+</details>
+<details>
+<summary><strong>Q3: Does Esmia store sensitive data publicly?</strong></summary>
+<p>No. Only hashed or pseudonymized data is stored on-chain. Full event data remains private and accessible only via permissioned nodes or APIs.</p>
+</details>
+<details>
+<summary><strong>Q4: Is Esmia open for developers?</strong></summary>
+<p>Yes, an SDK and REST API are available for integration with reverse, wms, grading, ERP, or marketplace systems.</p>
+</details>
+
+  
+  
+    
+    
+    
+      <ul class="links-nextprev">
+        
+        <li class="links-nextprev-next">Next →<br><a href="/blockchain/"></a></li>
+      </ul>
+    
+  
+</article>
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Add some footer or somethign maybe?? <a href="https://www.11ty.dev/">Eleventy v3.1.2</a></em>
+			</p>
+		</footer>
+
+		<!-- This page `/digital-product-passport/fifthpost/` was built on 2025-10-23T18:28:58.922Z -->
+		<script type="module" src="/dist/_LmV6B5au0.js"></script>
+
+
+	</body>
+</html>

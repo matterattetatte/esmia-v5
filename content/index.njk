@@ -14,18 +14,17 @@ title: "Start"
         {% if entry %}
           {{ entry.templateContent | safe }}
         {% else %}
-          <p>Error: Content not found for URL {{ item.url }}</p>
+          <p>Fel: Innehåll kunde inte hittas för URL {{ item.url }}</p>
         {% endif %}
       {% else %}
 <style>{% include "css/banner.css" %}</style>
 <div class="banner-section">
-  <div class="banner-text">
-    <h1>POWERING <strong>THE TRUST LAYER</strong> FOR RECOMMERCE</h1>
-    <p>Esmia makes every device tell a verifiable story of its origin, condition, and lifecycle — permanently stamped on an immutable ledger. We are building the global infrastructure for digital product passports on the blockchain, fueling the circular economy at scale.</p>
-    <a href="https://app.Esmia.com/" target="_blank" class="banner-button">Enter Protocol</a>
-  </div>
   <div class="banner-image">
-    <img src="/images/banner-img.svg" alt="Esmia Illustration" />
+    <img src="/images/background.jpg" alt="Spansk cateringillustration" />
+  </div>
+  <div class="banner-text">
+    <h1>UPPLEV <strong>SPANSKA SMAKER</strong> MED PASSION</h1>
+    <p>Esmia HB erbjuder autentiska spanska cateringupplevelser, där varje rätt berättar en historia av tradition, kvalitet och kärlek till mat. Vi skapar minnesvärda ögonblick för dina evenemang med smaker från Spanien, tillagade med färska råvaror och hjärta.</p>
   </div>
 </div>        
       {% endif %}

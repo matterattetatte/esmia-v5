@@ -1,23 +1,8 @@
 ---
-eleventyNavigation:
-  key: "Start"
-  order: 1
-  url: "/#"
-title: "Start"
+
 ---
-{% block content %}
-  {% set navItems = collections.all | eleventyNavigation | sort(false, false, "order") %}
-{% for item in navItems | head(6) %}
-    <section id="{{ item.key | slug }}">
-      {% if item.key != "Start" %}
-        {% set entry = collections.all | findByUrl(item.url) %}
-        {% if entry %}
-          {{ entry.templateContent | safe }}
-        {% else %}
-          <p>Fel: Innehåll kunde inte hittas för URL {{ item.url }}</p>
-        {% endif %}
-      {% else %}
 <style>{% include "css/banner.css" %}</style>
+<section class="banner">
 <div class="banner-section">
   <div class="banner-image">
     <img src="/images/background.jpg" alt="Spansk cateringillustration" />
@@ -29,8 +14,16 @@ title: "Start"
     <p>Spansk paella-och tapascatering i Stockholm</p>
   </center>
 
-      {% endif %}
-    </section>
-  {% endfor %}
 
-{% endblock %}
+  </section>
+
+
+  <section>
+
+jsut random section here lol!
+  </section>
+
+  <section>
+
+jsut a third random section here lol!
+  </section>

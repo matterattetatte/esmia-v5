@@ -14,6 +14,8 @@
   --color-text: #F4E4BC;              /* Warm off-white, inspired by Spanish architecture */
   --color-text-muted: #A67B5B;        /* Muted earthy tone, reminiscent of Spanish terracotta */
 
+
+  --color-bg-rgb: 11, 6, 32;
   /* Background & Surface Colors (Spanish night sky with Valencian influence) */
   --color-bg: #1A252F;                /* Dark blue-gray, evoking a Spanish night */
   --color-surface: #2E4057;           /* Deeper blue, inspired by Valencian sea */
@@ -399,15 +401,22 @@ h1, h2 {
 	color: var(--color-primary);
 }
 
+
 footer {
-	text-align: center;
-	color: var(--color-text-muted);
-	margin-top: 4rem;
-	background: var(--color-surface);
+ padding: 0.5rem 10%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 
-
+footer.scrolled {
+  background: rgba(var(--color-bg-rgb), 0.3);
+  box-shadow: 0 -2px 4px var(--color-primary);
+}
 
 /* Show hamburger on small screens */
 @media (max-width: 768px) {
@@ -447,3 +456,4 @@ footer {
    }
 
 }
+

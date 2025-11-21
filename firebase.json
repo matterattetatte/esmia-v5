@@ -11,6 +11,35 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "headers": [
+      {
+        "source": "/index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico|woff|woff2|ttf|eot|otf|css|js|json|webmanifest)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=604800, public, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=604800, public"
+          }
+        ]
+      }
     ]
   }
 }

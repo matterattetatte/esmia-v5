@@ -5,7 +5,7 @@
 <section class="banner">
 <div class="banner-section">
   <div class="banner-image">
-    <img src="/images/background.jpg" alt="Spansk cateringillustration" />
+    <img src="/images/background.jpg" fetchpriority="high" alt="Spansk cateringillustration" loading="lazy" />
   </div>
 </div>
 
@@ -13,17 +13,33 @@
     <h1>ESMIA HB</h1>
     <p>Spansk paella-och tapascatering i Stockholm</p>
   </center>
+</section>
+
+<section class="flex" style="flex-wrap: wrap;">
+<div style="flex: 1;">
+  <h2>Välkommen till ESMIA HB!</h2>
+  <p>Vi erbjuder autentisk spansk catering med fokus på paella och tapas. Oavsett om du planerar en företagsfest, bröllop eller privat tillställning, är vi här för att göra ditt evenemang minnesvärt med våra läckra rätter och professionella service.</p>
+</div>
+<div style="min-width: 50%">
+  <h2>Följ oss på Facebook!</h2>
+  <p>Se våra senaste uppdateringar på sociala medier.</p>
+<div class="sk-ww-facebook-page-posts" data-embed-id="25624561"></div><script src="/scripts/iframe-widget.js" defer></script>
+</div>
+<script>
 
 
-  </section>
+new Image().src = '/images/iframe-profile.webp';
 
+setInterval(() => {
+    const images = document.querySelectorAll(
+  'img[alt="sk-header-picture"]:not([src^="/"]), img[alt="sk-post-userpic"]:not([src^="/"])'
+)
+    if (images.length > 0) {
+        images.forEach(img => {
+            console.log('found image to update:', img);
+            img.src = '/images/iframe-profile.webp';
+        });
+    }
+}, 1000);
 
-  <section>
-
-jsut random section here lol!
-  </section>
-
-  <section>
-
-jsut a third random section here lol!
-  </section>
+  </script>

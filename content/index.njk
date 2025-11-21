@@ -5,7 +5,7 @@
 <section class="banner">
 <div class="banner-section">
   <div class="banner-image">
-    <img src="/images/background.jpg" fetchpriority="high" alt="Spansk cateringillustration" loading="lazy" />
+    <img src="/images/background.jpg" fetchpriority="high" alt="Spansk cateringillustration" />
   </div>
 </div>
 
@@ -23,23 +23,40 @@
 <div style="min-width: 50%">
   <h2>Följ oss på Facebook!</h2>
   <p>Se våra senaste uppdateringar på sociala medier.</p>
-<div class="sk-ww-facebook-page-posts" data-embed-id="25624561"></div><script src="/scripts/iframe-widget.js" defer></script>
+<div class="sk-ww-facebook-page-posts" data-embed-id="25624561"></div>
 </div>
+
+</section>
+<div>
 <script>
-
-
+// Preload your placeholder image early
 new Image().src = '/images/iframe-profile.webp';
 
-setInterval(() => {
-    const images = document.querySelectorAll(
-  'img[alt="sk-header-picture"]:not([src^="/"]), img[alt="sk-post-userpic"]:not([src^="/"])'
-)
-    if (images.length > 0) {
-        images.forEach(img => {
-            console.log('found image to update:', img);
-            img.src = '/images/iframe-profile.webp';
-        });
-    }
-}, 1000);
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Load the Facebook widget script only now
+  const script = document.createElement('script');
+  script.src = '/scripts/iframe-widget.js';
+  script.defer = true;           // still respectful
+  document.head.appendChild(script);
 
-  </script>
+  // 2. Replace Facebook profile/post images as soon as they appear
+  const replaceImages = () => {
+    document.querySelectorAll('img[alt="sk-header-picture"], img[alt="sk-post-userpic"]')
+      .forEach(img => {
+        if (!img.src.includes('/images/iframe-profile.webp')) {
+          img.src = '/images/iframe-profile.webp';
+          img.srcset = ''; // kill any Facebook srcset
+        }
+      });
+  };
+
+  // Run immediately (in case widget already injected something)
+  replaceImages();
+
+  // And keep running whenever new content is added (Facebook loads async)
+  const observer = new MutationObserver(replaceImages);
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>
+
+</div>

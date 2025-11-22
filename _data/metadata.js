@@ -1,11 +1,21 @@
 export default {
-	title: "Eleventy Base Blog v9",
-	url: "https://example.com/",
-	language: "en",
-	description: "I am writing about my experiences as a naval navel-gazer.",
+	title: "Esmia HB - Spanska delikatesser i Sverige",
+	url: "https://esmia.se",
+	language: "sv",
+	description: "Esmia HB erbjuder ett noggrant urval av spanska delikatesser och produkter av hög kvalitet i Sverige. Upptäck vårt sortiment av autentiska smaker från Spanien.",
+	keywords: [
+		"spanska delikatesser",
+		"spanska produkter",
+		"spansk mat",
+		"import spanska varor",
+		"ESMIA HB",
+		"spansk gourmetmat",
+		"spanska specialiteter",
+		"paella"
+	],
 	author: {
-		name: "Your Name Here",
-		email: "youremailaddress@example.com",
-		url: "https://example.com/about-me/"
+		name: "Norberto Marti",
+		email: "norberto@esmia.se",
+		url: "https://esmia.se"
 	}
 }

@@ -121,10 +121,10 @@ eleventyConfig.addFilter("findByUrl", (collection, url) => {
 	});
 
 	eleventyConfig.addCollection("posts", collectionApi => {  return collectionApi.getFilteredByGlob([
-    "content/blockchain/*.md",
-    "content/recommerce/*.md",
-    "content/digital-product-passport/*.md",
-    "content/other_folder2/*.md"
+    // "content/blockchain/*.md",
+    // "content/recommerce/*.md",
+    "content/news/**/*.md",
+    // "content/other_folder2/*.md"
   	]);
 	});
 

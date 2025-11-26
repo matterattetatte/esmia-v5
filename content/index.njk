@@ -2,26 +2,57 @@
 
 ---
 <style>{% include "css/banner.css" %}</style>
-<section class="banner">
-<div class="banner-section">
-  <div class="banner-image">
-    {# <img src="/images/flamenco.webp" fetchpriority="high" alt="Spansk cateringillustration" /> #}
-    <img src="/images/background.jpg" fetchpriority="high" alt="Spansk cateringillustration" />
-  </div>
-</div>
 
-  <center class="banner-text">
-    <h1>ESMIA HB</h1>
-    <p>Spansk paella-och tapascatering i Stockholm</p>
-  </center>
+<!-- HERO BANNER -->
+<section class="hero-banner">
+  <div class="hero-overlay"></div>
+  
+  <!-- Replace with your best party photo (people + huge paella + sangría) -->
+  <img src="/images/background.webp" 
+       class="hero-image" 
+       alt="Autentisk spansk paella och tapas catering i Stockholm" 
+       fetchpriority="high">
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>
+        <span class="small">¡Auténtica!</span><br>
+        Paella & Tapas
+      </h1>
+      <p class="tagline">para tu fiesta en Stockholm!</p>
+      <a href="#contact" class="btn-reserva">¡Reserva nu! →</a>
+    </div>
+
+    <!-- Decorative Spanish flags top -->
+    <div class="flag-left"></div>
+    <div class="flag-right"></div>
+
+    <!-- Flamenco silhouettes -->
+    <div class="flamenco-left"></div>
+    <div class="flamenco-right"></div>
+  </div>
 </section>
 
-<section class="flex" style="flex-wrap: wrap;">
-<div style="flex: 1;">
-  <h2>Välkommen till ESMIA HB!</h2>
-  <p>Vi erbjuder autentisk spansk catering med fokus på paella och tapas. Oavsett om du planerar en företagsfest, bröllop eller privat tillställning, är vi här för att göra ditt evenemang minnesvärt med våra läckra rätter och professionella service.</p>
-  <img src="/images/flamenco.webp" alt="Flamencodansare" style="border-radius: 4px;margin-top: 1em;" />
-</div>
+<!-- WELCOME SECTION -->
+<section class="welcome-section">
+  <div class="container">
+    <div class="welcome-content">
+      <div class="welcome-text">
+        <h2>¡Bienvenidos a la fiesta!</h2>
+        <p>
+          Vi lagar äkta valenciansk paella live framför era gäster – precis som i Spanien! 
+          Tillsammans med kalla sangría-kannor och massor av tapas förvandlar vi varje tillställning 
+          till en riktig spansk fiesta i Stockholm.
+        </p>
+        <a href="#menu" class="btn-secondary">Se vår meny</a>
+      </div>
+      <div class="welcome-image">
+        <img src="/images/flamenco.webp" alt="Flamencodansare">
+      </div>
+    </div>
+  </div>
+</section>
+
 <div style="min-width: 50%">
   <h2>Följ oss på Facebook!</h2>
   <p>Se våra senaste uppdateringar på sociala medier.</p>

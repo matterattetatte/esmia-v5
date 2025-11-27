@@ -36,7 +36,8 @@ Skriv bara **”Ja tack!”** i svar på mailet så lägger vi till dig på list
 
 Buen provecho & vi ses snart – kanske över en tallrik tataki?
 
-Kram från hela gänget  
-**MeAlegro DeBerto**  
+**Norberto** 
 
-[Följ oss på Facebook för dagliga doser matglädje](https://www.facebook.com/people/MeAlegro-DeBerto/100057035546976/)
+<a href="https://www.facebook.com/people/MeAlegro-DeBerto/100057035546976/" target="_blank" rel="noopener noreferrer">
+Följ oss på Facebook för dagliga doser matglädje
+</a>

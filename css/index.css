@@ -414,6 +414,10 @@ footer.scrolled {
   box-shadow: 0 -2px 4px var(--color-primary);
 }
 
+footer a {
+	text-decoration: none;
+}
+
 /* Show hamburger on small screens */
 @media (max-width: 768px) {
 	header {

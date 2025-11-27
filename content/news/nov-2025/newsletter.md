@@ -1,23 +1,18 @@
 ---
-
-# draft: true               # Optional: exclude from builds/feeds until ready
 layout: layouts/news.njk
-
-title: "Esmia — Nyheter november 2025" # (≤ 90 chars)
-description: "Verifiable DPP records using EVM L1 + IPFS + Glacier to anchor lifecycle data." # (150–180 chars; no quotes inside)
-date: 2025-11-22  
-# updated: 2025-10-23 # Optional:  (when you materially change content)
-author: "NewsEditor" 
-category: "Digital Product Passport" # Max 1 ONLY USE EXISTING category/folder
-tags: ["EU-DPP","ESPR","blockchain","recommerce","device-passport"]
-
-# Absolute preferred URL for this article (use /news/)
-canonical: "devicepassports-trust-layer"
-
-# Social/hero image path (1200x630 recommended); add alt in templates if you don’t store it here
-image: /images/news/devicepassports-trust-layer.jpg
-image_alt: "Blockchain Trust Layer for the EU Digital Product Passport"
-
+title: "ESMIA — Nyheter november 2025"
+description: "Spanska smaker på högvarv – tapas, paella, tataki och barvibbar hos ESMIA. Häng med på inspiration och god mat!" 
+date: 2025-11-22
+author: "NewsEditor"
+category: "catering"
+tags:
+  - tapas
+  - paella
+  - catering
+  - mat
+canonical: "esmia-nyheter-november-2025"
+image: "/images/news/esmia-catering-nyheter.jpg"
+image_alt: "Tapas och paella – spansk catering med ESMIA"
 ---
 
 ### Vad vi bjuder på just nu:

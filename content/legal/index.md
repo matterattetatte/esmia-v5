@@ -19,8 +19,6 @@ seo:
 	  <a href="/legal/cookies">Cookiepolicy</a>
 	  &nbsp;
 	  <a href="/legal/terms">Villkor</a>
-	  &nbsp;
-	  <a href="/legal/dpp">DPP</a>
   </p>
 
   <h2>1. Företag</h2>

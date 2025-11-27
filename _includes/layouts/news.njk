@@ -49,7 +49,11 @@ layout: layouts/base.njk
   {# ---- Social share row (text links, zero JS) ---- #}
   {% set shareUrl = canonical or ('https://Esmia.com' ~ page.url) %}
   <ul class="post-share" aria-label="Share article">
-    <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ shareUrl | urlencode }}&title={{ title | urlencode }}" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl | urlencode }}" target="_blank" rel="noopener noreferrer">
+        Facebook
+      </a>
+    </li>
     <li>•</li>
     <li><a href="https://twitter.com/intent/tweet?url={{ shareUrl | urlencode }}&text={{ title | urlencode }}" target="_blank" rel="noopener">X</a></li>
     <li>•</li>

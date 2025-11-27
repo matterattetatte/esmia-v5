@@ -3,15 +3,15 @@ layout: layouts/news.njk
 title: "ESMIA — Nyheter november 2025"
 description: "Spanska smaker på högvarv – tapas, paella, tataki och barvibbar hos ESMIA. Häng med på inspiration och god mat!" 
 date: 2025-11-22
-author: "NewsEditor"
+author: "Norberto"
 category: "catering"
 tags:
   - tapas
   - paella
   - catering
   - mat
-canonical: "esmia-nyheter-november-2025"
-image: "/images/news/esmia-catering-nyheter.jpg"
+canonical: "http://esmia.se/news/nov-2025/newsletter/"
+image: "/images/background.webp"
 image_alt: "Tapas och paella – spansk catering med ESMIA"
 ---
 

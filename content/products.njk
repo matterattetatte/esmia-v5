@@ -1,0 +1,69 @@
+---
+eleventyNavigation:
+  key: Produkter
+  order: 3
+url: '/products'
+---
+
+<style>
+  {% include "css/products.css" %}
+</style>
+
+
+
+<main class="products">
+  <h1>Produkter</h1>
+
+  <div class="tab-container">
+    {% for category, items in products %}
+      <div class="tab" data-tab="{{ category }}">{{ category | capitalize }}</div>
+    {% endfor %}
+  </div>
+
+  {% for category, items in products %}
+    <section id="{{ category }}" class="tab-content">
+      <div class="product-grid">
+        {% for item in items %}
+          <article class="product-card">
+            {% if item.image %}
+              <img src="{{ item.image }}" alt="{{ item.name }}" class="product-image">
+            {% endif %}
+            <h3>{{ item.name }}</h3>
+            {% if item.price %}
+              <p><strong>{{ item.price }}</strong></p>
+            {% endif %}
+            {% if item.description %}
+              <p>{{ item.description }}</p>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+</main>
+
+<script>
+  // Simple vanilla JS tab functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+
+    // Activate first tab by default
+    if (tabs.length > 0) {
+      tabs[0].classList.add('active');
+      contents[0].classList.add('active');
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  });
+</script>

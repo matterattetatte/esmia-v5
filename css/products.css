@@ -8,16 +8,14 @@
 .tab {
     padding: 0.7rem 1.2rem;
     cursor: pointer;
-    background: #f4f4f4;
-    border: 1px solid #ccc;
+    border: var(--color-primary);
     border-bottom: none;
     margin-right: 0.3rem;
     transition: background 0.2s;
 }
 
 .tab.active {
-    background: #fff;
-    border-top: 3px solid #e63946;
+    border-top: 3px solid var(--color-primary);
     font-weight: bold;
 }
 
@@ -27,6 +25,7 @@
 
 .tab-content.active {
     display: block;
+    padding-left: 0rem;
 }
 
 .product-grid {
@@ -38,11 +37,15 @@
 .product-card {
     border: 1px solid #ddd;
     padding: 1rem;
-    background: #fff;
     border-radius: 5px;
 }
 
 .product-image {
     max-width: 100%;
     height: auto;
+}
+
+
+main {
+	padding: 2rem 4rem;
 }

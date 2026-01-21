@@ -186,9 +186,28 @@ code {
 	word-break: break-all;
 }
 
-#main {
+main {
 	margin-top: 6rem;
 	margin-bottom: 2rem;
+	padding: 0 8rem;
+}
+
+@media (max-width: 1024px) {
+	main {
+		padding: 0 4rem;
+	}
+}
+
+@media (max-width: 768px) {
+	main {
+		padding: 0 2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	main {
+		padding: 0 1rem;
+	}
 }
 
 /* Header */
@@ -418,51 +437,58 @@ footer a {
 	text-decoration: none;
 }
 
-/* Show hamburger on small screens */
+/* Tablet screens */
+@media (max-width: 1024px) {
+
+}
+
+/* Small tablet screens */
 @media (max-width: 768px) {
 	header {
-	padding: 1rem 1rem;
+		padding: 1rem 1rem;
 	}
 
-  .nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
+	.nav {
+		display: none;
+		flex-direction: column;
+		width: 100%;
+	}
 
-  .nav-item {
-    margin: 0;
-    text-align: center;
-  }
+	.nav-item {
+		margin: 0;
+		text-align: center;
+	}
 
-  .nav-item a {
-    padding: 1rem;
-    display: block;
-    width: 100%;
-  }
+	.nav-item a {
+		padding: 1rem;
+		display: block;
+		width: 100%;
+	}
 
-  .nav-toggle {
-    display: block;
-  }
+	.nav-toggle {
+		display: block;
+	}
 
 	.nav.open {
-        display: flex;
-        position: absolute;
-        width: 100vw;
-        min-height: 30vh;
-        left: 0;
-        top: 0;
-        padding-top: 5rem;
-        background: var(--color-bg);
-        box-shadow: 0 2px 4px var(--color-primary-alt);
-        animation: slideDown 0.2s ease-in-out;
-    }
-	section {
-	padding: 1rem 1rem;
+		display: flex;
+		position: absolute;
+		width: 100vw;
+		min-height: 30vh;
+		left: 0;
+		top: 0;
+		padding-top: 5rem;
+		background: var(--color-bg);
+		box-shadow: 0 2px 4px var(--color-primary-alt);
+		animation: slideDown 0.2s ease-in-out;
 	}
-   #mission .flex {
-	flex-wrap: wrap;
-   }
+
+	#mission .flex {
+		flex-wrap: wrap;
+	}
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
 
 }
 

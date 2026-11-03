@@ -60,7 +60,7 @@ export default {
     },
     {
       name: 'Chorizo extra cular påläggschorizo 1,8kg',
-      image: 'products/korv.jpg',
+      image: 'products/chorizoExtraCular.jpg',
       price: '128 kr / kg',
       description: 'Lufttorkad chorizo 1 månad. Hel i bit 1,8kg. Perfekt till smörgåsar. 4 st / låda.'
     },
@@ -79,32 +79,32 @@ export default {
       image: 'products/korv.jpg',
       price: '330 kr / kg',
       description:
-        'Ibericoskinkan är lufttorkad i 30 månader. Gris av svart ras. Den avlas i naturen med ekollon och andra örter. 6 månader innan slakt utfodras grisarna med vanligt foder. 7,5kg /st.'
+        'Spansk extra jungfruolivolja av hög kvalitet. Passar utmärkt till tapas, sallader, bröd och spansk matlagning.'
     },
     {
       name: 'Piquillo Paprika',
       image: 'products/korv.jpg',
       price: '450 kr / kg',
       description:
-        'Ibericoskinka 30 månaders lufttorkad. Den svarta grisrasen avlas i naturen med ekollon och örter. Senaste månader äter den vanlig grisföda, recebo. Vikt i vacuumfrp.: 4-5kg /st.'
+        'Rostad spansk piquillopaprika med fyllig sötma. Serveras som tapas, till charkuterier eller fylld med ost eller skaldjur.'
     },
     {
       name: 'Chorizo och Salami Iberico',
-      image: 'products/korv.jpg',
+      image: 'products/mycketkorvrar.jpg',
       price: '175 kr / kg',
       description:
-        'Chorizo och Salchichon (salame) Iberico charkuteri. Mycket smak och doft av svart den svarta grisrasen Iberico. Serveras kallskuret på fat med paprika, oliver mm. Förpackning: 1,2kg st. 6 st/kolli = 8kg'
+        'Chorizo och Salchichon (salame) Iberico charkuteri. Mycket smak och doft av den svarta grisrasen Iberico. Serveras kallskuret på fat med paprika, oliver mm. Förpackning: 1,2kg st. 6 st/kolli = 8kg'
     },
     {
       name: 'Serranoskinka reserva 14 mån',
-      image: 'products/korv.jpg',
+      image: 'products/serrano5.jpg',
       price: '160 kr / kg',
       description:
-        'Chorizo och salchichon (salame) Iberico charkuteri. Mycket smak och doft av svart den svarta grisrasen Iberico. Serveras kallskuret på fat med paprika, oliver mm. Förpackning: 1,2kg st. 6 st/kolli = 8kg'
+        'Serranoskinka Reserva lufttorkad i 14 månader. Mild, balanserad sälta och rik arom. Serveras kallskuret på fat med oliver och rostad paprika.'
     },
     {
       name: 'Serranoskinka 500g skivad',
-      image: 'products/korv.jpg',
+      image: 'products/ibericoSkivad.jpg',
       price: '235 kr / kg',
       description:
         'Serranoskinka skivad 500gr. Lätt att dra varje skiva med mellanlägg. Skinkan från grishona med 11 månaders lufttorkning. Linda den med dadlar, runt getost, servera med oliver. Förpackning: 5 st x 500g = 2,5kg/kolli.'
@@ -152,14 +152,14 @@ export default {
       image: 'products/mancebo.jpg',
       price: '155 kr / kg',
       description:
-        'Chorizo och Salchichon (salame) Iberico charkuteri. Mycket smak och doft av svart den svarta grisrasen Iberico. Serveras kallskuret på fat med paprika, oliver mm. Förpackning: 1,2kg st. 6 st/kolli = 8kg'
+        'Traditionell spansk hårdost med fyllig och rund smak. Serveras i tunna skivor på ostbricka med kvittenmarmelad (membrillo), mandlar och oliver.'
     },
     {
       name: 'Manchego fårost 6 mån',
-      image: 'products/altoBello.jpg',
+      image: 'products/manceboRojo.jpg',
       price: '195 kr / kg',
       description:
-        'Chorizo och Salchichon (salame) Iberico charkuteri. Mycket smak och doft av svart den svarta grisrasen Iberico. Serveras kallskuret på fat med paprika, oliver mm. Förpackning: 1,2kg st. 6 st/kolli = 8kg'
+        'Klassisk spansk fårost från La Mancha, lagrad i 6 månader. Rik och nötig karaktär, perfekt i trianglar med rostade mandlar och oliver.'
     }
   ],
 
@@ -173,19 +173,19 @@ export default {
     },
     {
       name: 'Paella med stora räkor och kyckling',
-      image: null,
+      image: 'products/norbertoGambas.jpg',
       price: '275 kr / person',
       description: 'Stora räkor, kycklingbröst i bitar, calamar ringar och musslor'
     },
     {
       name: 'Paella mixta',
-      image: null,
+      image: 'products/maricoPaella2.jpg',
       price: '260 kr / person',
       description: 'Räkor och kyckling, calamar ringar och musslor'
     },
     {
       name: 'Arroz del senyoret',
-      image: null,
+      image: 'products/norbertoPaellas.JPG',
       price: '250 kr / person',
       description: 'Scampi utan skal (inga skal eller ben), kycklingbröst i bitar, calamar bitar, musslor utan skal'
     },
@@ -197,7 +197,7 @@ export default {
     },
     {
       name: 'Pintxos Vascos',
-      image: null,
+      image: 'products/GotebTapas.jpg',
       price: '280 kr / person',
       description: `IBERICO MINI MACKA\nCHISTORRA MED VAKTELÄGG VOILAVENT\nCECINA KOSKINKA MED TRYFFEL MAJONÄS\nBOQUERÓN PÅ TIGRES DE BILBAO TOAST\nSCAMPI PÅ AVOCADO RÖRA TOAST\nTORTILLA POTATIS+GUL LÖK OMELETT\nLAXPASTRAMI JALAPEÑO\nIDIAZÁBAL TARTELINA`
     },
@@ -205,7 +205,7 @@ export default {
       name: 'Tilltugg - Spansk Tortilla',
       image: 'products/tortilla.jpg',
       price: '',
-      description: ''
+      description: 'Klassisk spansk potatisomelett med potatis och gul lök, serverad som tapas eller tilltugg vid mingel och fest.'
     },
   ]
 }

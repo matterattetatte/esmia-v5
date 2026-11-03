@@ -22,11 +22,11 @@ import process from "node:process";
 
 import lighthouse from "lighthouse";
 import * as chromeLauncher from "chrome-launcher";
+import { CHROME_VERSION, resolvePinnedChrome } from "./resolve-chrome.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const SITE_DIR = path.join(ROOT, "_site");
 const BASELINE_DIR = path.join(ROOT, "docs", "baselines");
-const CHROME_VERSION = "156.0.8078.80";
 
 /** Pages audited by default: slug -> path. */
 const DEFAULT_PAGES = {
@@ -38,41 +38,15 @@ const CATEGORIES = ["performance", "accessibility", "best-practices", "seo"];
 
 /**
  * The Chrome that `npm run lighthouse:chrome` installs, or a clear failure.
- *
- * The install layout differs per platform and the installer's `--path` does not
- * match what `computeExecutablePath()` expects, so the binary is located by
- * searching the pinned version's directory for a known executable name.
  */
 function resolveChrome() {
+	const found = resolvePinnedChrome(ROOT);
+	if (found) return found;
 	const cacheDir = path.join(ROOT, "chrome");
-	const executableNames = new Set([
-		"chrome",
-		"chrome.exe",
-		"Google Chrome for Testing",
-		"Google Chrome for Testing.exe",
-	]);
-
-	try {
-		const stack = [{ dir: cacheDir, depth: 0 }];
-		while (stack.length) {
-			const { dir, depth } = stack.pop();
-			for (const child of fs.readdirSync(dir, { withFileTypes: true })) {
-				const full = path.join(dir, child.name);
-				if (child.isFile() && executableNames.has(child.name) && full.includes(CHROME_VERSION)) {
-					return full;
-				}
-				if (child.isDirectory() && depth < 5) {
-					stack.push({ dir: full, depth: depth + 1 });
-				}
-			}
-		}
-	} catch {
-		// fall through to the error below
-	}
 	console.error(
 		`Pinned Chrome ${CHROME_VERSION} not found in ${cacheDir}.\n` +
 			`Install it with:  npm run lighthouse:chrome\n` +
-			`Pin a different version by editing CHROME_VERSION in scripts/lighthouse.mjs ` +
+			`Pin a different version by editing CHROME_VERSION in scripts/resolve-chrome.mjs ` +
 			`and the lighthouse:chrome script in package.json together.`
 	);
 	process.exit(1);

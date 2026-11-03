@@ -275,7 +275,7 @@ Kept in the awesome-list spirit: curated, dated, link-dense, one line per entry.
 
 - [ ] Lighthouse mobile, on the production URL: **100 / 100 / 100 / 100**
 - [ ] `curl -sI` shows correct status + content type for `/`, `/robots.txt`, `/sitemap.xml`, `/llms.txt`, a bogus path
-- [ ] Zero console errors and zero 404s across all 15 routes
-- [ ] `_site` under 10 MB; homepage under 1.5 MB transferred
-- [ ] Rich Results Test: 0 errors for `LocalBusiness`, `Product`, `BreadcrumbList`
-- [ ] `lhci assert` wired into PRs and currently green
+- [x] Zero console errors and zero 404s across all 15 routes
+- [x] `_site` under 10 MB; homepage under 1.5 MB transferred
+- [x] Rich Results Test: 0 errors for `LocalBusiness`, `Product`, `BreadcrumbList`
+- [x] `lhci assert` wired into PRs and currently green

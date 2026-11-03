@@ -2,7 +2,7 @@
 
 _Auto-generated from the draft tasks in `docs/draft_tasks/`. Do not edit by hand._
 
-Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqFVs1u20YQfpUBDQcKINlcidRfgQKynNRunUSIhB5a97Akl-RCK66wu7QrBHmKXvMevfdR-iSdpUSWXtGtLpK-mW_-Z8gvXiwT5s29VMjnOKfKwOb2sQD8XF7CWgqeAFVKPsMCBoPv4WYON5CwPSsSDbJAtBcJGW9ZAtEBFm8b6q00BkHBC2apV6CYoBa5GlgjC6BFgqaoYrWkoS6lkErPIVOMFZBItPDXnxCJkgEvYK8kCrS2WEJ1jiYzRQ9gZCKhV0gD2mAaLDnFossI5fsco4655rLQvz56P6BDIIPbGnr0fjtqb3yCYp_AOuf7wYqaHGoleAN3stRsy9ieFxn0ZsNLGwQh12RYRSMRftsyNbSmhvDAs9zklgo3VLOqJHdUFTaJv7_90RCwpk7IOqZpKkVSRzwcrE9Iy8vIehlhbNrYsD6zZ8UN60PgB9rGzGjC1EtPGz-wpABWij1x9gzLnBYFE5BKBYsy4UZDj_jH9K6Jb79tfdvJhdZCCPc7mjFY8f0xL-tPSXhYrhyHY6s-hk3OVYJ1VeYAP65R_b0sDNwdMs6Q_d_VSBk1Jba-rsZo8P6EtPxMrJ9JlbWtxieFyaObBxy3HVVbtw5Tqz6Fn9ghkhQjW8QxtoVHAnNSMilj3AcauayZZc2qQS0VfhVGUW1gRZ2OboiPmli_j_QJNjLLBPZlveV7nIlii2FtqMqYcUl2BAmBDxhvuYefKS4hx3otBaMFAi-V7ZDh_GEQWmLUlRJaXrO4VJbV1f_z2vLCMPxlcM7r8gaD-3_BlkM7b2QES0WfBaxLldIYs9pwI5juw5IWsuAxFRjDZxnJs-Ts5JEAHiTq3JSaV2uwjnO2o0j5uHAGh9g5I2HTjTfwKU2xpSfGS107ZGQMQuz0lfndHMc5Y4X5v_QTnN4npg517iGehiPSsm5Hi0za67y8h5sywQ7iMaiXhXQsC7FjRqawLI18quZxzaiK86ZrvXFNH3fR7byRGawEPeByo3t4N3yHVupp5cJ2el3i3kPvuLb-NRLOTDWZ452r7jmeDxcImsPiApMTMHU0yLDZcheoNRov4QkIXY1xMyAuEDoAntQjMGmumQOQM43axtTVaICRCwQucGZj7AITF5g5AJ6aIzBrTokDNIHNWqG_eHpilVsNcUTTV0WEtDJ1RO3avyYKXxPFAs_eLUuPT-qUCzG_SGKWxNO-Nkpu2fwiDKfRMO3H9sE-vyBRyIb-Gdme6xM7YrM0atgkHIexX7P9JJhQ4rCrh_-RnFafhhz5EYvDmhwGYzahJ-HAvj7gyw09zEMIWharZagC-u4lOqxydMBRFxhUITlg2KU57gInXeC0C5x1gPjA6QBJF9iVEenKCEejA-zKiHRlhKtxXhC8iB3grAa9vpcpnnhzo0rW93ZM7aj96335iqI9LX6RcldLlSyz3JunVGj8V-4TnNNbTvG8n1S-_gOfNUX6)** (pako/zlib-compressed, verified to round-trip).
+Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqFVttu4zYQ_ZWBFllkATsRZcm3AgUcZ7dJm-4aa6MPbfpASZREmBYNkkpqLPYr-tr_6Hs_pV_SoWypCq20frF9Zs5wLocjffESmTJv7mVCPicFVQY2t48l4OfiAtZS8BSoUvIZFjAcfgs3c7iBlO1ZmWqQJaKXsZDJlqUQH2DxrqXeSmMQFLxklnoFiglqkauhDbIAWqYYiirWWFrqUgqp9BxyxVgJqcQIf_0JsagY8BL2SqJBa4ulVBcYMlf0AEamEi5LaUAbLIOlp1x0FaN9X2DWCddclvqXR-87PBDI8LaBHr1fj94bn6DZJ7Au-H64oqaAxgnewp2sNNsytudlDpez4MImQcg1CepsJMLvOqECGyqAB54XprBUuKGa1S25o6q0Rfz9x-8tAXvqpKwTmmVSpE3GwXB9QjqnjOwpI8xNG5vWZ_asuGEDCP1Q25wZTZl6edLGDy0phJViT5w9w7KgZckEZFLBokq50XAZ-HV5wTXx7bftb7e4yEaI4H5HcwYrvj_WZc9TEh6WK-fAsXUfw6bgKsW-KnOA79fo_kGWBu4OOWfI_u9uZIyaCkffdGM0_HBCOudM7DmTumrbjU8Ki8djHlBuO6q2bh-m1n0KP7BDLClmtkgSHAuPBdakZFoleB9o7LJmljWrhVop_CqNotrAijoT3RAfPbF_H-kTbGSeC5zLesv3qIlyi2ltqMqZcUlWgoTAj5hvtYefKF5Cjv1aCkZLBF46W5Gh_jAJLTHr2gkjr1lSKcvqm_95b3lpGP4yqPOmveHw_l-wc6DVGxnBUtFnAetKZTTBqjbcCKYHsKSlLHlCBebwWcbyrDirPBLCg0Sfm0rz-hqsk4LtKFI-LhzhEKszErXTeAufsgxHemK89LUiI2MQYqevzG_mKOecleb_yk9RvU9MHZraI1wNR6QT3UqLTLrXeXkPN1WKE8RlQI7LwL_GyfUsA2KVRqawrIx8qiW5ZlQlRTu4y_ExwDUWcH7diJUcmcFK0APeb8wA3gfvMUojWC7ssNcVXv3-WnGz1RscF4YLhO0qcYHJCZg6HiRo77ULNB7tKdEJiFyPcSsJF4gcAJfoEZi0-8sByJlHE2PqerTAyAVCFziLMXaBiQvMHACXyxGYtcvDAdrEZp3UXzwvscudgTim6asmQjqVOqZu718zRa-ZEoGL7pZlx2dzxoWYv0kTlibTgTZKbtn8TRRN4yAbJPZRPn9D4ogF_hnZLugTO2azLG7ZJBpHid-w_TScUOKw68f9kZzVn5Yc-zFLooYchWM2oSfj0L4w4OsMPcwjCDsR68tQJ_TNSzSoa3TAUR8Y1ik5YNTnOe4DJ33gtA-c9YD4iOkBSR_YVxHpqwil0QP2VUT6KiKTvobiBjxvE2lL8gZernjqzY2q2MDbMbWj9q_35Sua9rT8WcpdY1WyygtvnlGh8V-1T1Got5ziRj-5fP0HJD1CfQ)** (pako/zlib-compressed, verified to round-trip).
 
 Regenerate whenever task metadata changes:
 
@@ -37,7 +37,7 @@ flowchart TD
     end
     subgraph scaffold["Gate 2-Scaffold"]
     T03["03 Hosting Rewrite, 404s & Headers ✓"]
-    T04["04 Preview Channel for Audits (10% · 1/10 · todo)"]
+    T04["04 Preview Channel for Audits (20% · 2/10 · todo)"]
     T05["05 Image Pipeline & Hero LCP ✓"]
     T06["06 Third-Party JS & Font Hygiene ✓"]
     end
@@ -56,9 +56,9 @@ flowchart TD
     T16["16 llms.txt for Agents ✓"]
     end
     subgraph delivery["Gate 5-Delivery"]
-    T17["17 Lighthouse CI Budget (9% · 1/11 · todo)"]
+    T17["17 Lighthouse CI Budget (91% · 10/11 · doing)"]
     T18["18 Cutover & Search Console (6% · 1/16 · todo)"]
-    T19["19 Playwright E2E & Accessibility Suite (0% · 0/19 · todo)"]
+    T19["19 Playwright E2E & Accessibility Suite ✓"]
     end
     T01 --> T03
     T01 --> T04
@@ -110,7 +110,7 @@ flowchart TD
     class T14 done;
     class T15 done;
     class T16 done;
-    class T17 todo;
+    class T17 doing;
     class T18 todo;
-    class T19 todo;
+    class T19 done;
 ```

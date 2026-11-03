@@ -1,0 +1,44 @@
+name: Quality Gate (Playwright + Lighthouse 100)
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install pinned Chrome for Lighthouse & Playwright
+        run: npm run lighthouse:chrome
+
+      - name: Build & validate HTML + JSON-LD + titles
+        run: npm run build
+
+      - name: Run unit tests (price parser)
+        run: npm test
+
+      - name: Run Playwright E2E + axe accessibility suite
+        run: npm run test:e2e
+
+      - name: Run Lighthouse 100/100/100/100 assertion (median of 3 runs)
+        run: npm run lighthouse:assert
+
+      - name: Upload Lighthouse scorecard artefact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-scorecard
+          path: docs/baselines/*.json

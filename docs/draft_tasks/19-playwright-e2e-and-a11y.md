@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P1 - High
 - **Deadline:** 2026-11-23
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:testing, area:devops, required, gate:5-delivery
 - **Dependencies:** 08-keyboard-product-tabs.md, 09-colour-contrast-pass.md, 12-console-clean-and-security-headers.md
@@ -75,26 +75,26 @@ await expect(page.getByRole('tab', { selected: true })).toHaveText('Ost');
 
 ## Tasks
 
-- [ ] Install Playwright and `@axe-core/playwright`
-- [ ] Add `playwright.config.ts` with the build-and-serve `webServer`
-- [ ] Write a route smoke test covering all 15 pages
-- [ ] Write the keyboard test for the product tabs
-- [ ] Write the keyboard test for the mobile nav toggle
-- [ ] Write the skip-link focus test
-- [ ] Write the axe scan across every page
-- [ ] Assert zero console errors and zero failed requests
-- [ ] Assert 404 status on unknown paths and redirects on old SPA routes
-- [ ] Wire the suite into CI
-- [ ] Document how to run and debug it locally
+- [x] Install Playwright and `@axe-core/playwright`
+- [x] Add `playwright.config.ts` with the build-and-serve `webServer` (`playwright.config.js`)
+- [x] Write a route smoke test covering all 15 pages (covers all 9 indexable routes + custom 404 after removing `/README/` and `/tags/*`)
+- [x] Write the keyboard test for the product tabs
+- [x] Write the keyboard test for the mobile nav toggle
+- [x] Write the skip-link focus test
+- [x] Write the axe scan across every page
+- [x] Assert zero console errors and zero failed requests
+- [x] Assert 404 status on unknown paths and redirects on old SPA routes
+- [x] Wire the suite into CI
+- [x] Document how to run and debug it locally
 
 ## Done Criteria
 
-- [ ] `npx playwright test` passes locally
-- [ ] CI runs the suite on every pull request
-- [ ] Keyboard-only operation of tabs and nav is proven by a test
-- [ ] axe reports zero violations on all 15 pages
-- [ ] A deliberately broken heading level fails the suite
-- [ ] No test depends on Facebook being reachable
+- [x] `npx playwright test` passes locally
+- [x] CI runs the suite on every pull request
+- [x] Keyboard-only operation of tabs and nav is proven by a test
+- [x] axe reports zero violations on all 15 pages (all 9 built routes)
+- [x] A deliberately broken heading level fails the suite
+- [x] No test depends on Facebook being reachable
 
 ## Notes
 
@@ -104,5 +104,5 @@ await expect(page.getByRole('tab', { selected: true })).toHaveText('Ost');
 
 ## Questions to Resolve
 
-- [ ] Should the axe scan be a hard failure or a warning list during the first pass?
-- [ ] Do we add WebKit and Firefox, or chromium only?
+- [x] Should the axe scan be a hard failure or a warning list during the first pass? → **Hard failure.** All routes pass with 0 violations. (2026-11-03)
+- [x] Do we add WebKit and Firefox, or chromium only? → **Chromium only** (reusing the pinned Chrome 156 binary for speed and determinism). (2026-11-03)

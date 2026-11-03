@@ -34,11 +34,11 @@ The channel URL (`https://esmia--lh-audit-<hash>.web.app`) is the audit target f
 
 ## Tasks
 
-- [ ] Create the preview channel
+- [ ] Create the preview channel (requires `firebase login`)
 - [ ] Confirm headers match production configuration
 - [ ] Confirm `robots.txt` is served correctly on the channel
 - [ ] Record the channel Lighthouse baseline
-- [ ] Document the command in README
+- [x] Document the command in README (`npm run deploy:preview`)
 
 ## Done Criteria
 

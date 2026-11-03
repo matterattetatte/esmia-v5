@@ -121,10 +121,13 @@ function buildSite() {
 function parseArgs(argv) {
 	const paths = [];
 	let runs = 1;
+	let assert = false;
 	for (const arg of argv) {
 		const runsMatch = arg.match(/^--runs=(\d+)$/);
 		if (runsMatch) {
 			runs = Math.max(1, Number(runsMatch[1]));
+		} else if (arg === "--assert") {
+			assert = true;
 		} else if (arg.startsWith("-")) {
 			console.error(`Unknown option: ${arg}`);
 			process.exit(1);
@@ -137,7 +140,7 @@ function parseArgs(argv) {
 				paths.map((p) => [p.replace(/^\/|\/$/g, "").replace(/\//g, "-") || "home", p])
 			)
 		: DEFAULT_PAGES;
-	return { pages, runs };
+	return { pages, runs, assert };
 }
 
 async function auditPage({ url, port, runs, chromePath }) {
@@ -176,7 +179,7 @@ function summarise(results) {
 		scores[category] = Math.round(median(values));
 	}
 	const audits = lhr.audits;
-	return {
+		return {
 		url: lhr.finalDisplayedUrl || lhr.finalUrl,
 		fetchedAt: new Date().toISOString(),
 		lighthouseVersion: lhr.lighthouseVersion,
@@ -195,6 +198,7 @@ function summarise(results) {
 			tbtMs: Math.round(audits["total-blocking-time"]?.numericValue ?? 0),
 			cls: Number((audits["cumulative-layout-shift"]?.numericValue ?? 0).toFixed(4)),
 			siMs: Math.round(audits["speed-index"]?.numericValue ?? 0),
+			totalByteWeight: Math.round(audits["total-byte-weight"]?.numericValue ?? 0),
 		},
 		failingAudits: Object.values(audits)
 			.filter((a) => a.score !== null && a.score < 1 && a.scoreDisplayMode === "binary")
@@ -203,7 +207,7 @@ function summarise(results) {
 }
 
 async function main() {
-	const { pages, runs } = parseArgs(process.argv.slice(2));
+	const { pages, runs, assert } = parseArgs(process.argv.slice(2));
 	const chromePath = resolveChrome();
 	buildSite();
 	fs.mkdirSync(BASELINE_DIR, { recursive: true });
@@ -244,9 +248,34 @@ async function main() {
 			console.log(`  failing: ${summary.failingAudits.join(", ")}`);
 		}
 	}
-	// This script records baselines and never fails on a low score — the hard gate
-	// is task 17 (Lighthouse CI budget), which reads these numbers.
 	console.log(`\nWrote ${summaries.length} baseline(s) to docs/baselines/ (${summaries[0].summary.formFactor}, runs: ${runs}).`);
+
+	if (assert) {
+		const PAGE_WEIGHT_BUDGETS = {
+			"/": 1_500_000,
+			"/products/": 2_500_000,
+		};
+		const failures = [];
+		for (const { pagePath, summary } of summaries) {
+			for (const category of CATEGORIES) {
+				if (summary.scores[category] < 100) {
+					failures.push(`${pagePath} ${category} scored ${summary.scores[category]} (required 100)`);
+				}
+			}
+			const budget = PAGE_WEIGHT_BUDGETS[pagePath];
+			if (budget && summary.metrics.totalByteWeight > budget) {
+				failures.push(
+					`${pagePath} totalByteWeight ${summary.metrics.totalByteWeight} B exceeds budget ${budget} B`
+				);
+			}
+		}
+		if (failures.length) {
+			console.error(`\nLighthouse assertion failed:`);
+			for (const f of failures) console.error(`  ✗ ${f}`);
+			process.exit(1);
+		}
+		console.log(`Lighthouse assertions passed: 100/100/100/100 and page-weight budgets met.`);
+	}
 }
 
 await main();

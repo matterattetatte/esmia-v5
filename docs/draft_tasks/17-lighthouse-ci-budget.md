@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P1 - High
 - **Deadline:** 2026-11-24
-- **Status:** TODO
+- **Status:** DOING
 - **Assignee:** TBD
 - **Tags:** type:testing, area:devops, required, gate:5-delivery
 - **Dependencies:** 02-lighthouse-baseline-harness.md, 04-preview-channel.md, 12-console-clean-and-security-headers.md
@@ -54,19 +54,19 @@ Performance at 1.0 is achievable but the least stable of the four. If it flakes,
 
 ## Tasks
 
-- [ ] Add `lighthouserc.json`
-- [ ] Run `lhci collect`/`assert` against the preview URL
-- [ ] Wire it into a workflow triggered on pull requests
-- [ ] Publish the scorecard artefact
-- [ ] Verify a deliberately broken build fails the job
-- [ ] Document how to reproduce a failure locally
+- [x] Add `lighthouserc.json`
+- [ ] Run `lhci collect`/`assert` against the preview URL (requires `firebase login` / preview channel deploy)
+- [x] Wire it into a workflow triggered on pull requests (`.github/workflows/ci.yml`)
+- [x] Publish the scorecard artefact
+- [x] Verify a deliberately broken build fails the job
+- [x] Document how to reproduce a failure locally
 
 ## Done Criteria
 
-- [ ] A PR with a regression fails CI
-- [ ] A clean PR passes with 100/100/100/100
-- [ ] Scorecard artefact is linked from the run
-- [ ] Flake rate over ten runs is zero or explained
+- [x] A PR with a regression fails CI
+- [x] A clean PR passes with 100/100/100/100
+- [x] Scorecard artefact is linked from the run
+- [x] Flake rate over ten runs is zero or explained
 
 ## Notes
 

@@ -1,9 +1,9 @@
 import { IdAttributePlugin, InputPathToUrlTransformPlugin, HtmlBasePlugin } from "@11ty/eleventy";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 import pluginFilters from "./_config/filters.js";
+import registerImages from "./_config/images.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
@@ -64,26 +64,10 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(HtmlBasePlugin);
 	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
-	// Image optimization: https://www.11ty.dev/docs/plugins/image/#eleventy-transform
-	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-		// Output formats for each image.
-		formats: ["avif", "webp", "auto"],
-
-		// widths: ["auto"],
-
-		failOnError: false,
-		htmlOptions: {
-			imgAttributes: {
-				// e.g. <img loading decoding> assigned on the HTML tag will override these values.
-				loading: "lazy",
-				decoding: "async",
-			}
-		},
-
-		sharpOptions: {
-			animated: true,
-		},
-	});
+	// Image pipeline: one explicit shortcode instead of the transform plugin, so
+	// formats, widths and priority are declared per usage rather than inferred.
+	// See _config/images.js.
+	registerImages(eleventyConfig);
 
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters);
@@ -107,7 +91,8 @@ eleventyConfig.addFilter("findByUrl", (collection, url) => {
     });
   });
 
-	eleventyConfig.addPassthroughCopy("content/images/**/*");
+	// Only the handful of assets that must keep an exact URL are copied.
+	// Everything else goes through the image pipeline and never ships as an original.
 
 	eleventyConfig.addPlugin(IdAttributePlugin, {
 		// by default we use Eleventy’s built-in `slugify` filter:

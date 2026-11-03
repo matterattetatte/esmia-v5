@@ -5,33 +5,39 @@
     margin-bottom: 1rem;
 }
 
+/* Tabs are real <button role="tab"> elements, so the reset has to be explicit. */
 .tab {
+    font: inherit;
+    color: inherit;
+    background: none;
     padding: 0.7rem 1.2rem;
     cursor: pointer;
-    border: var(--color-primary);
+    border: 1px solid transparent;
     border-bottom: none;
     margin-right: 0.3rem;
     transition: background 0.2s;
 }
 
-.tab.active {
+.tab:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Selected state is not colour-only: it adds a rule and weight as well. */
+.tab[aria-selected="true"] {
     border-top: 3px solid var(--color-primary);
     font-weight: bold;
 }
 
-.tab-content {
-    display: none;
+.tab:focus-visible,
+.tab-content:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
-.tab-content.active {
-    display: block;
-}
+/* Panels are hidden with the `hidden` attribute, never with CSS alone. */
 
 @media (max-width: 768px) {
-    .tab-content.active {
-        padding: 0;
-    }
-    .tab-content.active .product-grid {
+    .tab-content .product-grid {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -52,6 +58,6 @@
 }
 
 .product-image {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }

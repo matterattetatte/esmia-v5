@@ -1,19 +1,5 @@
-.sk-ww-facebook-page-posts {
-  max-height: 50vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  background: #fff !important;
-}
-
-.sk-header-search {
-  display: none !important;
-}
-
-.sk-header-username {
-  display: none !important;
-}
-
 .hero-banner {
+  position: relative;
   height: 100vh;
   min-height: 600px;
   overflow: hidden;
@@ -49,19 +35,6 @@
 .flag-left  { left: 20px; transform: rotate(-15deg); }
 .flag-right { right: 20px; transform: rotate(15deg); }
 
-/* Flamenco silhouettes */
-.flamenco-left, .flamenco-right {
-  position: absolute;
-  bottom: 10%;
-  width: 120px;
-  height: 200px;
-  background: url('/images/flamenco-silhouette.png') center/contain no-repeat;
-  opacity: 0.7;
-  z-index: 4;
-}
-.flamenco-left  { left: 5%; transform: scaleX(-1); }
-.flamenco-right { right: 5%; }
-
 .hero-content {
   position: relative;
   z-index: 5;
@@ -74,7 +47,7 @@
 }
 
 .hero-text h1 {
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-family);
   font-size: 6.5rem;
   line-height: 1;
   margin: 0;
@@ -96,9 +69,10 @@
   color: white;
 }
 
+/* #8A0018 on #FFD60A = 6.46:1 (on hover #ffe066 = 6.95:1) */
 .btn-reserva {
   background: #FFD60A;
-  color: #C1121F !important;
+  color: #8A0018 !important;
   font-weight: bold;
   font-size: 1.4rem;
   padding: 1rem 2.5rem;
@@ -109,7 +83,7 @@
 }
 
 .btn-reserva:visited {
-  color: #C1121F !important;
+  color: #8A0018 !important;
 }
 
 .btn-reserva:hover {
@@ -120,7 +94,7 @@
 
 /* ==== WELCOME SECTION ==== */
 .welcome-section {
-  background: #C1121F;
+  background: #9E0E19; /* #FFFFFF on #9E0E19 = 7.45:1, #FFD60A on #9E0E19 = 5.48:1 */
   color: white;
   padding: 80px 20px;
 }
@@ -140,7 +114,7 @@
 }
 
 .welcome-text h2 {
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-family);
   font-size: 4rem;
   margin-bottom: 1rem;
   color: #FFD60A;
@@ -156,11 +130,19 @@
   display: inline-block;
   margin-top: 1.5rem;
   background: #FFD60A;
-  color: #C1121F !important;
+  color: #8A0018 !important;
   padding: 0.8rem 2rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
+}
+
+.btn-secondary:visited {
+  color: #8A0018 !important;
+}
+
+.btn-secondary:hover {
+  background: #ffe066;
 }
 
 /* Responsive */

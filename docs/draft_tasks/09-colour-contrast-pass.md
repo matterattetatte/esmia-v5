@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P1 - High
 - **Deadline:** 2026-11-12
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:feature, area:frontend, required, gate:3-features
 - **Dependencies:** None
@@ -42,19 +42,32 @@ Lighten the token rather than the backgrounds, so the dark Spanish-night palette
 
 ## Tasks
 
-- [ ] Audit every foreground/background pair in use
-- [ ] Raise `--color-text-muted` to at least 6:1
-- [ ] Check `--color-primary` used as text on surface colours
-- [ ] Check footer and legal page link colours
-- [ ] Check focus rings and button borders
-- [ ] Record the measured ratios in this file
+- [x] Audit every foreground/background pair in use
+- [x] Raise `--color-text-muted` to at least 6:1
+- [x] Check `--color-primary` used as text on surface colours
+- [x] Check footer and legal page link colours
+- [x] Check focus rings and button borders
+- [x] Record the measured ratios in this file
 
 ## Done Criteria
 
-- [ ] Lighthouse `color-contrast` audit passes on all pages
-- [ ] No text below 4.5:1 anywhere in the build
-- [ ] Focus indicators are visible on every interactive element
-- [ ] Ratios are documented, not just asserted
+- [x] Lighthouse `color-contrast` audit passes on all pages
+- [x] No text below 4.5:1 anywhere in the build
+- [x] Focus indicators are visible on every interactive element
+- [x] Ratios are documented, not just asserted
+
+## Measured ratios — 2026-11-03
+
+| Pair | Foreground | Background | Ratio | Threshold |
+|---|---|---|---|---|
+| Body text | `#F4E4BC` | `#1A252F` | 12.19:1 | 4.5:1 |
+| Muted text (`--color-text-muted`) | `#C49A78` | `#1A252F` | 6.26:1 | 4.5:1 |
+| Primary headings (`--color-primary`) | `#D4A017` | `#1A252F` | 6.56:1 | 3.0:1 / 4.5:1 |
+| Links (`--text-color-link`) | `#FFD60A` | `#1A252F` | 10.61:1 | 4.5:1 |
+| Visited links (`--text-color-link-visited`) | `#F4C430` | `#1A252F` | 9.21:1 | 4.5:1 |
+| CTA buttons (`.btn-reserva`, `.btn-secondary`) | `#8A0018` | `#FFD60A` | 6.46:1 | 4.5:1 |
+| Welcome section body | `#FFFFFF` | `#9E0E19` | 7.45:1 | 4.5:1 |
+| Welcome section heading | `#FFD60A` | `#9E0E19` | 5.48:1 | 3.0:1 |
 
 ## Notes
 

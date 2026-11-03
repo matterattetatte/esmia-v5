@@ -11,11 +11,11 @@ tags:
   - catering
   - mat
 canonical: "http://esmia.se/news/nov-2025/newsletter/"
-image: "/images/background.webp"
+image: "background.webp"
 image_alt: "Tapas och paella – spansk catering med ESMIA"
 ---
 
-### Vad vi bjuder på just nu:
+## Vad vi bjuder på just nu:
 - Tonfisk-tataki med wasabi & soya – iskallt, snyggt, galet gott 🐟🔥  
 - Lyxiga tapasbilder som ser ut att kosta 200 dollar (men vi bjuder på inspirationen gratis) 💸  
 - Het spansk chorizo, lufttorkad jamón och marinerad pastrami – höstens köttfest 🐷  
@@ -26,7 +26,7 @@ image_alt: "Tapas och paella – spansk catering med ESMIA"
 
 Kort sagt: vi kör spanska smaker på högvarv – tapas, paella, jamón och glada människor.
 
-### Vill du ha det här först av alla nästa gång?  
+## Vill du ha det här först av alla nästa gång?  
 Skriv bara **”Ja tack!”** i svar på mailet så lägger vi till dig på listan.
 
 Buen provecho & vi ses snart – kanske över en tallrik tataki?

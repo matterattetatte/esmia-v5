@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P1 - High
 - **Deadline:** 2026-11-11
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:feature, area:frontend, required, gate:3-features
 - **Dependencies:** 07-heading-order-and-landmarks.md
@@ -50,22 +50,22 @@ Use roving tabindex: the selected tab is `tabindex="0"`, the rest `-1`.
 
 ## Tasks
 
-- [ ] Convert tab `div`s to `button role="tab"`
-- [ ] Add `aria-selected`/`aria-controls`/`aria-labelledby`
-- [ ] Add `role="tablist"` and an accessible name
-- [ ] Implement roving tabindex and arrow-key navigation
-- [ ] Use `hidden` on inactive panels
-- [ ] Add a visible focus style
-- [ ] Make the widget work without JS, or document that it requires it
+- [x] Convert tab `div`s to `button role="tab"`
+- [x] Add `aria-selected`/`aria-controls`/`aria-labelledby`
+- [x] Add `role="tablist"` and an accessible name
+- [x] Implement roving tabindex and arrow-key navigation
+- [x] Use `hidden` on inactive panels
+- [x] Add a visible focus style
+- [x] Make the widget work without JS, or document that it requires it
 
 ## Done Criteria
 
-- [ ] Every tab is reachable with Tab and operable with Enter/Space
-- [ ] Arrow keys move selection
-- [ ] `aria-selected` tracks the active tab
-- [ ] Inactive panels are hidden from the accessibility tree
-- [ ] Focus is visible against the dark background at 3:1 or better
-- [ ] Lighthouse `aria-*` and name-role-value audits pass
+- [x] Every tab is reachable with Tab and operable with Enter/Space
+- [x] Arrow keys move selection
+- [x] `aria-selected` tracks the active tab
+- [x] Inactive panels are hidden from the accessibility tree
+- [x] Focus is visible against the dark background at 3:1 or better
+- [x] Lighthouse `aria-*` and name-role-value audits pass
 
 ## Notes
 

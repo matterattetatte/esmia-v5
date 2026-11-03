@@ -1,45 +1,42 @@
 {
-	"url": "http://localhost:4173/products/",
-	"fetchedAt": "2026-11-03T15:41:42.610Z",
+	"url": "http://localhost:43483/products/",
+	"fetchedAt": "2026-11-03T18:37:18.715Z",
 	"lighthouseVersion": "12.8.2",
 	"chromeVersion": "Chrome/156.0.0.0",
 	"formFactor": "mobile",
 	"runs": 3,
 	"scores": {
-		"performance": 56,
-		"accessibility": 98,
-		"best-practices": 96,
+		"performance": 100,
+		"accessibility": 100,
+		"best-practices": 100,
 		"seo": 100
 	},
 	"perRun": [
 		{
-			"performance": 51,
-			"accessibility": 98,
-			"best-practices": 96,
+			"performance": 100,
+			"accessibility": 100,
+			"best-practices": 100,
 			"seo": 100
 		},
 		{
-			"performance": 56,
-			"accessibility": 98,
-			"best-practices": 96,
+			"performance": 100,
+			"accessibility": 100,
+			"best-practices": 100,
 			"seo": 100
 		},
 		{
-			"performance": 69,
-			"accessibility": 98,
-			"best-practices": 96,
+			"performance": 100,
+			"accessibility": 100,
+			"best-practices": 100,
 			"seo": 100
 		}
 	],
 	"metrics": {
-		"fcpMs": 871,
-		"lcpMs": 46689,
-		"tbtMs": 706,
-		"cls": 0.1547,
-		"siMs": 871
+		"fcpMs": 817,
+		"lcpMs": 1092,
+		"tbtMs": 0,
+		"cls": 0,
+		"siMs": 817
 	},
-	"failingAudits": [
-		"errors-in-console",
-		"heading-order"
-	]
+	"failingAudits": []
 }

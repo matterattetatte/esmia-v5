@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P1 - High
 - **Deadline:** 2026-11-13
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:feature, area:frontend, required, gate:3-features
 - **Dependencies:** None
@@ -46,19 +46,19 @@ Toggle `aria-expanded` in the click handler. The skip link uses `.visually-hidde
 
 ## Tasks
 
-- [ ] Add `aria-expanded` and `aria-controls`
-- [ ] Update `aria-expanded` on open/close
-- [ ] Give the button a 44×44 minimum target
-- [ ] Reveal the skip link on focus
-- [ ] Verify focus order from the top of the page
-- [ ] Confirm the nav closes with Escape
+- [x] Add `aria-expanded` and `aria-controls`
+- [x] Update `aria-expanded` on open/close
+- [x] Give the button a 44×44 minimum target
+- [x] Reveal the skip link on focus
+- [x] Verify focus order from the top of the page
+- [x] Confirm the nav closes with Escape
 
 ## Done Criteria
 
-- [ ] Lighthouse `tap-targets`-class issues are absent
-- [ ] `aria-expanded` flips with the menu
-- [ ] Skip link is invisible until focused and jumps to `#main`
-- [ ] Menu is operable by keyboard alone
+- [x] Lighthouse `tap-targets`-class issues are absent
+- [x] `aria-expanded` flips with the menu
+- [x] Skip link is invisible until focused and jumps to `#main`
+- [x] Menu is operable by keyboard alone
 
 ## Notes
 

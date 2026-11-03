@@ -7,7 +7,7 @@ layout: layouts/base.njk
 <article class="post">
  {% if image %}
   <figure class="post-hero">
-    <img src="{{ image }}" alt="{{ image_alt or title }}">
+    {% image image, image_alt or title, "figure" %}
     {% if image_caption %}
       <figcaption>{{ image_caption }}</figcaption>
     {% endif %}

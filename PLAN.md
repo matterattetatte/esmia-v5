@@ -274,8 +274,8 @@ Kept in the awesome-list spirit: curated, dated, link-dense, one line per entry.
 
 ## 6. Definition of done
 
-- [ ] Lighthouse mobile, on the production URL: **100 / 100 / 100 / 100**
-- [ ] `curl -sI` shows correct status + content type for `/`, `/robots.txt`, `/sitemap.xml`, `/llms.txt`, a bogus path
+- [x] Lighthouse mobile, on the production URL: **100 / 100 / 100 / 100**
+- [x] `curl -sI` shows correct status + content type for `/`, `/robots.txt`, `/sitemap.xml`, `/llms.txt`, a bogus path
 - [x] Zero console errors and zero 404s across all 15 routes
 - [x] `_site` under 10 MB; homepage under 1.5 MB transferred
 - [x] Rich Results Test: 0 errors for `LocalBusiness`, `Product`, `BreadcrumbList`

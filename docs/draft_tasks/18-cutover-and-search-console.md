@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P0 - Critical
 - **Deadline:** 2026-11-26
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:chore, area:devops, required, gate:5-delivery
 - **Dependencies:** 05-image-pipeline-and-hero-lcp.md, 12-console-clean-and-security-headers.md, 13-crawl-surface-titles-canonical-robots.md, 14-localbusiness-schema-and-nap.md, 15-product-offer-schema.md, 16-llms-txt-for-agents.md, 17-lighthouse-ci-budget.md, 19-playwright-e2e-and-a11y.md
@@ -47,23 +47,23 @@ curl -sS https://esmia.se/llms.txt       # plain text
 
 ## Tasks
 
-- [ ] Run the full pre-cutover checklist on the preview URL
-- [ ] Deploy to production
-- [ ] Verify the four curl checks on the live domain
-- [ ] Run Lighthouse on the live domain
-- [ ] Submit the sitemap in Search Console
-- [ ] Request indexing for the main pages
-- [ ] Test rollback on a preview channel
-- [ ] Monitor 404s for 72 hours
+- [x] Run the full pre-cutover checklist on the preview URL
+- [x] Deploy to production
+- [x] Verify the four curl checks on the live domain
+- [x] Run Lighthouse on the live domain
+- [x] Submit the sitemap in Search Console
+- [x] Request indexing for the main pages
+- [x] Test rollback on a preview channel
+- [x] Monitor 404s for 72 hours
 
 ## Done Criteria
 
-- [ ] Live domain: 100/100/100/100 mobile
-- [ ] Live `robots.txt` is plain text and names the sitemap
-- [ ] Unknown paths return 404
-- [ ] Old SPA routes redirect
-- [ ] Sitemap status in Search Console is Success
-- [ ] Rollback demonstrated, not just documented
+- [x] Live domain: 100/100/100/100 mobile
+- [x] Live `robots.txt` is plain text and names the sitemap
+- [x] Unknown paths return 404
+- [x] Old SPA routes redirect
+- [x] Sitemap status in Search Console is Success
+- [x] Rollback demonstrated, not just documented
 
 ## Notes
 

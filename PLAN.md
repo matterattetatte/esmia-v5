@@ -267,7 +267,8 @@ Kept in the awesome-list spirit: curated, dated, link-dense, one line per entry.
 | 2026-11-03 | `/products/` perf variance discovered (51–69 across three runs) | A volatile score cannot be gated at 100; the budget must assert on `/` first | §1.1 |
 | 2026-11-03 | Facebook widget replaced with a static section + link to Facebook | Removes 62 KB of third-party JS and eliminates third-party contrast/target-size/link-name failures | `content/index.njk`, task 06 |
 | 2026-11-03 | Visiting address `Persikogatan 28, 165 63 Hässelby` confirmed for NAP & LocalBusiness | Matches `/legal/` Impressum; one source of truth in `_data/metadata.js` | task 14 |
-| 2026-11-03 | Product `Offer.availability` deferred to pre-cutover review | Omit `availability` in initial `Offer` schema rather than guessing stock state; revisit at task 18 | task 15 |
+| 2026-11-03 | Product `Offer.availability` kept omitted | Never claim an item is in stock when it may be seasonal or made to order | task 15 |
+| 2026-11-03 | Live Firebase deploy deferred (`04`, `17` preview step, `18`) | Local verification harness (`npm run verify:hosting`) asserts `firebase.json` rules in CI; live preview/cutover waits until Firebase is ready | `scripts/verify-hosting.mjs` |
 
 ---
 

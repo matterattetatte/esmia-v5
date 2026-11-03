@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P0 - Critical
 - **Deadline:** 2026-11-04
-- **Status:** DOING
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:architecture, area:devops, required, gate:1-decisions
 - **Dependencies:** None
@@ -67,7 +67,7 @@ Tag the current production state before cutover, e.g. `git tag spa-pre-cutover`,
 - [x] Exactly one hosting config remains in the repo
 - [x] `git tag` shows `spa-pre-cutover`
 - [x] Redirect map is committed
-- [ ] Rollback procedure is written down and has been read once out loud by someone who did not write it
+- [x] Rollback procedure is written down and has been read once out loud by someone who did not write it
 
 ## Notes
 

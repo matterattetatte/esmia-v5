@@ -27,6 +27,9 @@ jobs:
       - name: Build & validate HTML + JSON-LD + titles
         run: npm run build
 
+      - name: Verify hosting headers, status codes, redirects & 404
+        run: npm run verify:hosting
+
       - name: Run unit tests (price parser)
         run: npm test
 

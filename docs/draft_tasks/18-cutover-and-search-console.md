@@ -73,4 +73,4 @@ curl -sS https://esmia.se/llms.txt       # plain text
 ## Questions to Resolve
 
 - [x] Cut over during a weekday or a weekend? → **Weekday morning**, with a full working day to watch it. (2026-11-03)
-- [ ] **OPEN** — Who is on call for the 72-hour window?
+- [x] Who is on call for the 72-hour window? → **Project owner / engineering on-call** (no personal names recorded in repo docs). (2026-11-03)

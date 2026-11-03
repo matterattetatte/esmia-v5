@@ -61,7 +61,7 @@ Per-page front matter supplies `title` and `description`; the layout stops prefi
 - [ ] Add a self-referencing canonical to `base.njk`
 - [ ] Add a `Sitemap:` line to `robots.txt`
 - [ ] State the AI-crawler policy in `robots.txt`
-- [ ] Decide the fate of `/tags/*`
+- [x] Decide the fate of `/tags/*` — drop the tag system
 - [ ] Add `BreadcrumbList` JSON-LD to non-home pages
 - [ ] Validate the sitemap against the built pages
 
@@ -81,5 +81,5 @@ Per-page front matter supplies `title` and `description`; the layout stops prefi
 
 ## Questions to Resolve
 
-- [ ] Do we keep `/tags/*` pages at all, or drop the tag system?
-- [ ] Should AI crawlers be allowed by default? Recommendation: allow, and say so explicitly in the file.
+- [x] Do we keep `/tags/*` pages at all, or drop the tag system? → **Drop it.** `tags.njk` and `tag-pages.njk` leave the build; four thin near-duplicate URLs are not worth defending in the index. (2026-11-03)
+- [x] Should AI crawlers be allowed by default? → **Allow explicitly.** Name GPTBot, ClaudeBot, PerplexityBot and Google-Extended with `Allow: /` so the position is unambiguous. (2026-11-03)

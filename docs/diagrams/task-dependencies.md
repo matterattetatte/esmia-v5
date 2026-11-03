@@ -2,7 +2,7 @@
 
 _Auto-generated from the draft tasks in `docs/draft_tasks/`. Do not edit by hand._
 
-Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqVVttu4zYQ_ZWBgiyygJ2KtmQ7LlDAcbBNtumusTb60KYPlEhJhGXSIKmkxmK_q-_9sg5tS6vITNL6xfYZnjMXzoz0NUgV48E0yEr1lBZUW1jdPEjAz_k5LFUpGFCt1RPMoN__Ca6ncA2Mb7lkBpRE9CIpVbrmDJIdzN431BtlLYKlkNxRL0Hzkjrksu9EZkAlQymqeW1pqHNVKm2mkGvOJTCFCv_8DUlZcRAStlqhwRiHMWoKlMw13YFVTMGFVBaMxTQ4O8ZiqgTt2wKjToURSpo_HoKf0SGQ_k0NPQR_Hk6vQoLmkMCyENv-gtoC6kPwDm5VZfia862QOVyE5y6G8AcycN_O__uWzsDpDOBe5IUtHA-uqeH7etxSLV0GrypghTsJmJRmmSpZHf-gvzwiLbdD53aIkRrrgvzCn7SwvAdRGBmXAaeMa_NW8JFTiWCh-aPgTzAvqJS8hExpmFVM2LZA6BOInUAMdxuac1iI7SFx518ruJ8vWvyRjz9y_BGsCqEZXoO2O_i4RP4HJS3c7nLBUe5_1i_j1FbYOnX9hv0PR6TleOwcj_d1cvX7rLFc6Pce23VD9bqV-JUv7omjT-AXvksUxdBnaYo3LZISq6AVq1KcL5q0yxf5ZK6czNV-EiqNX9Jqaiws6LOuIR4qCZGKd_KJPsJK5XmJd79ciy02olxjIiuqc27fVHFTgJZfMeVqC79R3AMC72BecioReP32iet9vBOM2yjMfM9C30ueVtrJ_KcuPL1AIS3HXxaHsb7DqH_3HWxF4MaADGGu6VMJy0pnNMVCrIQtuenBnEolRUpLDOqLStSzeox9GbmBwKu6V0i6rozYz-8yLfiGosan2eKNiSJuIEjcNME7-Jxl2FlHie_koY_spgHnpCw35tL-ZQ9zmHP51j2elpDhID5yvavrF-MOPCAtd24GsAyt1TW_g-uKYeO81Teu_8kE5pVVj_vBWXKq06JphVfHvgkXt_D-aYPrrAtEzaLrAuMjMOmcIINmqXSB-kTjJT4CcffEqGmELhB3ANz5B2DcLNMOQE5O1BqT7okGGHaBqAucaIy6wLgDOLfPnstYoVYxO6bJiyZCWlF2TO26vWSKXzKlJe67G54d3gEyUZbTM5Zylk56xmq15tOzOJ4kg6yXuleG6RlJYj4IT8hukR_ZCb_KkoZN4lGchjU7ZNGYkg57_1pxIGf7T0NOwoSncU2OoxEf06Ox715M8LWJ7qYxRC3FfSM7yR-fgwMfOPSBkQ-MfeDIB4594MQHXnlA3PYe0JcR8WVEfBkRX0bElxHxZUR8GZEmo6AX5FqwYGp1xXvBhusNdX-Dr9_QtKXyd6U2tVWrKi-CaUZLg_-qLcOOvBEUN-fxyLd_AV0KV6s)** (pako/zlib-compressed, verified to round-trip).
+Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqNVttu4zYQ_ZWBFll4ATsRbcm3AgV8yTbpphtjbfShTR8oiZII06JBUUmNxQL9iP5L3_sp_ZIOZUurlZm6fpF1hnM4Zzgz4mcnlBFzpk4s5EuYUqVhs3zKAH9XV7CWgkdAlZIvMINe73uYT2EOEduzLMpBZoh2AiHDLYsgOMDsXe26lFojKHjGjOs1KCaoQa57hmQGNIuQiipWWWrXhRRS5VNIFGMZRBIZ_v4LAlEw4BnslURDnhssonmKlImiB9AyktDJpIZcowwWnWLJiwDt-xSjDnnOZZb_-uT8gBsC6S0r6Mn57bh64xI0uwTWKd_3VlSnUC2Ct3Ani5xtGdvzLIHO-MrEQG5I3zzN_u8aPH3D04cHnqQ6NX4wpzkr83FHVWYUdMiopOhbKTDFLQV5SONYiqgS0O-tT0hj34HZd4Ch5tpE-Ym9KK5ZFzzXy40ERiOm8kvRe4bFg5Viz5y9wCKlWcYExFLBrIi4NsG7FYNrY_ANgw_3O5owWPH9UboJQEl4WKyQoF-pH9oIhoZgCJuUqwhPQukD_LhGgvcy03B3SDhDvn_--BPmD4-LD7fL_5Z0ns2YUV1gJVXZHPTen5BGECMTxKjMmsnmo8LkYQwPWL07qraX0zA2BGP4wA6BpChkFoZ49DwQmBQloyLEhqMB8owqGs9GMzE0k7I1CoWPTCuaa1hRU0aTypVYXImLrhjbR_oMG5kkAmthveV7rMxsi1I2VCVMX2QxbYGWn1B0sYefKQ4GjieyEIxmCFxIAzHdgMeCgecSpZduuPmahYUyPP-rLM_PkGea4T-N7Vkdo9e7_wo2IjB9QQawUPRFwLpQMQ0xExuuBcu7sKCZzHhIBQb1SQayLPBjLIMbMrJJMi2Ch_Ug0Wte5Lxs6XWYsh1Fko-z1YUeI6ZDiF-XwVt4jGOsrhPFV-eBzdl0B_aNELv8Wv-uj52ZsOzSSZ7nMMLOfGbqUCXQx7F4RBrbmT7ANDSm2eIe5kWEpXOpckwHkDEsCi2fy-ZZM6rCtK6FzrByt40BYiqfTGAl6AEnGW4Pt_1bZKkaiQtTP-sChxx0jkXo3qDD68pxxpffMpyVbcCrp2gbGJ2AcWsF6dfzqg1UK-pd_BPgt1cM65pqA34LwC_KERjVk7oFkLMVFce4vaIGBm3AawNnHMM2MGoDkxaAU_AITOqh1gLqwCaN0L-5OWCWGwfSMo1fNRHSUNoyNXP_msl_zRQKHMBLFh9vKTEXYvomClkUjru5VnLLpm98fxz0425oLjXTNyTwWd89czbflpN3wCZxUHsTf-iHbuXtRt6IkpZ3efE5Osflr3YO3ICFfuXse0M2oidjz1yd8GJHD1MfvAZj2QyG8rtvwb4NHNhAzwb6NnBoA0c2cGwDJxYQvz4W0KaI2BQRmyJiU0RsiohNEbEpIjZFpFbkdJ1E8ciZalWwrrNjakfNq_P5C5r2NPtFyl1lVbJIUmcaU5HjW7GPsEyXnOJ0Py358i8RvYpD)** (pako/zlib-compressed, verified to round-trip).
 
 Regenerate whenever task metadata changes:
 
@@ -32,32 +32,33 @@ flowchart TD
     %% Dotted line A -. related .- B: A and B are related
     %% Colors: green done · blue in progress · dashed gray todo (not started)
     subgraph decisions["Gate 1-Decisions"]
-    T01["01 Ship-Path Decision & Housekeeping (0% · 0/12 · todo)"]
-    T02["02 Lighthouse Baseline Harness (0% · 0/12 · todo)"]
+    T01["01 Ship-Path Decision & Housekeeping (8% · 1/12 · todo)"]
+    T02["02 Lighthouse Baseline Harness (17% · 2/12 · todo)"]
     end
     subgraph scaffold["Gate 2-Scaffold"]
-    T03["03 Hosting Rewrite, 404s & Headers (0% · 0/12 · todo)"]
-    T04["04 Preview Channel for Audits (0% · 0/10 · todo)"]
-    T05["05 Image Pipeline & Hero LCP (0% · 0/16 · todo)"]
-    T06["06 Third-Party JS & Font Hygiene (0% · 0/12 · todo)"]
+    T03["03 Hosting Rewrite, 404s & Headers (8% · 1/12 · todo)"]
+    T04["04 Preview Channel for Audits (10% · 1/10 · todo)"]
+    T05["05 Image Pipeline & Hero LCP (12% · 2/16 · todo)"]
+    T06["06 Third-Party JS & Font Hygiene — BLOCKED (8% · 1/12 · todo)"]
     end
     subgraph features["Gate 3-Features"]
-    T07["07 Heading Order & Landmarks (0% · 0/9 · todo)"]
-    T08["08 Keyboard-Accessible Product Tabs (0% · 0/14 · todo)"]
-    T09["09 Colour Contrast Pass (0% · 0/11 · todo)"]
-    T10["10 Nav Toggle, Skip Link & Targets (0% · 0/11 · todo)"]
-    T11["11 Markup Validity Cleanup (0% · 0/10 · todo)"]
-    T12["12 Console Clean & Security Headers (0% · 0/12 · todo)"]
+    T07["07 Heading Order & Landmarks (10% · 1/10 · todo)"]
+    T08["08 Keyboard-Accessible Product Tabs (7% · 1/14 · todo)"]
+    T09["09 Colour Contrast Pass (9% · 1/11 · todo)"]
+    T10["10 Nav Toggle, Skip Link & Targets (9% · 1/11 · todo)"]
+    T11["11 Markup Validity Cleanup (10% · 1/10 · todo)"]
+    T12["12 Console Clean & Security Headers (8% · 1/12 · todo)"]
     end
     subgraph integration["Gate 4-Integration"]
-    T13["13 Crawl Surface, Titles, Canonical & Robots (0% · 0/17 · todo)"]
-    T14["14 LocalBusiness Schema & NAP (0% · 0/12 · todo)"]
-    T15["15 Product & Offer Schema (0% · 0/13 · todo)"]
-    T16["16 llms.txt for Agents (0% · 0/11 · todo)"]
+    T13["13 Crawl Surface, Titles, Canonical & Robots (18% · 3/17 · todo)"]
+    T14["14 LocalBusiness Schema & NAP (8% · 1/12 · todo)"]
+    T15["15 Product & Offer Schema (8% · 1/13 · todo)"]
+    T16["16 llms.txt for Agents (9% · 1/11 · todo)"]
     end
     subgraph delivery["Gate 5-Delivery"]
-    T17["17 Lighthouse CI Budget (0% · 0/11 · todo)"]
-    T18["18 Cutover & Search Console (0% · 0/16 · todo)"]
+    T17["17 Lighthouse CI Budget (9% · 1/11 · todo)"]
+    T18["18 Cutover & Search Console (6% · 1/16 · todo)"]
+    T19["19 Playwright E2E & Accessibility Suite (0% · 0/19 · todo)"]
     end
     T01 --> T03
     T01 --> T04
@@ -80,6 +81,10 @@ flowchart TD
     T15 --> T18
     T16 --> T18
     T17 --> T18
+    T19 --> T18
+    T08 --> T19
+    T09 --> T19
+    T12 --> T19
     T05 -. related .- T06
     T07 -. related .- T08
     T07 -. related .- T11
@@ -107,4 +112,5 @@ flowchart TD
     class T16 todo;
     class T17 todo;
     class T18 todo;
+    class T19 todo;
 ```

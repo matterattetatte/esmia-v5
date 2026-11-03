@@ -18,6 +18,7 @@
 - Arrow keys must move between tabs; `Home`/`End` jump to first/last
 - The selected tab must be visually distinguishable without relying on colour alone
 - The panel must be hidden with `hidden`, not only `display: none` in CSS
+- The widget must be covered by the Playwright suite (task 19), including keyboard operation
 
 ## User Stories
 
@@ -73,4 +74,4 @@ Use roving tabindex: the selected tab is `tabindex="0"`, the rest `-1`.
 
 ## Questions to Resolve
 
-- [ ] Keep tabs, or replace with anchored sections that work without JS?
+- [x] Keep tabs, or replace with anchored sections that work without JS? → **Keep tabs as full ARIA tabs.** `role=tablist`/`tab`/`tabpanel`, roving tabindex, arrow/Home/End keys. Full accessibility is a hard requirement. (2026-11-03)

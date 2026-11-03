@@ -76,5 +76,5 @@ Tag the current production state before cutover, e.g. `git tag spa-pre-cutover`,
 
 ## Questions to Resolve
 
-- [ ] Is Firebase Hosting the long-term home, or should this move to Cloudflare Pages for a simpler static story?
-- [ ] Should `/home` redirect permanently (301) or temporarily?
+- [ ] **OPEN** — Is Firebase Hosting the long-term home, or should this move to Cloudflare Pages? Revisit after cutover; not blocking.
+- [x] Should `/home` redirect permanently (301) or temporarily? → **301 permanent.** The SPA routes are gone for good. (2026-11-03)

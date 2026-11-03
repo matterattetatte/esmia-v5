@@ -67,4 +67,4 @@ Toggle `aria-expanded` in the click handler. The skip link uses `.visually-hidde
 
 ## Questions to Resolve
 
-- [ ] Should the nav toggle be a `button` with `aria-expanded` (disclosure) or a menu button with `aria-haspopup`?
+- [x] Should the nav toggle be a `button` with `aria-expanded` (disclosure) or a menu button with `aria-haspopup`? → **Disclosure with `aria-expanded`.** The nav is a list of links, not a menu widget. (2026-11-03)

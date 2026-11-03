@@ -75,4 +75,4 @@ Performance at 1.0 is achievable but the least stable of the four. If it flakes,
 
 ## Questions to Resolve
 
-- [ ] Full 1.0 on performance, or 0.95 with a tracking task for the gap?
+- [x] Full 1.0 on performance, or 0.95 with a tracking task for the gap? → **Hard 1.0, median of 3 runs.** If it flakes, fix the page rather than the threshold. (2026-11-03)

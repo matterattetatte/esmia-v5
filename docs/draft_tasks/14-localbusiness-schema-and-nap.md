@@ -50,6 +50,20 @@ The live SPA exposes `norberto@esmia.se` and `0707223191`. The new build drops t
 
 Data lives in `_data/metadata.js` so one edit updates schema, footer and `llms.txt`.
 
+### Reference structure
+
+[paellakungen.se](https://paellakungen.se) is the model for how a Stockholm paella caterer presents itself: a booking CTA above the fold, an occasion grid (bröllop, företagsevent, trädgårdsfest, AW), menu cards that list ingredients, an "Om kocken" credibility block with years and awards, testimonials, a quote form, and a footer carrying full NAP.
+
+Esmia should mirror the **structure** — booking CTA, explicit service area, visible NAP, social proof — and the schema that goes with it. Not the copy, not the identity, and not the other company's address or contact details.
+
+Their footer is the concrete pattern to copy:
+
+```
+Foodonfleek AB · Rabygatan 42 · 216 13 Limhamn · info@paellakungen.se · 0708-63 63 64
+```
+
+Esmia's equivalent needs Esmia's own values — see the open question below.
+
 ## Tasks
 
 - [ ] Add NAP fields to `_data/metadata.js`
@@ -73,5 +87,5 @@ Data lives in `_data/metadata.js` so one edit updates schema, footer and `llms.t
 
 ## Questions to Resolve
 
-- [ ] Is there a public visiting address, or is this delivery-only?
-- [ ] Should `openingHours` be published? Only if it is stable.
+- [ ] **OPEN** — Is there a public visiting address, or is this delivery-only? Needs Esmia's real values; the Paellakungen footer is the pattern, not the data.
+- [x] Should `openingHours` be published? Only if it is stable. → **Omit for now.** Catering is by arrangement, not by opening hours; a wrong schedule is worse than none. (2026-11-03)

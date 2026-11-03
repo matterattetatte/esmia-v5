@@ -18,6 +18,7 @@
 - `/products` currently goes `h1` → `h3`, with the only `h2` being the visually hidden navigation label
 - Each tab panel needs a heading so that its products are grouped, not just listed
 - Landmarks must be unique: one `main` per page, `header`/`footer` outside it
+- No empty headings: `/products` currently emits **7 empty `<h3></h3>` elements** from the image-only gallery entries in `_data/products.js` (they have `image` but no `name`), which pollutes the heading outline
 
 ## User Stories
 
@@ -49,6 +50,7 @@ h3      Manchego
 
 ## Tasks
 
+- [ ] Skip `h3` output when `item.name` is empty (7 gallery-only entries)
 - [ ] Replace the inner `<main>` in `products.njk` with a `<section>`
 - [ ] Make each category an `h2`
 - [ ] Keep product names at `h3`
@@ -68,4 +70,4 @@ h3      Manchego
 
 ## Questions to Resolve
 
-- [ ] Should category headings be visible, or is the tab bar itself the visual affordance and the `h2` screen-reader-only?
+- [x] Should category headings be visible, or is the tab bar itself the visual affordance and the `h2` screen-reader-only? → **Visually hidden `h2`.** The tab bar stays the visual affordance; the headings exist for the outline. (2026-11-03)

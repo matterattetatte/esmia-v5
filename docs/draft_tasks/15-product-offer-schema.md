@@ -85,5 +85,5 @@ A filter in `_config/filters.js` exposes `{ amount, unit }` so template and sche
 
 ## Questions to Resolve
 
-- [ ] Is everything always in stock, or should availability be omitted?
-- [ ] Should `/products` emit all 40 products, or only the visible tab?
+- [ ] **OPEN** — Is everything always in stock, or should availability be omitted? Revisit before cutover (task 18).
+- [x] Should `/products` emit every product, or only the visible tab? → **All 29 named products.** They are present in the DOM; hidden panels still carry the content. (2026-11-03)

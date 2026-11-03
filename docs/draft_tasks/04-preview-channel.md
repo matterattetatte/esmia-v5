@@ -54,4 +54,4 @@ The channel URL (`https://esmia--lh-audit-<hash>.web.app`) is the audit target f
 
 ## Questions to Resolve
 
-- [ ] Should preview deploys happen on every PR, or only on demand?
+- [x] Should preview deploys happen on every PR, or only on demand? → **Every PR**, because the Lighthouse job asserts against it. (2026-11-03)

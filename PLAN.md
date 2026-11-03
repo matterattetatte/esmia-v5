@@ -44,7 +44,7 @@ These are the facts the backlog is derived from. Each row is reproducible.
 
 ## 2. Backlog
 
-> **Execution artifacts.** The 40 plan IDs below are consolidated into **18 tracked tasks** in [`docs/draft_tasks/`](docs/draft_tasks), in the AwesomeJournal draft-task format. Each draft lists its `Plan IDs` in its Metadata block, so every ticket here maps to exactly one draft. The diagrams are generated from that metadata — never drawn by hand:
+> **Execution artifacts.** The 40 plan IDs below are consolidated into **19 tracked tasks** in [`docs/draft_tasks/`](docs/draft_tasks), in the AwesomeJournal draft-task format. Each draft lists its `Plan IDs` in its Metadata block, so every ticket here maps to exactly one draft. The diagrams are generated from that metadata — never drawn by hand:
 >
 > ```bash
 > python3 -m project_management plan check
@@ -213,10 +213,14 @@ Kept in the awesome-list spirit: curated, dated, link-dense, one line per entry.
 |------|----------|-----|------|
 | 2026-11-03 | Messurability is ticket #1, not performance | Live domain returns one shell for every path; scores would describe the wrong site | `curl -sI https://esmia.se/robots.txt` |
 | 2026-11-03 | Eleventy build replaces the SPA at cutover, not in place | The SPA is a client-rendered CRA; no partial migration path adds value | `last-modified: 2024-05-04` |
-| 2026-11-03 | Structured data generated from `_data/products.js`, never hand-written | 40 products with prices; hand-maintained schema is stale within one price change | §2 G2 |
+| 2026-11-03 | Structured data generated from `_data/products.js`, never hand-written | 29 products with prices; hand-maintained schema is stale within one price change | §2 G2 |
 | 2026-11-03 | `llms.txt` is a template, not a static file | Same reason as above — one source of truth | §2 G4 |
-| 2026-11-03 | Adopted the AwesomeJournal draft-task + generated-diagram workflow | 18 drafts with metadata beat 40 prose tickets; the graph and Gantt regenerate from the same source, so they cannot drift | `docs/draft_tasks/` |
+| 2026-11-03 | Adopted the AwesomeJournal draft-task + generated-diagram workflow | 19 drafts with metadata beat 40 prose tickets; the graph and Gantt regenerate from the same source, so they cannot drift | `docs/draft_tasks/` |
 | 2026-11-03 | Gates reuse `gate:2-scaffold`, not a new `gate:2-foundation` | The planner's gate map knows five tags; an unknown tag silently drops tasks into an "Other" bucket | `project_management/planner.py` GATE_TAG_TO_NAME |
+| 2026-11-03 | Interview decisions recorded inline in each draft | Every `Questions to Resolve` item now carries its answer, date and rationale, so the reasoning is not re-litigated in six weeks | `docs/draft_tasks/` |
+| 2026-11-03 | Task 06 stamped **BLOCKED** pending the Facebook embed decision | The scope is genuinely undefined; leaving it as a plain TODO invites someone to build the wrong thing | `06-third-party-js-and-fonts.md` |
+| 2026-11-03 | Playwright + axe suite added as task 19 | Accessibility was a one-off fix with nothing to stop it regressing on the next commit | `19-playwright-e2e-and-a11y.md` |
+| 2026-11-03 | `BLOCKED` lives in the title, not just `Status:` | The planner renders only done / doing / todo, so a metadata-only stamp disappears from the diagram and Gantt | `project_management/planner.py` `_status_class` |
 | 2026-11-03 | No MCP server / no API for now | A static catering site's agentic payoff is readable facts, not a protocol endpoint | §2 E6 |
 | 2026-11-03 | Lighthouse budget asserted in CI | A target that lives in a doc regresses; a target that fails a PR does not | §2 V2 |
 | 2026-11-03 | CSP treated as hardening, not as a score | Not a scored audit; blocks on the inline-CSS architecture | §2 B3 |

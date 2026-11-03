@@ -52,4 +52,4 @@
 
 ## Questions to Resolve
 
-- [ ] Should HTML validation fail the build, or only warn?
+- [x] Should HTML validation fail the build, or only warn? → **Fail the build.** A warning nobody reads is exactly how this bug survived review. (2026-11-03)

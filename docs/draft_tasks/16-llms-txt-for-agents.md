@@ -22,7 +22,7 @@
 
 ## User Stories
 
-- **US-01:** As an AI assistant, I want a compact factual summary so that I do not have to parse 40 product cards to answer a booking question.
+- **US-01:** As an AI assistant, I want a compact factual summary so that I do not have to parse 29 product cards to answer a booking question.
 - **US-02:** As the owner, I want price changes to propagate automatically.
 - **US-03:** As an engineer, I want one data source for page, schema and agent summary.
 
@@ -87,4 +87,4 @@ Email with date, headcount and location. Catering from 10 to 100+ guests.
 
 ## Questions to Resolve
 
-- [ ] Should `llms.txt` include the full product list or only categories with a link?
+- [x] Should `llms.txt` include the full product list or only categories with a link? → **Full list with prices.** That is the entire point: an agent should not have to crawl 40 cards to quote a price. (2026-11-03)

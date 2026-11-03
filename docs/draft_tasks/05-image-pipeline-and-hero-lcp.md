@@ -71,5 +71,5 @@
 
 ## Questions to Resolve
 
-- [ ] Do we keep the `content/images` originals in git, or move them to object storage?
-- [ ] Is a 1300px hero wide enough for a 4K display, or do we need a larger variant?
+- [x] Do we keep the `content/images` originals in git, or move them to object storage? → **Keep them in git.** The deploy problem is solved by the pipeline; migrating adds a bucket and a build-time fetch for no scoring benefit. (2026-11-03)
+- [x] Is a 1300px hero wide enough for a 4K display, or do we need a larger variant? → **Add a 1920px variant to the srcset** and let `sizes` choose. (2026-11-03)

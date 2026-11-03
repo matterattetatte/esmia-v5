@@ -63,4 +63,4 @@ Lighten the token rather than the backgrounds, so the dark Spanish-night palette
 
 ## Questions to Resolve
 
-- [ ] Is the muted tone a brand requirement, or can it move further for legibility?
+- [x] Is the muted tone a brand requirement, or can it move further for legibility? → **Legibility wins.** Move the token as far as needed to clear 4.5:1; the palette stays recognisably Spanish either way. (2026-11-03)

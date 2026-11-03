@@ -69,4 +69,4 @@ Note that CSP effectiveness is not a scored Lighthouse audit; this is hardening,
 
 ## Questions to Resolve
 
-- [ ] Inline CSS with `unsafe-inline`, or a separate stylesheet with a stricter policy?
+- [x] Inline CSS with `unsafe-inline`, or a separate stylesheet with a stricter policy? → **Keep inline CSS, allow `style-src 'self' 'unsafe-inline'`.** CSP strength is not a scored audit; the extra request costs more than the policy buys here. (2026-11-03)

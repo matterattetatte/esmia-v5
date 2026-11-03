@@ -68,4 +68,4 @@ h3      Manchego
 
 ## Questions to Resolve
 
-- [ ] Should category headings be visible, or is the tab bar itself the visual affordance and the `h2` screen-reader-only?
+- [x] Should category headings be visible, or is the tab bar itself the visual affordance and the `h2` screen-reader-only? → **Visually hidden `h2`.** The tab bar stays the visual affordance; the headings exist for the outline. (2026-11-03)

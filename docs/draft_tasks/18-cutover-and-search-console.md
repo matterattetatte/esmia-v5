@@ -6,7 +6,7 @@
 - **Status:** TODO
 - **Assignee:** TBD
 - **Tags:** type:chore, area:devops, required, gate:5-delivery
-- **Dependencies:** 05-image-pipeline-and-hero-lcp.md, 12-console-clean-and-security-headers.md, 13-crawl-surface-titles-canonical-robots.md, 14-localbusiness-schema-and-nap.md, 15-product-offer-schema.md, 16-llms-txt-for-agents.md, 17-lighthouse-ci-budget.md
+- **Dependencies:** 05-image-pipeline-and-hero-lcp.md, 12-console-clean-and-security-headers.md, 13-crawl-surface-titles-canonical-robots.md, 14-localbusiness-schema-and-nap.md, 15-product-offer-schema.md, 16-llms-txt-for-agents.md, 17-lighthouse-ci-budget.md, 19-playwright-e2e-and-a11y.md
 - **GitHub Issue:** _not created_
 - **Estimated Effort:** 4h
 - **Plan IDs:** D1.5, S8
@@ -72,5 +72,5 @@ curl -sS https://esmia.se/llms.txt       # plain text
 
 ## Questions to Resolve
 
-- [ ] Cut over during a weekday or a weekend?
-- [ ] Who is on call for the 72-hour window?
+- [x] Cut over during a weekday or a weekend? → **Weekday morning**, with a full working day to watch it. (2026-11-03)
+- [ ] **OPEN** — Who is on call for the 72-hour window?

@@ -68,4 +68,4 @@ This rewrites *every* path, including `/robots.txt`, to the HTML shell. Removing
 
 ## Questions to Resolve
 
-- [ ] Do we want `/sitemap.xml` at the root or under `/sitemap_index.xml`?
+- [x] Do we want `/sitemap.xml` at the root or under `/sitemap_index.xml`? → **Root `/sitemap.xml`**, referenced from robots.txt. (2026-11-03)

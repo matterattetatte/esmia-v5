@@ -87,4 +87,4 @@ Email with date, headcount and location. Catering from 10 to 100+ guests.
 
 ## Questions to Resolve
 
-- [ ] Should `llms.txt` include the full product list or only categories with a link?
+- [x] Should `llms.txt` include the full product list or only categories with a link? → **Full list with prices.** That is the entire point: an agent should not have to crawl 40 cards to quote a price. (2026-11-03)

@@ -65,5 +65,5 @@ Baselines live under `docs/baselines/` and are committed, so score regressions a
 
 ## Questions to Resolve
 
-- [ ] Should the reference run be mobile (default) or desktop? The 100 target implies mobile.
-- [ ] Do we keep Chrome pinned in the repo toolchain or let the runner download it?
+- [x] Should the reference run be mobile (default) or desktop? → **Mobile**, matching the 100 target and real traffic. (2026-11-03)
+- [x] Do we keep Chrome pinned in the repo toolchain or let the runner download it? → **Pin via `@puppeteer/browsers`** so scores are comparable across machines. (2026-11-03)

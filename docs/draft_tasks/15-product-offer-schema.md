@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P1 - High
 - **Deadline:** 2026-11-20
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:feature, area:seo, required, gate:4-integration
 - **Dependencies:** 05-image-pipeline-and-hero-lcp.md
@@ -63,20 +63,20 @@ A filter in `_config/filters.js` exposes `{ amount, unit }` so template and sche
 
 ## Tasks
 
-- [ ] Write a price parser filter
-- [ ] Add a unit test for the parser against every product string
-- [ ] Emit `Product`/`Offer` JSON-LD per visible product
-- [ ] Reuse the transformed image URL, not the source path
-- [ ] Handle products with no price
-- [ ] Validate with the Rich Results Test
+- [x] Write a price parser filter
+- [x] Add a unit test for the parser against every product string
+- [x] Emit `Product`/`Offer` JSON-LD per visible product
+- [x] Reuse the transformed image URL, not the source path
+- [x] Handle products with no price
+- [x] Validate with the Rich Results Test
 
 ## Done Criteria
 
-- [ ] Every priced product has a valid `Offer`
-- [ ] Schema prices equal the rendered prices
-- [ ] No product invents a price
-- [ ] Parser has tests covering all price formats in the data
-- [ ] Rich Results Test reports 0 errors
+- [x] Every priced product has a valid `Offer`
+- [x] Schema prices equal the rendered prices
+- [x] No product invents a price
+- [x] Parser has tests covering all price formats in the data
+- [x] Rich Results Test reports 0 errors
 
 ## Notes
 

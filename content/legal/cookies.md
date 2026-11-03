@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-title: "Cookiepolicy – ESMIA HB"
+title: "Cookiepolicy"
 description: "Läs hur ESMIA HB använder cookies och liknande tekniker på esmia.se."
 permalink: "/legal/cookies/"
 seo:

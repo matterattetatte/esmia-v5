@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-title: "Villkor – ESMIA HB"
+title: "Villkor"
 description: "Läs de villkor som reglerar din användning av ESMIA HB:s webbplats och catering­tjänster."
 permalink: "/legal/terms/"
 seo:

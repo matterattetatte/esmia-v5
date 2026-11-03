@@ -2,7 +2,7 @@
 
 _Auto-generated from the draft tasks in `docs/draft_tasks/`. Do not edit by hand._
 
-Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNp9Vt1u2zYUfpUDBylcwE5EW7IkDxjgOO2SLW2N2tjFll1QEiURpkWDopIZRZ9it32P3e9R9iQ7lC1NoZX6xvZ3znf--PFIXwaxTNhgPkiFfI5zqjRsbh8LwM_lJayl4AlQpeQzLGA8_hFu5nADCduzIilBFogOIyHjLUsgOsDibUu9lVojKHjBDPUKFBPUIFdjE2QBtEgwFFWssbTUpRRSlXPIFGMFJBIj_PM3RKJiwAvYK4mGsjRYQsscQ2aKHkDLRMKwkBpKjW2w5FRLWUVo3-dYdcxLLovy98fBT5gQyPi2gR4Hfxy9Nw5Bs0NgnfP9eEV1Do0TvIE7WZVsy9ieFxkMw8mlKYKQazKpq5EIv-2EmphQE3jgWa5zQ4UbWrJ6JHdUFaaJf7_91RJwplbJZUzTVIqkqXgyXp-QTpapyTLF2kptyvrMnhXXbASu45amZkYTpl5m2jiuIbmwUuyJs2dY5rQomIBUKlhUCdclDIlzbO-aOObbzLfbnGcieHC_oxmDFd8f-zL5lISH5cpKODPuM9jkXCU4V6UP8PMa3d_LQsPdIeMM2d-fRsqorvDom2lMx-9PSCePb_L4dddmGp8UNo9pHlBuO6q29hwC4x7AL-wQSYqVLeIYj4VHAntSMqlivA80slmhYYW1UCuFX4VWtNSwotaJboiDnji_j_QJNjLLBJ7Lesv3qIlii2VtqMqYtklGgoTAB6y32sOvFC8hx3ktBaMFAi-djchQf1hEKbHq2gkjr1lcKcPqO__z2fJCM_ylUefNeN3x_f9gJ6HRG5nCUtFnAetKpTTGrjZcC1aOYEkLWfCYCqzhs4xkraSgVtL0mvg9SiJGi8SFB4msm6rk9cVYxznbUQzycbHCCH4dYXK6aXYEo0XitSf2Bj6lKR77KcYwaIQ87SMbZZIZCLErr_Sf-ngHMlaYysOGSc6Z50NM8A48MXVoJujhgjkinXRGoDiHzlJY3sNNlaAOvp9vQ4xYSQDLSsunWtVrRlWct2c_nDX0WR_dqJaEsBL0gCsC08O7yTuM0mieC6OXdYXbA4bHy-9cI-H1znFb1k8FXEI24LbryQb8ExBYHmTS7gobaDzaLN4J8GyPWSsqG_AsABfzEfDbnWgB5MyjiRHYHi0wtQHXBs5izGzAt4HQAnBhHYGwXUgW0BYWdkp_8QzGKXcOxDIFr5oI6XRqmbqzf83kvWaKBS7PW5Yen_cpF2J-kcQsiYNRqZXcsvmF5wXRJB3F5vVgfkEij02cM7JZ-id2xMI0atnEm3mx07CdxPUpsdj1K8SRnNaflhw5EYu9huy5M-bTk3FsXkLwFYke5h64nYj1ZagL-uElOql7tMBpH-jWJVmg1-c56wP9PjDoA8MeEB9bPSDpA_s6QoGcF0_6OkJR9ICzPtDvA4M-MGzAwWiQKZ4M5lpVbDTYMbWj5u_gy1c07Wnxm5S7xqpkleWDeUpFif-qfYI6veUU1_vJ5et_fb5YxA)** (pako/zlib-compressed, verified to round-trip).
+Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqFVs1u20YQfpUBDQcKINlcidRfgQKynNRunUSIhB5a97Akl-RCK66wu7QrBHmKXvMevfdR-iSdpUSWXtGtLpK-mW_-Z8gvXiwT5s29VMjnOKfKwOb2sQD8XF7CWgqeAFVKPsMCBoPv4WYON5CwPSsSDbJAtBcJGW9ZAtEBFm8b6q00BkHBC2apV6CYoBa5GlgjC6BFgqaoYrWkoS6lkErPIVOMFZBItPDXnxCJkgEvYK8kCrS2WEJ1jiYzRQ9gZCKhV0gD2mAaLDnFossI5fsco4655rLQvz56P6BDIIPbGnr0fjtqb3yCYp_AOuf7wYqaHGoleAN3stRsy9ieFxn0ZsNLGwQh12RYRSMRftsyNbSmhvDAs9zklgo3VLOqJHdUFTaJv7_90RCwpk7IOqZpKkVSRzwcrE9Iy8vIehlhbNrYsD6zZ8UN60PgB9rGzGjC1EtPGz-wpABWij1x9gzLnBYFE5BKBYsy4UZDj_jH9K6Jb79tfdvJhdZCCPc7mjFY8f0xL-tPSXhYrhyHY6s-hk3OVYJ1VeYAP65R_b0sDNwdMs6Q_d_VSBk1Jba-rsZo8P6EtPxMrJ9JlbWtxieFyaObBxy3HVVbtw5Tqz6Fn9ghkhQjW8QxtoVHAnNSMilj3AcauayZZc2qQS0VfhVGUW1gRZ2OboiPmli_j_QJNjLLBPZlveV7nIlii2FtqMqYcUl2BAmBDxhvuYefKS4hx3otBaMFAi-V7ZDh_GEQWmLUlRJaXrO4VJbV1f_z2vLCMPxlcM7r8gaD-3_BlkM7b2QES0WfBaxLldIYs9pwI5juw5IWsuAxFRjDZxnJs-Ts5JEAHiTq3JSaV2uwjnO2o0j5uHAGh9g5I2HTjTfwKU2xpSfGS107ZGQMQuz0lfndHMc5Y4X5v_QTnN4npg517iGehiPSsm5Hi0za67y8h5sywQ7iMaiXhXQsC7FjRqawLI18quZxzaiK86ZrvXFNH3fR7byRGawEPeByo3t4N3yHVupp5cJ2el3i3kPvuLb-NRLOTDWZ452r7jmeDxcImsPiApMTMHU0yLDZcheoNRov4QkIXY1xMyAuEDoAntQjMGmumQOQM43axtTVaICRCwQucGZj7AITF5g5AJ6aIzBrTokDNIHNWqG_eHpilVsNcUTTV0WEtDJ1RO3avyYKXxPFAs_eLUuPT-qUCzG_SGKWxNO-Nkpu2fwiDKfRMO3H9sE-vyBRyIb-Gdme6xM7YrM0atgkHIexX7P9JJhQ4rCrh_-RnFafhhz5EYvDmhwGYzahJ-HAvj7gyw09zEMIWharZagC-u4lOqxydMBRFxhUITlg2KU57gInXeC0C5x1gPjA6QBJF9iVEenKCEejA-zKiHRlhKtxXhC8iB3grAa9vpcpnnhzo0rW93ZM7aj96335iqI9LX6RcldLlSyz3JunVGj8V-4TnNNbTvG8n1S-_gOfNUX6)** (pako/zlib-compressed, verified to round-trip).
 
 Regenerate whenever task metadata changes:
 
@@ -50,10 +50,10 @@ flowchart TD
     T12["12 Console Clean & Security Headers ✓"]
     end
     subgraph integration["Gate 4-Integration"]
-    T13["13 Crawl Surface, Titles, Canonical & Robots (18% · 3/17 · todo)"]
-    T14["14 LocalBusiness Schema & NAP (17% · 2/12 · todo)"]
-    T15["15 Product & Offer Schema (8% · 1/13 · todo)"]
-    T16["16 llms.txt for Agents (9% · 1/11 · todo)"]
+    T13["13 Crawl Surface, Titles, Canonical & Robots ✓"]
+    T14["14 LocalBusiness Schema & NAP ✓"]
+    T15["15 Product & Offer Schema ✓"]
+    T16["16 llms.txt for Agents ✓"]
     end
     subgraph delivery["Gate 5-Delivery"]
     T17["17 Lighthouse CI Budget (9% · 1/11 · todo)"]
@@ -106,10 +106,10 @@ flowchart TD
     class T10 done;
     class T11 done;
     class T12 done;
-    class T13 todo;
-    class T14 todo;
-    class T15 todo;
-    class T16 todo;
+    class T13 done;
+    class T14 done;
+    class T15 done;
+    class T16 done;
     class T17 todo;
     class T18 todo;
     class T19 todo;

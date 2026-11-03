@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
-title: "Integritetspolicy – ESMIA HB"
-description: "Läs hur ESMIA HB samlar in, använder och skyddar personuppgifter relaterade till enhetsspårning och digitala produktpass."
+title: "Integritetspolicy"
+description: "Läs hur ESMIA HB samlar in, använder och skyddar personuppgifter i samband med kontakt och catering."
 permalink: "/legal/privacy/"
 seo:
   canonical: "https://esmia.se/legal/privacy/"

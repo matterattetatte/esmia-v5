@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P0 - Critical
 - **Deadline:** 2026-11-18
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:feature, area:seo, required, gate:4-integration
 - **Dependencies:** 03-hosting-rewrite-404s-headers.md
@@ -55,24 +55,24 @@ Per-page front matter supplies `title` and `description`; the layout stops prefi
 
 ## Tasks
 
-- [ ] Exclude `README.md` from collections and output
-- [ ] Add unique `title` and `description` front matter to every page
-- [ ] Fix the doubled-brand title template
-- [ ] Add a self-referencing canonical to `base.njk`
-- [ ] Add a `Sitemap:` line to `robots.txt`
-- [ ] State the AI-crawler policy in `robots.txt`
+- [x] Exclude `README.md` from collections and output
+- [x] Add unique `title` and `description` front matter to every page
+- [x] Fix the doubled-brand title template
+- [x] Add a self-referencing canonical to `base.njk`
+- [x] Add a `Sitemap:` line to `robots.txt`
+- [x] State the AI-crawler policy in `robots.txt`
 - [x] Decide the fate of `/tags/*` — drop the tag system
-- [ ] Add `BreadcrumbList` JSON-LD to non-home pages
-- [ ] Validate the sitemap against the built pages
+- [x] Add `BreadcrumbList` JSON-LD to non-home pages
+- [x] Validate the sitemap against the built pages
 
 ## Done Criteria
 
-- [ ] 15 pages emit 15 distinct titles
-- [ ] No title contains the brand twice
-- [ ] Every page has one absolute canonical URL
-- [ ] `sitemap.xml` contains no `/README/` and no duplicates
-- [ ] `robots.txt` names the sitemap
-- [ ] Breadcrumb JSON-LD validates
+- [x] 15 pages emit 15 distinct titles (10 distinct titles across the 10 remaining pages after dropping `/README/` and `/tags/*`)
+- [x] No title contains the brand twice
+- [x] Every page has one absolute canonical URL
+- [x] `sitemap.xml` contains no `/README/` and no duplicates
+- [x] `robots.txt` names the sitemap
+- [x] Breadcrumb JSON-LD validates
 
 ## Notes
 

@@ -1,21 +1,24 @@
 ---
+title: "Om oss & Kontakt"
+description: "Esmia HB har sedan 1993 levererat spanska delikatesser till restauranger och paellacatering till fester och företagsevent i Stockholm. Kontakta Norberto."
 eleventyNavigation:
   key: Om oss
   order: 2
 url: '/about'
 ---
-  <style>{% include "css/about.css" %}</style>
+<style>{% include "css/about.css" %}</style>
 <section class="about">
-    <h1>UPPLEV <strong>SPANSKA SMAKER</strong> MED PASSION</h1>
-    <p>Esmia HB har sedan starten 1993 sålt spanska delikatesser.
-      <br>
-      Vi levererar produkter till restauranger och vi hanterar även catering vid fester och evenemang för både små och stora sällskap.
-    </p>
+  <h1>UPPLEV <strong>SPANSKA SMAKER</strong> MED PASSION</h1>
+  <p>
+    Esmia HB har sedan starten {{ metadata.foundingYear }} sålt spanska delikatesser i {{ metadata.contact.areaServed }}.
+    Vi levererar produkter till restauranger och hanterar catering vid bröllop, fester och företagsevent för både små och stora sällskap.
+  </p>
+
+  <h2>Kontakt &amp; Bokning</h2>
+  <address class="nap-block">
+    <p><strong>{{ metadata.name }}</strong></p>
+    <p>{{ metadata.contact.streetAddress }}, {{ metadata.contact.postalCode }} {{ metadata.contact.addressLocality }} ({{ metadata.contact.areaServed }})</p>
+    <p>Telefon: <a href="tel:{{ metadata.contact.phone }}">{{ metadata.contact.phoneDisplay }}</a></p>
+    <p>E-post: <a href="mailto:{{ metadata.contact.email }}">{{ metadata.contact.email }}</a></p>
+  </address>
 </section>
-
-
-{# MORE CONTENT ABOUT location and who we are! #}
-
-{# https://paella.nu/ #}
-
-{# check their about page #}

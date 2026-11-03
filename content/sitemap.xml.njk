@@ -10,7 +10,9 @@ eleventyExcludeFromCollections: true
 		{% set absoluteUrl %}{{ page.url | htmlBaseUrl(metadata.url) }}{% endset %}
 		<url>
 			<loc>{{ absoluteUrl }}</loc>
+			{% if page.inputPath and page.inputPath.startsWith("./content/news/") and page.url != "/news/" %}
 			<lastmod>{{ page.date | htmlDateString }}</lastmod>
+			{% endif %}
 		</url>
 	{% endif %}
 {%- endfor %}

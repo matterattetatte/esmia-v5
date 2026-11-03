@@ -17,8 +17,10 @@ eleventyExcludeFromCollections: true
 
 - Email: {{ metadata.contact.email }}
 - Phone: {{ metadata.contact.phoneDisplay }} ({{ metadata.contact.phone }})
+- Address: {{ metadata.contact.streetAddress }}, {{ metadata.contact.postalCode }} {{ metadata.contact.addressLocality }}
 - Service area: {{ metadata.contact.areaServed }}, Sweden
 - Website: {{ metadata.url }}
+- Facebook: {{ metadata.social.facebook }}
 - Language: Swedish (sv)
 
 ## Booking
@@ -38,7 +40,8 @@ Prices are as published on the product page. Where a unit is given it is per pie
 
 - {{ metadata.url }}/ — home, paella and tapas catering
 - {{ metadata.url }}/products/ — full product list with prices
-- {{ metadata.url }}/about/ — company background
+- {{ metadata.url }}/about/ — company background and contact
+- {{ metadata.url }}/news/ — latest news and inspiration
 - {{ metadata.url }}/legal/ — legal, privacy, cookies and terms
 - {{ metadata.url }}/sitemap.xml — all indexable URLs
 

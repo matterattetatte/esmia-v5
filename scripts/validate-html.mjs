@@ -39,6 +39,23 @@ function validateFile(file) {
 	const html = stripNonMarkup(raw);
 	const errors = [];
 
+	// 0. JSON-LD blocks must parse cleanly
+	for (const match of raw.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
+		try {
+			JSON.parse(match[1]);
+		} catch (err) {
+			errors.push(`invalid application/ld+json: ${err.message}`);
+		}
+	}
+
+	// 0b. Canonical link present and absolute
+	const canonicals = [...raw.matchAll(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/gi)];
+	if (canonicals.length !== 1) {
+		errors.push(`expected 1 <link rel="canonical">, found ${canonicals.length}`);
+	} else if (!canonicals[0][1].startsWith("https://")) {
+		errors.push(`canonical URL must be absolute https:// (got "${canonicals[0][1]}")`);
+	}
+
 	// 1. Landmarks: one main, one header, one footer
 	for (const landmark of ["main", "header", "footer"]) {
 		const count = (html.match(new RegExp(`<${landmark}\\b`, "gi")) || []).length;
@@ -108,3 +125,23 @@ if (allErrors.length) {
 }
 
 console.log(`HTML validation clean across ${files.length} built page(s).`);
+
+// 5. Unique <title> across all built pages
+const titles = new Map();
+for (const file of files) {
+	const rel = path.relative(SITE_DIR, file);
+	const raw = fs.readFileSync(file, "utf8");
+	const match = raw.match(/<title>([\s\S]*?)<\/title>/i);
+	const title = match ? match[1].trim() : "";
+	if (!title) {
+		allErrors.push(`${rel}: missing <title>`);
+	} else if (titles.has(title)) {
+		allErrors.push(`${rel}: duplicate <title> "${title}" (also on ${titles.get(title)})`);
+	} else {
+		titles.set(title, rel);
+	}
+}
+if (allErrors.length) {
+	for (const err of allErrors) console.error(`  ✗ ${err}`);
+	process.exit(1);
+}

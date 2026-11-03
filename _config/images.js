@@ -130,4 +130,15 @@ export default function registerImages(eleventyConfig) {
 
 		return links.filter(Boolean).join("\n\t\t");
 	});
+
+	eleventyConfig.addAsyncShortcode("imageUrl", async (src, presetName = "card") => {
+		if (!src) return "";
+		const preset = getPreset(presetName);
+		const file = resolveSource(src);
+		if (!file) return "";
+		const metadata = await metadataFor(file, preset.widths);
+		const entries = metadata.webp || metadata.avif || Object.values(metadata)[0];
+		if (!entries || !entries.length) return "";
+		return entries[entries.length - 1].url;
+	});
 }

@@ -40,4 +40,19 @@ export default function(eleventyConfig) {
 	eleventyConfig.addFilter("sortAlphabetically", strings =>
 		(strings || []).sort((b, a) => b.localeCompare(a))
 	);
+
+	// Parse a Swedish price string (e.g. "115 kr / st", "295 kr / person") into
+	// { amount: "115", currency: "SEK", unit: "st" } or null if no price is present.
+	eleventyConfig.addFilter("parsePrice", parsePrice);
 };
+
+export function parsePrice(raw) {
+	if (typeof raw !== "string") return null;
+	const trimmed = raw.trim();
+	if (!trimmed) return null;
+	const match = trimmed.match(/^(\d+(?:[.,]\d+)?)\s*kr(?:\s*\/\s*(.+))?$/i);
+	if (!match) return null;
+	const amount = match[1].replace(",", ".");
+	const unit = match[2] ? match[2].trim() : null;
+	return { amount, currency: "SEK", unit };
+}

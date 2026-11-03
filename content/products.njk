@@ -1,4 +1,6 @@
 ---
+title: "Produkter & Cateringmeny"
+description: "Se Esmia HB:s sortiment och priser på valenciansk paella, tapas, serranoskinka, iberico, chorizo, manchego och spanska delikatesser i Stockholm."
 eleventyNavigation:
   key: Produkter
   order: 3
@@ -120,4 +122,57 @@ url: '/products'
     const linked = panels.findIndex((panel) => panel && `#${panel.id}` === window.location.hash);
     if (linked > -1) select(linked);
   })();
+</script>
+
+<script type="application/ld+json" eleventy:ignore>
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Produkter & Cateringmeny – Esmia HB",
+  "itemListElement": [
+  {%- set comma = joiner(",") -%}
+  {%- set pos = 0 -%}
+  {%- for category, items in products -%}
+    {%- for item in items -%}
+      {%- if item.name -%}
+        {%- set pos = pos + 1 -%}
+        {%- set parsed = item.price | parsePrice -%}
+        {%- set imgPath -%}{% if item.image %}{% imageUrl item.image, "card" %}{% endif %}{%- endset -%}
+        {{ comma() }}
+    {
+      "@type": "ListItem",
+      "position": {{ pos }},
+      "item": {
+        "@type": "Product",
+        "name": {{ item.name | dump | safe }},
+        "category": {{ (category | capitalize) | dump | safe }}
+        {%- if item.description %},
+        "description": {{ item.description | dump | safe }}
+        {%- endif %}
+        {%- if imgPath %},
+        "image": "{{ metadata.url }}{{ imgPath }}"
+        {%- endif %}
+        {%- if parsed %},
+        "offers": {
+          "@type": "Offer",
+          "price": "{{ parsed.amount }}",
+          "priceCurrency": "{{ parsed.currency }}",
+          "url": "{{ metadata.url }}/products/#panel-{{ category }}"
+          {%- if parsed.unit %},
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "{{ parsed.amount }}",
+            "priceCurrency": "{{ parsed.currency }}",
+            "unitText": {{ parsed.unit | dump | safe }}
+          }
+          {%- endif %}
+        }
+        {%- endif %}
+      }
+    }
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor %}
+  ]
+}
 </script>

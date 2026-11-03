@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
-title: "Juridiskt meddelande – ESMIA HB"
-description: "Juridiskt meddelande och företagsinformation för ESMIA HB."
+title: "Juridiskt meddelande"
+description: "Juridiskt meddelande och företagsinformation för ESMIA HB på Persikogatan 28 i Hässelby, Stockholm."
 permalink: "/legal/"
 seo:
   canonical: "https://esmia.se/legal/"

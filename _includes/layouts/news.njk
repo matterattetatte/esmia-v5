@@ -31,9 +31,7 @@ layout: layouts/base.njk
       <li>•</li>
       <li><strong>Tags:</strong></li>
       {% for tag in tags %}
-        {# build a simple slug without a custom filter #}
-        {% set tagSlug = tag | lower | replace(' ', '-') %}
-        <li><a class="post-tag" href="/tags/{{ tagSlug }}/">#{{ tag }}</a>{% if not loop.last %}{% endif %}</li>
+        <li><span class="post-tag">#{{ tag }}</span></li>
       {% endfor %}
     {% endif %}
 

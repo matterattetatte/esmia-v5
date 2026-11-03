@@ -1,6 +1,6 @@
 {
-	"url": "http://localhost:43483/products/",
-	"fetchedAt": "2026-11-03T18:37:18.715Z",
+	"url": "http://localhost:4173/products/",
+	"fetchedAt": "2026-11-03T18:44:20.196Z",
 	"lighthouseVersion": "12.8.2",
 	"chromeVersion": "Chrome/156.0.0.0",
 	"formFactor": "mobile",
@@ -32,11 +32,11 @@
 		}
 	],
 	"metrics": {
-		"fcpMs": 817,
-		"lcpMs": 1092,
+		"fcpMs": 828,
+		"lcpMs": 1100,
 		"tbtMs": 0,
 		"cls": 0,
-		"siMs": 817
+		"siMs": 828
 	},
 	"failingAudits": []
 }

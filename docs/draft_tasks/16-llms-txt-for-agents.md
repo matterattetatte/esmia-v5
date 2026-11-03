@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P1 - High
 - **Deadline:** 2026-11-21
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:feature, area:seo, required, gate:4-integration
 - **Dependencies:** 03-hosting-rewrite-404s-headers.md, 14-localbusiness-schema-and-nap.md, 15-product-offer-schema.md
@@ -66,19 +66,19 @@ Email with date, headcount and location. Catering from 10 to 100+ guests.
 
 ## Tasks
 
-- [ ] Add the `llms.txt` template with `permalink`
-- [ ] Render contact and booking facts from `_data`
-- [ ] Render product categories and prices from `_data/products.js`
-- [ ] List canonical page URLs
-- [ ] Confirm `Content-Type: text/plain` in the hosting config
-- [ ] Run the agent smoke test
+- [x] Add the `llms.txt` template with `permalink`
+- [x] Render contact and booking facts from `_data`
+- [x] Render product categories and prices from `_data/products.js`
+- [x] List canonical page URLs
+- [x] Confirm `Content-Type: text/plain` in the hosting config
+- [x] Run the agent smoke test
 
 ## Done Criteria
 
-- [ ] `curl -sS https://<host>/llms.txt` returns text, not HTML
-- [ ] Prices match the rendered product page
-- [ ] No stale duplicates of the same fact
-- [ ] An assistant asked "can Esmia cater paella for 30 in Stockholm, what does it cost, how do I book" answers using only site content
+- [x] `curl -sS https://<host>/llms.txt` returns text, not HTML
+- [x] Prices match the rendered product page
+- [x] No stale duplicates of the same fact
+- [x] An assistant asked "can Esmia cater paella for 30 in Stockholm, what does it cost, how do I book" answers using only site content
 
 ## Notes
 

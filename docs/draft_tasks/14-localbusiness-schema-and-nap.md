@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P1 - High
 - **Deadline:** 2026-11-19
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:feature, area:seo, required, gate:4-integration
 - **Dependencies:** None
@@ -66,19 +66,19 @@ Esmia's equivalent needs Esmia's own values — see the open question below.
 
 ## Tasks
 
-- [ ] Add NAP fields to `_data/metadata.js`
-- [ ] Restore phone and email as visible HTML on about/contact
-- [ ] Add the `LocalBusiness` JSON-LD to `base.njk`
-- [ ] Confirm `sameAs` URL is the real Facebook page
-- [ ] Validate with the Rich Results Test
-- [ ] Confirm schema values match the visible page
+- [x] Add NAP fields to `_data/metadata.js`
+- [x] Restore phone and email as visible HTML on about/contact
+- [x] Add the `LocalBusiness` JSON-LD to `base.njk`
+- [x] Confirm `sameAs` URL is the real Facebook page
+- [x] Validate with the Rich Results Test
+- [x] Confirm schema values match the visible page
 
 ## Done Criteria
 
-- [ ] Rich Results Test reports 0 errors for the business entity
-- [ ] Phone and email appear in rendered HTML, not only in JSON-LD
-- [ ] No invented street address
-- [ ] One source of truth for the contact data
+- [x] Rich Results Test reports 0 errors for the business entity
+- [x] Phone and email appear in rendered HTML, not only in JSON-LD
+- [x] No invented street address
+- [x] One source of truth for the contact data
 
 ## Notes
 

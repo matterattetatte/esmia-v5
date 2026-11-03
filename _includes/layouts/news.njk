@@ -5,31 +5,29 @@ layout: layouts/base.njk
 <style>{% include "css/news.css" %}</style>
 
 <article class="post">
- {% if image %}
+  {% if image %}
   <figure class="post-hero">
     {% image image, image_alt or title, "figure" %}
     {% if image_caption %}
       <figcaption>{{ image_caption }}</figcaption>
     {% endif %}
   </figure>
-{% endif %}
+  {% endif %}
 
   <h1 class="post-title">{{ title }}</h1>
 
   {# ---- Muted metadata row ---- #}
   <ul class="post-metadata">
-    {% if author %}<li><strong>Author:</strong>&nbsp;{{ author }}</li>{% endif %}
+    {% if author %}<li><strong>Författare:</strong>&nbsp;{{ author }}</li>{% endif %}
 
     {% if category %}
       <li>•</li>
-      <li><strong>Category:</strong>&nbsp;
-        <a href="/categories/{{ category | lower | replace(' ', '-') }}/">{{ category }}</a>
-      </li>
+      <li><strong>Kategori:</strong>&nbsp;<span>{{ category | capitalize }}</span></li>
     {% endif %}
 
     {% if tags and tags.length %}
       <li>•</li>
-      <li><strong>Tags:</strong></li>
+      <li><strong>Taggar:</strong></li>
       {% for tag in tags %}
         <li><span class="post-tag">#{{ tag }}</span></li>
       {% endfor %}
@@ -38,37 +36,60 @@ layout: layouts/base.njk
     {% if page.date %}
       <li>•</li>
       <li>
-        <strong>Date:</strong>&nbsp;
+        <strong>Publicerad:</strong>&nbsp;
         <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
       </li>
     {% endif %}
   </ul>
 
   {# ---- Social share row (text links, zero JS) ---- #}
-  {% set shareUrl = canonical or ('https://esmia.se' ~ page.url) %}
-  <ul class="post-share" aria-label="Share article">
+  {% set shareUrl = canonical or (page.url | htmlBaseUrl(metadata.url)) %}
+  <ul class="post-share" aria-label="Dela artikel">
     <li>
       <a href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl | urlencode }}" target="_blank" rel="noopener noreferrer">
-        Facebook
+        Dela på Facebook
       </a>
     </li>
     <li>•</li>
-    <li><a href="https://twitter.com/intent/tweet?url={{ shareUrl | urlencode }}&text={{ title | urlencode }}" target="_blank" rel="noopener">X</a></li>
-    <li>•</li>
-    <li><a href="mailto:?subject={{ title | urlencode }}&body={{ shareUrl | urlencode }}">Email</a></li>
+    <li><a href="mailto:?subject={{ title | urlencode }}&amp;body={{ shareUrl | urlencode }}">Tipsa via e-post</a></li>
   </ul>
 
-  {{ content | safe }}
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
 
-  {# ---- Prev/Next: left as your project expects (no args) ---- #}
+  {# ---- Prev/Next ---- #}
   {% if collections.posts %}
     {% set previousPost = collections.posts | getPreviousCollectionItem %}
     {% set nextPost = collections.posts | getNextCollectionItem %}
     {% if nextPost or previousPost %}
-      <ul class="links-nextprev">
-        {% if previousPost %}<li class="links-nextprev-prev">← Previous<br> <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-        {% if nextPost %}<li class="links-nextprev-next">Next →<br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+      <ul class="links-nextprev" aria-label="Fler artiklar">
+        {% if previousPost %}<li class="links-nextprev-prev">← Föregående artikel<br><a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+        {% if nextPost %}<li class="links-nextprev-next">Nästa artikel →<br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
       </ul>
     {% endif %}
   {% endif %}
 </article>
+
+<script type="application/ld+json" eleventy:ignore>
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | dump | safe }},
+  "description": {{ (description or metadata.description) | dump | safe }},
+  "datePublished": "{{ page.date | htmlDateString }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ shareUrl }}"
+  },
+  "author": {
+    "@type": "Person",
+    "name": {{ (author or metadata.author.name) | dump | safe }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{ metadata.url }}/#business",
+    "name": {{ metadata.name | dump | safe }}
+  }
+}
+</script>

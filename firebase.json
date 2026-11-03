@@ -6,37 +6,70 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
+    "redirects": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/home",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/contact",
+        "destination": "/about/",
+        "type": 301
       }
     ],
     "headers": [
       {
-        "source": "/index.html",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico|woff|woff2|ttf|eot|otf|css|js|json|webmanifest)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=604800, public, immutable"
-          }
-        ]
-      },
-      {
         "source": "**",
         "headers": [
           {
             "key": "Cache-Control",
+            "value": "max-age=0, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "/dist/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000, public, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|avif|ico|woff|woff2)",
+        "headers": [
+          {
+            "key": "Cache-Control",
             "value": "max-age=604800, public"
+          }
+        ]
+      },
+      {
+        "source": "/robots.txt",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          }
+        ]
+      },
+      {
+        "source": "/llms.txt",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          }
+        ]
+      },
+      {
+        "source": "/sitemap.xml",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/xml; charset=utf-8"
           }
         ]
       }

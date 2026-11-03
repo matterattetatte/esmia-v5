@@ -1,6 +1,46 @@
-# eleventy-base-blog v9
+# Esmia — esmia.se
 
-A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v3.0 release](https://github.com/11ty/eleventy/releases/tag/v3.0.0)).
+The static site for Esmia HB (Spanish delicatessen and paella catering), built with the [Eleventy](https://www.11ty.dev/) site generator (v3).
+
+## Deployment
+
+**Firebase Hosting is the single deploy target.** `firebase.json` is the only hosting config in the
+repository — `netlify.toml` and `vercel.json` were deleted so that the environment being audited is
+the environment that ships.
+
+| | |
+|---|---|
+| Build | `npm run build` → `_site/` |
+| Deploy | `npm run deploy` (`npm run build && firebase deploy`) |
+| Config | [`firebase.json`](firebase.json) |
+
+### Rollback
+
+Two ways back, fastest first:
+
+```bash
+# 1. Instant: restore the previous Firebase release (no build, ~seconds)
+firebase hosting:rollback
+
+# 2. From git: the annotated tag marks the last state before the static site took over
+#    the catch-all rewrite. Check it out, build, deploy.
+git checkout spa-pre-cutover
+npm ci && npm run deploy
+```
+
+The React SPA that `esmia.se` served before this build **is not in this repository**, so the tag
+marks the repo's pre-cutover state rather than the SPA source. For the SPA itself, Firebase keeps
+its own release history — roll back there, not in git.
+
+### Redirect map
+
+Client-side routes from the SPA era are redirected permanently in [`firebase.json`](firebase.json).
+`/about` and `/products` keep their paths and need no redirect.
+
+| Old route | New route | Status |
+|---|---|---|
+| `/home` | `/` | 301 |
+| `/contact` | `/about/` | 301 |
 
 ## Getting Started
 
@@ -87,13 +127,8 @@ Or you can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the
 
 ## Deploy this to your own site
 
-Deploy this Eleventy site in just a few clicks on these services:
-
-- Read more about [Deploying an Eleventy project](https://www.11ty.dev/docs/deployment/) to the web.
-- [Deploy this to **Netlify**](https://app.netlify.com/start/deploy?repository=https://github.com/11ty/eleventy-base-blog)
-- [Deploy this to **Vercel**](https://vercel.com/import/project?template=11ty%2Feleventy-base-blog)
-- Look in `.github/workflows/gh-pages.yml.sample` for information on [Deploying to **GitHub Pages**](https://www.11ty.dev/docs/deployment/#deploy-an-eleventy-project-to-git-hub-pages).
-- [Try it out on **Stackblitz**](https://stackblitz.com/github/11ty/eleventy-base-blog)
+This project deploys to Firebase Hosting only — see [Deployment](#deployment). The upstream template's
+other deploy targets (Netlify, Vercel, GitHub Pages) are not used here.
 
 ### Implementation Notes
 

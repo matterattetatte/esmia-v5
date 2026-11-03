@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P0 - Critical
 - **Deadline:** 2026-11-05
-- **Status:** TODO
+- **Status:** DOING
 - **Assignee:** TBD
 - **Tags:** type:testing, area:devops, required, gate:1-decisions
 - **Dependencies:** None
@@ -44,18 +44,18 @@ Baselines live under `docs/baselines/` and are committed, so score regressions a
 
 ## Tasks
 
-- [ ] Add a local Lighthouse runner script
-- [ ] Install a pinned Chrome for the runner
-- [ ] Record a baseline for `/`
-- [ ] Record a baseline for `/products`
-- [ ] Record the mobile preset as the reference configuration
-- [ ] Summarise baseline scores in PLAN.md
+- [x] Add a local Lighthouse runner script
+- [x] Install a pinned Chrome for the runner
+- [x] Record a baseline for `/`
+- [x] Record a baseline for `/products`
+- [x] Record the mobile preset as the reference configuration
+- [x] Summarise baseline scores in PLAN.md
 
 ## Done Criteria
 
-- [ ] One command produces four scores for a given URL
-- [ ] `docs/baselines/` contains committed JSON for both pages
-- [ ] The baseline numbers are quoted in PLAN.md with the date they were taken
+- [x] One command produces four scores for a given URL
+- [x] `docs/baselines/` contains committed JSON for both pages
+- [x] The baseline numbers are quoted in PLAN.md with the date they were taken
 - [ ] A second run of the same command reproduces the same scores within noise
 
 ## Notes
@@ -67,3 +67,19 @@ Baselines live under `docs/baselines/` and are committed, so score regressions a
 
 - [x] Should the reference run be mobile (default) or desktop? → **Mobile**, matching the 100 target and real traffic. (2026-11-03)
 - [x] Do we keep Chrome pinned in the repo toolchain or let the runner download it? → **Pin via `@puppeteer/browsers`** so scores are comparable across machines. (2026-11-03)
+
+
+## Measured baseline — 2026-11-03
+
+Recorded with `npm run lighthouse -- --runs=3`, mobile form factor, Chrome 156.0.8078.80, against
+`_site/` served locally. Medians of three runs:
+
+| Page | Perf | A11y | Best-practices | SEO | FCP | LCP | TBT | CLS |
+|---|---|---|---|---|---|---|---|---|
+| `/` | 83 | 89 | 96 | 100 | 830 ms | 1027 ms | 714 ms | 0 |
+| `/products/` | 56 | 98 | 96 | 100 | 871 ms | **46 689 ms** | 706 ms | **0.155** |
+
+`/` reproduces tightly (82 / 83 / 85 across runs). `/products/` does not: 51 / 56 / 69, because its
+LCP is a lazily-loaded grid image that sometimes paints after the run's measurement window. The
+reproducibility criterion therefore stays open until task 05 fixes the product image pipeline —
+gating a volatile score at 100 would produce a CI failure nobody can act on.

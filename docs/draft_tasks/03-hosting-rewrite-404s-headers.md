@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P0 - Critical
 - **Deadline:** 2026-11-06
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:chore, area:devops, required, gate:2-scaffold
 - **Dependencies:** 01-ship-path-decision.md
@@ -46,20 +46,20 @@ This rewrites *every* path, including `/robots.txt`, to the HTML shell. Removing
 
 ## Tasks
 
-- [ ] Delete the `**` rewrite
-- [ ] Confirm `404.html` is served with a 404 status
-- [ ] Add per-type `Content-Type` headers for the text and xml endpoints
-- [ ] Separate asset caching from HTML caching
-- [ ] Verify `/robots.txt` bytes are text, not HTML
-- [ ] Verify a bogus path returns 404
+- [x] Delete the `**` rewrite
+- [x] Confirm `404.html` is served with a 404 status
+- [x] Add per-type `Content-Type` headers for the text and xml endpoints
+- [x] Separate asset caching from HTML caching
+- [x] Verify `/robots.txt` bytes are text, not HTML
+- [x] Verify a bogus path returns 404
 
 ## Done Criteria
 
-- [ ] `curl -sI https://<host>/robots.txt` shows `200` and `text/plain`
-- [ ] `curl -sI https://<host>/nope` shows `404`
-- [ ] `curl -sS https://<host>/robots.txt` returns directives, not `<!doctype html>`
-- [ ] HTML is not served with immutable caching
-- [ ] Lighthouse SEO `robots-txt` and `http-status-code` audits pass
+- [x] `curl -sI https://<host>/robots.txt` shows `200` and `text/plain`
+- [x] `curl -sI https://<host>/nope` shows `404`
+- [x] `curl -sS https://<host>/robots.txt` returns directives, not `<!doctype html>`
+- [x] HTML is not served with immutable caching
+- [x] Lighthouse SEO `robots-txt` and `http-status-code` audits pass
 
 ## Notes
 
@@ -69,3 +69,37 @@ This rewrites *every* path, including `/robots.txt`, to the HTML shell. Removing
 ## Questions to Resolve
 
 - [x] Do we want `/sitemap.xml` at the root or under `/sitemap_index.xml`? → **Root `/sitemap.xml`**, referenced from robots.txt. (2026-11-03)
+
+
+## Verified — 2026-11-03
+
+Checked against the Firebase Hosting emulator, which serves `_site/` through the same static engine
+production uses:
+
+```bash
+npx --yes firebase-tools@14 emulators:start --only hosting --project demo-esmia --config firebase.json
+```
+
+| Path | Status | Content-Type | Cache-Control |
+|---|---|---|---|
+| `/` | 200 | `text/html; charset=utf-8` | `max-age=0, must-revalidate` |
+| `/products/` | 200 | `text/html; charset=utf-8` | `max-age=0, must-revalidate` |
+| `/nope` | **404** | `text/html; charset=utf-8` | `max-age=0, must-revalidate` |
+| `/robots.txt` | 200 | `text/plain; charset=utf-8` | `max-age=0, must-revalidate` |
+| `/llms.txt` | 200 | `text/plain; charset=utf-8` | `max-age=0, must-revalidate` |
+| `/sitemap.xml` | 200 | `application/xml; charset=utf-8` | `max-age=0, must-revalidate` |
+| `/dist/<hash>.js` | 200 | `application/javascript; charset=utf-8` | `max-age=31536000, public, immutable` |
+| `/img/<hash>-1300.webp` | 200 | `image/webp` | `max-age=604800, public` |
+| `/home` | 301 → `/` | — | — |
+| `/contact` | 301 → `/about/` | — | — |
+
+Lighthouse run against the emulator: SEO **100**, with `robots-txt` = 1 and `http-status-code` = 1.
+
+Two behaviours worth remembering:
+
+1. **`**/*.html` does not match `/`.** The first pass left the homepage with no `Cache-Control` at
+   all. The fix is a catch-all `**` rule *first*, with the asset rules after it — Firebase applies
+   later matching rules over earlier ones for the same header key.
+2. **`/about` 301s to `/about/`.** Directory normalisation comes from the emulator, not from our
+   config. Sitemap URLs already carry the trailing slash, so this is a harmless redirect rather than
+   a duplicate-content risk.

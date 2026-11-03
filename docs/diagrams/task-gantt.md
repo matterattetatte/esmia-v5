@@ -2,7 +2,7 @@
 
 _Auto-generated from the draft tasks in `docs/draft_tasks/`. Do not edit by hand._
 
-Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqVlc9O20AQxl9lZAmUSnHJOv9zIw4USoAIR5VacZnYG3sbZzfaXQcihNSH6Lv03kfpk3Qcx-AeCKkvlj3r3858-834yQlVxJ2BE6O09l4CXVbYlMNEq-88tDAVS54KyYtYhJafK71EC_CVLvf62h2Nihg-ClPGjmZwFN3LImCII5SET_QxMHfEQ2Ho2RTRBoMgESt3gjaBMgbHcKEywxecr4SModY7gt-_gJ0wL79bFakPMAAk8JrXwWt4HZcxt9GqA4t2XA_GIk5sknNgiGZbBlygltwYqLHuFum9h2y_Iv8pxHODEOdzlZb7NSllY_Ns7_iDFpYgrUbL5KVwjLg2B1fRqVTRopPga8EfwE9QSp7CXGk4zSJh8yIaJbGxl9itENtwucSYTlisCknyBLWCsT8hoFeq0nkP6JXADkwToSM6QW038Dkg4LmSFi42seDE__PjJwzHt_7V2ehgCfpvqN50zznaTPPSPd2turnqt5pEpr3HKKMl6sXh8rBGRZ4eXPHNTCEVdBqGZBUxK9ohyvJ2wBlxuyW2tRfLKtg--CpVmaabtBqNhQnmNuyXKLYX5b2iqJYbXMNUxXFKS4KFWJHT5YJKn6KOuT2c2qxQGVyTaNkKvmAqyF0b8FOOkl4cLGOl--h4qVCjSLothpILeJjpnPuf7cC6b3ih5V5Ky2ON-avdtk3wNT6kEGR6jiFRpvk0M3XwUSopQkwpkzs1U9vuKRJonrDu3gR6lbpaMFZEGWZGbOdIECZ8iQS9OZ0cXFHF3az94q1juJ3PycI75CusuQ_mVcxLTZumS_PRPtpiTMRcHm4Hj70hdJtmdkpL9Wa3Tbc6Wv1LGGYR-e7gfao-6YGfWbXedm7AUYfJi3FqnRK3dxZ5lXHJ-jBJcUPjl9KDM--MqGUXizQ3X5DRZIZa4ejGCX2wD-0VY86pO7EWkTOwOuN1Z8npL5c_Ok_PFFqh_KbUsoxqlcWJM5hjaugpW-X_zJFA8uluyfNfBl5A_Q)** (pako/zlib-compressed, verified to round-trip).
+Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqVlc9O20AQxl9lZAmUSnHjdf4BN3CgUAJEOKrUqpeJvbG3cXaj3XUgQkh9h_bY9-i9j8KTdBzH4EolTX2x12P_9pvxN-MHJ1Ixd46cBKW1nyXQYYXNOIy0-sIjC2Mx55mQvIzFaPmZ0nO0AB_pcK-u3MGgjOG9MFVsbwJ78WdZBgxxhJLwjl4G5g54JAytTRn1GISpWLgjtClUMdiHc5UbPuN8IWQCjUN_D379BMZazC8uYkW338ARILGXvAm-5_dcxlyv0wQWb9A-DEWS2rRAwQmadSZwjlpyY_4H2n2B_pGN74YRTqcqq3Zsk25jC8m3_E4LS5CO1zFFPhxjrg08_fhGO8RK1vm9mugO1Z4vBb-DIEUpeQZTpeE4j4UlzcwrNbeYV5ytitVfFfdrxC5czDGhbyoWZQUKNVrBMBgRsCyC32K9fwH9CtiDcSp0TN9M2xW8Dwl4pqSF81UiOPGfvn6Hk-FNcHk6gMZBJdjfyj98pcRt94yjzTWv_NJfl7Io8Y2mitLeQ5TxHPVs9_Iwr1aeA7jkq4lCSug4isgZYlI2QJwXDYAT4vYrbGcrltWwhxCoTOWaTtJqNBZGuHZdhWJbUf4LinK5xiWMVZJk9Eg4EwsytpxR6mPUCbe7U9s1KoMrKlq-gA-YCXLXCoKMo6QbO5ex1mz0eSlRo6h0awyJC3mU64JbeX9HL7D-K17ouBfS8kRjcWuzbRsCjXcZhLmeYkSUcTG_TBMClEqKCDNScqsmat09pYB2i_W3Cjio5dWBoSLKSW7EemyEUcrnSNDr49HOGdXczbrP3tqHm-mULLxBvsDa22B-zbzUtFk2N2_tvS3HRMLl7nbw2SuF7tKUzuhRvdps069P0uACTvKYfLfzPnWfHECQW7Vcd27IUUfps3EavQq3dRb5tXHJDmGU4YpmLcmDU_-UqFUXi6wwX5jTGIZG6WivRS9sQ_vlmHOaTqJF7BxZnfOmM-f0XyuWzsMjhRYoPyk1r6Ja5UnqHE0xM7TKF8VfciCQfLp55PE3N5M87A)** (pako/zlib-compressed, verified to round-trip).
 
 Regenerate whenever task metadata changes:
 
@@ -31,10 +31,10 @@ gantt
     axisFormat  %b %d
 
     section Gate 1-Decisions
-    01 Ship-Path Decision & Housekeeping (8% · 1/12 · todo) : active, 2026-11-04, 1d
-    02 Lighthouse Baseline Harness (17% · 2/12 · todo) : active, 2026-11-05, 1d
+    01 Ship-Path Decision & Housekeeping (92% · 11/12 · doing) : active, 2026-11-04, 1d
+    02 Lighthouse Baseline Harness (92% · 11/12 · doing) : active, 2026-11-05, 1d
     section Gate 2-Scaffold
-    03 Hosting Rewrite, 404s & Headers (8% · 1/12 · todo) : active, 2026-11-06, 1d
+    03 Hosting Rewrite, 404s & Headers ✓ : done, 2026-11-06, 1d
     04 Preview Channel for Audits (10% · 1/10 · todo) : active, 2026-11-07, 1d
     05 Image Pipeline & Hero LCP (12% · 2/16 · todo) : active, 2026-11-07, 2d
     06 Third-Party JS & Font Hygiene — BLOCKED (8% · 1/12 · todo) : active, 2026-11-09, 1d

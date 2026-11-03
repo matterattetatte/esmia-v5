@@ -40,6 +40,42 @@ These are the facts the backlog is derived from. Each row is reproducible.
 | 16 | Phone `0707223191` exists in the old SPA but was **dropped** in this build; no NAP block | `content/about.njk`, `_includes/layouts/base.njk` | E6 |
 | 17 | `firebase.json` has no `X-Frame-Options` / `frame-ancestors`; HSTS is set at the CDN | `curl -sI https://esmia.se/`, `grep -ci x-frame firebase.json` → 0 | E4 |
 
+### 1.1 Local baseline — measured 2026-11-03 (mobile, median of 3)
+
+First real numbers for *this* build, from the harness in `scripts/lighthouse.mjs` against
+`_site/` (Chrome 156.0.8078.80, mobile form factor + mobile throttling). These are the "before"
+column the whole backlog is measured against. Localhost runs score higher than production — no CDN
+latency, no cache-miss penalty — so treat these as a floor, not a goal.
+
+| Page | Perf | A11y | Best-practices | SEO | FCP | LCP | TBT | CLS |
+|---|---|---|---|---|---|---|---|---|
+| `/` | **83** | **89** | **96** | **100** | 830 ms | 1027 ms | 714 ms | 0 |
+| `/products/` | **56** | **98** | **96** | **100** | 871 ms | **46 689 ms** | 706 ms | **0.155** |
+
+Failing binary audits:
+
+- `/` → `errors-in-console`, `color-contrast`, `link-name`, `target-size`
+- `/products/` → `errors-in-console`, `heading-order`
+
+Two readings worth acting on immediately:
+
+1. **`/products/` LCP is 46.7 s**, not 4.7 s. The largest element only paints after the lazily-loaded
+   product grid resolves, which matches evidence rows 6–8 — the images never reached `eleventy-img`.
+   This is task 05's problem and it is much worse than the plan assumed.
+2. **`/products/` performance is volatile**: three consecutive runs scored 51, 56, 69. Home is stable
+   (82/83/85). A volatile score cannot be held to a 1.0 gate until the cause is fixed, so task 17's
+   budget should assert on `/` first and add `/products/` only once its variance collapses.
+
+Reproduce:
+
+```bash
+npm run lighthouse:chrome   # once, pins Chrome 156.0.8078.80 into ./chrome (gitignored)
+npm run lighthouse -- --runs=3
+```
+
+Baselines live in [`docs/baselines/`](docs/baselines) and are committed, so a regression shows up in
+`git diff`.
+
 ---
 
 ## 2. Backlog
@@ -224,6 +260,11 @@ Kept in the awesome-list spirit: curated, dated, link-dense, one line per entry.
 | 2026-11-03 | No MCP server / no API for now | A static catering site's agentic payoff is readable facts, not a protocol endpoint | §2 E6 |
 | 2026-11-03 | Lighthouse budget asserted in CI | A target that lives in a doc regresses; a target that fails a PR does not | §2 V2 |
 | 2026-11-03 | CSP treated as hardening, not as a score | Not a scored audit; blocks on the inline-CSS architecture | §2 B3 |
+| 2026-11-03 | **Firebase Hosting locked as the only deploy target**; `netlify.toml` + `vercel.json` deleted | It already serves production; three configs meant the one we audit is never the one that ships | `firebase.json`, task 01 |
+| 2026-11-03 | Rollback documented as `firebase hosting:rollback` first, git tag second | The SPA source is not in this repo, so a git-only rollback story is fiction | `README.md` |
+| 2026-11-03 | Chrome pinned to **156.0.8078.80**, installed into gitignored `./chrome` | Scores must be comparable across machines and across weeks | `scripts/lighthouse.mjs` |
+| 2026-11-03 | Baselines commit the **summary**, not the raw LHR | A full LHR is ~2 MB per run and adds nothing to a diff | `docs/baselines/` |
+| 2026-11-03 | `/products/` perf variance discovered (51–69 across three runs) | A volatile score cannot be gated at 100; the budget must assert on `/` first | §1.1 |
 
 ---
 

@@ -73,3 +73,14 @@
 
 - [x] Do we keep the `content/images` originals in git, or move them to object storage? → **Keep them in git.** The deploy problem is solved by the pipeline; migrating adds a bucket and a build-time fetch for no scoring benefit. (2026-11-03)
 - [x] Is a 1300px hero wide enough for a 4K display, or do we need a larger variant? → **Add a 1920px variant to the srcset** and let `sizes` choose. (2026-11-03)
+
+
+## Measured evidence — 2026-11-03
+
+The asset problem is worse than the plan estimated. A Lighthouse mobile run against the built site
+puts **LCP on `/products/` at 46.7 seconds** with **CLS 0.155**, versus 1.03 s and 0 on the homepage.
+The largest element only paints once the lazily-loaded product grid resolves, and that grid is still
+shipping raw JPEGs at their original paths (evidence rows 6–8).
+
+Consequence for this task's done criteria: LCP cannot be brought under 2.5 s by image work alone
+while the grid loads 27 MB. Re-shooting or re-compressing originals is in scope, not optional.

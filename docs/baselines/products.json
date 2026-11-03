@@ -1,0 +1,45 @@
+{
+	"url": "http://localhost:4173/products/",
+	"fetchedAt": "2026-11-03T15:41:42.610Z",
+	"lighthouseVersion": "12.8.2",
+	"chromeVersion": "Chrome/156.0.0.0",
+	"formFactor": "mobile",
+	"runs": 3,
+	"scores": {
+		"performance": 56,
+		"accessibility": 98,
+		"best-practices": 96,
+		"seo": 100
+	},
+	"perRun": [
+		{
+			"performance": 51,
+			"accessibility": 98,
+			"best-practices": 96,
+			"seo": 100
+		},
+		{
+			"performance": 56,
+			"accessibility": 98,
+			"best-practices": 96,
+			"seo": 100
+		},
+		{
+			"performance": 69,
+			"accessibility": 98,
+			"best-practices": 96,
+			"seo": 100
+		}
+	],
+	"metrics": {
+		"fcpMs": 871,
+		"lcpMs": 46689,
+		"tbtMs": 706,
+		"cls": 0.1547,
+		"siMs": 871
+	},
+	"failingAudits": [
+		"errors-in-console",
+		"heading-order"
+	]
+}

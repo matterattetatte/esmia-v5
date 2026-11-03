@@ -2,7 +2,7 @@
 
 _Auto-generated from the draft tasks in `docs/draft_tasks/`. Do not edit by hand._
 
-Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqNVttu4zYQ_ZWBFll4ATsRbcm3AgV8yTbpphtjbfShTR8oiZII06JBUUmNxQL9iP5L3_sp_ZIOZUurlZm6fpF1hnM4Zzgz4mcnlBFzpk4s5EuYUqVhs3zKAH9XV7CWgkdAlZIvMINe73uYT2EOEduzLMpBZoh2AiHDLYsgOMDsXe26lFojKHjGjOs1KCaoQa57hmQGNIuQiipWWWrXhRRS5VNIFGMZRBIZ_v4LAlEw4BnslURDnhssonmKlImiB9AyktDJpIZcowwWnWLJiwDt-xSjDnnOZZb_-uT8gBsC6S0r6Mn57bh64xI0uwTWKd_3VlSnUC2Ct3Ani5xtGdvzLIHO-MrEQG5I3zzN_u8aPH3D04cHnqQ6NX4wpzkr83FHVWYUdMiopOhbKTDFLQV5SONYiqgS0O-tT0hj34HZd4Ch5tpE-Ym9KK5ZFzzXy40ERiOm8kvRe4bFg5Viz5y9wCKlWcYExFLBrIi4NsG7FYNrY_ANgw_3O5owWPH9UboJQEl4WKyQoF-pH9oIhoZgCJuUqwhPQukD_LhGgvcy03B3SDhDvn_--BPmD4-LD7fL_5Z0ns2YUV1gJVXZHPTen5BGECMTxKjMmsnmo8LkYQwPWL07qraX0zA2BGP4wA6BpChkFoZ49DwQmBQloyLEhqMB8owqGs9GMzE0k7I1CoWPTCuaa1hRU0aTypVYXImLrhjbR_oMG5kkAmthveV7rMxsi1I2VCVMX2QxbYGWn1B0sYefKQ4GjieyEIxmCFxIAzHdgMeCgecSpZduuPmahYUyPP-rLM_PkGea4T-N7Vkdo9e7_wo2IjB9QQawUPRFwLpQMQ0xExuuBcu7sKCZzHhIBQb1SQayLPBjLIMbMrJJMi2Ch_Ug0Wte5Lxs6XWYsh1Fko-z1YUeI6ZDiF-XwVt4jGOsrhPFV-eBzdl0B_aNELv8Wv-uj52ZsOzSSZ7nMMLOfGbqUCXQx7F4RBrbmT7ANDSm2eIe5kWEpXOpckwHkDEsCi2fy-ZZM6rCtK6FzrByt40BYiqfTGAl6AEnGW4Pt_1bZKkaiQtTP-sChxx0jkXo3qDD68pxxpffMpyVbcCrp2gbGJ2AcWsF6dfzqg1UK-pd_BPgt1cM65pqA34LwC_KERjVk7oFkLMVFce4vaIGBm3AawNnHMM2MGoDkxaAU_AITOqh1gLqwCaN0L-5OWCWGwfSMo1fNRHSUNoyNXP_msl_zRQKHMBLFh9vKTEXYvomClkUjru5VnLLpm98fxz0425oLjXTNyTwWd89czbflpN3wCZxUHsTf-iHbuXtRt6IkpZ3efE5Osflr3YO3ICFfuXse0M2oidjz1yd8GJHD1MfvAZj2QyG8rtvwb4NHNhAzwb6NnBoA0c2cGwDJxYQvz4W0KaI2BQRmyJiU0RsiohNEbEpIjZFpFbkdJ1E8ciZalWwrrNjakfNq_P5C5r2NPtFyl1lVbJIUmcaU5HjW7GPsEyXnOJ0Py358i8RvYpD)** (pako/zlib-compressed, verified to round-trip).
+Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqVVtuO2zYQ_ZWBFhs4gL1rypJvBQr4sulusskasdGHdvtASZREmBYNitqtEQToP6SP_Y--91PyJR1KlqLI2hr1i6wznMM5w5kRP1m-DJg1tUIhn_2YKg2b5WMC-Lu8hLUUPACqlHyGGfR6P8J8CnMI2J4lQQoyQbTjCelvWQDeAWavK9el1BpBwRNmXK9AMUENctUzJDOgSYBUVLHSUrkupJAqnUKkGEsgkMjwz9_giYwBT2CvJBrS1GABTWOkjBQ9gJaBhE4iNaQaZbDgGEuaeWjfxxi1z1Muk_TXR-sn3BBIb1lCj9ZvxepNn6C5T2Ad831vRXUM5SJ4BbcyS9mWsT1PIuhM7EsTBCHXxM6jkQi_rlHZhsqGex7FOjauMKcpy1NyS1ViRJwjwTw3ZKQ-DUMpglKF3VsfkdrOA7PzAONNtQn1I3tWXLMuOH0nNToYDZhK4etfX2pOjnFyYKXYE2fPsIhpkjABoVQwywKuMVrSL6K9Jn3zNDmvC3YNgwt3OxoxWPF9odXspyTcL1ZIUMi1r8mwjWBoCIawibkKMPtKH-DtGgneyETD7SHiDPm-_vEnzO8fFu9ultAZlwHZp3ynyQsZ1RlWT5m8Qe_NEakFMTJBjPIkmeQ9KMwVxnCPFbujans-DWNDMIZ37OBJikJmvo9nzT2BSVEyyHxsMuohz6ikcdpoJoZmkrdDpvCRaEVTDSua103pSlpcSR9dMbYP9Ak2MooEHv16y_dYiskWpWyoipg-y2JaAS3vUXS2h58pDgOOJ7IQjCYInEkDMeWPx4KBpxKl5264-Zr5mTI8ZRX-zzPkiWb4T2NLlsfo9O6-gbUITBuQASwUfRawzlRIfczEhmvB0i4saCIT7lOBQX2UnswLvIhlcE1GbZJMi-Bh3Uv0mmcpz3t47cdsR5Hkw2z132I2xHQIcasyeAUPYYjVdaT45jxoczbdgX0jxC690r_rojMjlpw7ydMcBtiZT0wdygS6OAoLpLad6QNMQ218Le5gngVYOucqx3QAGcMi0_Ipb541o8qPq1roDEv3tjFATOWTCawEPeDgwu3hxr5BlrKRuDD1s85wpkGnKML-NTq8rBznev79wtHYBJxqaDaB0REYN1YQu5pXTaBcUe3iHgG3uWJY1VQTcBsAfkIKYFRN6gZATlaUHOPmigoYNAGnCZxwDJvAqAlMGgBOwQKYVEOtAVSBTWqhf3dbwCzXDqRhGr9oIqSmtGGq5_4lk_uSyRc4gJcsLG4mIRdiehH4LPDH3VQruWXTC9cde3bY9c1FZnpBPJfZ_RNn8205entsEnqVN3GHrt8vvfuBM6Kk4Z1fdgrnMP9Vzl7fY75bOrvOkI3o0dgz1yW8zNHD1AWnxpg3Qx7QD9-jdis6yJU3QCePqQG6beCwDRy1geM2cNIC4venBSRtoN0GDtrANkWkTRFpU0TaFJE2RaRSZHWtSPHAmmqVsa61Y2pHzav16TOa9jT5RcpdaVUyi2JrGlKR4lu2D7BQl5zifD8u-fwvZZGHrg)** (pako/zlib-compressed, verified to round-trip).
 
 Regenerate whenever task metadata changes:
 
@@ -32,11 +32,11 @@ flowchart TD
     %% Dotted line A -. related .- B: A and B are related
     %% Colors: green done · blue in progress · dashed gray todo (not started)
     subgraph decisions["Gate 1-Decisions"]
-    T01["01 Ship-Path Decision & Housekeeping (8% · 1/12 · todo)"]
-    T02["02 Lighthouse Baseline Harness (17% · 2/12 · todo)"]
+    T01["01 Ship-Path Decision & Housekeeping (92% · 11/12 · doing)"]
+    T02["02 Lighthouse Baseline Harness (92% · 11/12 · doing)"]
     end
     subgraph scaffold["Gate 2-Scaffold"]
-    T03["03 Hosting Rewrite, 404s & Headers (8% · 1/12 · todo)"]
+    T03["03 Hosting Rewrite, 404s & Headers ✓"]
     T04["04 Preview Channel for Audits (10% · 1/10 · todo)"]
     T05["05 Image Pipeline & Hero LCP (12% · 2/16 · todo)"]
     T06["06 Third-Party JS & Font Hygiene — BLOCKED (8% · 1/12 · todo)"]
@@ -94,9 +94,9 @@ flowchart TD
     classDef done fill:#dcedc8,stroke:#558b2f,color:#1b5e20
     classDef doing fill:#dbe9fb,stroke:#1565c0,color:#0d47a1
     classDef todo fill:#ffffff,stroke:#b0bec5,color:#546e7a,stroke-dasharray:5 4
-    class T01 todo;
-    class T02 todo;
-    class T03 todo;
+    class T01 doing;
+    class T02 doing;
+    class T03 done;
     class T04 todo;
     class T05 todo;
     class T06 todo;

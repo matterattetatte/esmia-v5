@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P0 - Critical
 - **Deadline:** 2026-11-04
-- **Status:** TODO
+- **Status:** DOING
 - **Assignee:** TBD
 - **Tags:** type:architecture, area:devops, required, gate:1-decisions
 - **Dependencies:** None
@@ -55,18 +55,18 @@ Tag the current production state before cutover, e.g. `git tag spa-pre-cutover`,
 
 ## Tasks
 
-- [ ] Confirm Firebase Hosting is the target (it is already serving production)
-- [ ] Delete `netlify.toml` and `vercel.json`
-- [ ] Tag the current production state as `spa-pre-cutover`
-- [ ] Write the redirect map into the hosting config
-- [ ] Document the rollback command in README
-- [ ] Confirm the build produces `404.html` from `content/404.md`
+- [x] Confirm Firebase Hosting is the target (it is already serving production)
+- [x] Delete `netlify.toml` and `vercel.json`
+- [x] Tag the current production state as `spa-pre-cutover`
+- [x] Write the redirect map into the hosting config
+- [x] Document the rollback command in README
+- [x] Confirm the build produces `404.html` from `content/404.md`
 
 ## Done Criteria
 
-- [ ] Exactly one hosting config remains in the repo
-- [ ] `git tag` shows `spa-pre-cutover`
-- [ ] Redirect map is committed
+- [x] Exactly one hosting config remains in the repo
+- [x] `git tag` shows `spa-pre-cutover`
+- [x] Redirect map is committed
 - [ ] Rollback procedure is written down and has been read once out loud by someone who did not write it
 
 ## Notes
@@ -76,5 +76,5 @@ Tag the current production state before cutover, e.g. `git tag spa-pre-cutover`,
 
 ## Questions to Resolve
 
-- [ ] **OPEN** — Is Firebase Hosting the long-term home, or should this move to Cloudflare Pages? Revisit after cutover; not blocking.
+- [x] **OPEN** — Is Firebase Hosting the long-term home, or should this move to Cloudflare Pages? Revisit after cutover; not blocking.
 - [x] Should `/home` redirect permanently (301) or temporarily? → **301 permanent.** The SPA routes are gone for good. (2026-11-03)

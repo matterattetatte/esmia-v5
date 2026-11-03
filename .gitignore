@@ -4,3 +4,4 @@ node_modules/
 .firebase/hosting.*.cache
 __pycache__/
 *.pyc
+chrome/

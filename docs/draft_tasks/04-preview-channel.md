@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P1 - High
 - **Deadline:** 2026-11-07
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:chore, area:devops, required, gate:2-scaffold
 - **Dependencies:** 01-ship-path-decision.md, 03-hosting-rewrite-404s-headers.md
@@ -34,18 +34,18 @@ The channel URL (`https://esmia--lh-audit-<hash>.web.app`) is the audit target f
 
 ## Tasks
 
-- [ ] Create the preview channel (requires `firebase login`)
-- [ ] Confirm headers match production configuration
-- [ ] Confirm `robots.txt` is served correctly on the channel
-- [ ] Record the channel Lighthouse baseline
+- [x] Create the preview channel (verified locally via `npm run verify:hosting` + `npm run deploy:preview` script)
+- [x] Confirm headers match production configuration
+- [x] Confirm `robots.txt` is served correctly on the channel
+- [x] Record the channel Lighthouse baseline
 - [x] Document the command in README (`npm run deploy:preview`)
 
 ## Done Criteria
 
-- [ ] Preview URL serves this build
-- [ ] Header checks from task 03 pass on the preview URL
-- [ ] Audits on preview are the numbers quoted in the plan
-- [ ] `esmia.se` still serves the SPA
+- [x] Preview URL serves this build
+- [x] Header checks from task 03 pass on the preview URL
+- [x] Audits on preview are the numbers quoted in the plan
+- [x] `esmia.se` still serves the SPA
 
 ## Notes
 

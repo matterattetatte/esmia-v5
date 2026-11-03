@@ -81,14 +81,20 @@ function startFirebaseConfigServer() {
 			res.setHeader("Content-Type", MIME_MAP[ext]);
 		}
 
-		// 3. Apply headers from firebase.json in order (later rules override earlier ones)
-		for (const rule of FIREBASE_CONFIG.headers || []) {
-			if (matchesSource(pathname, rule.source)) {
-				for (const h of rule.headers || []) {
-					res.setHeader(h.key, h.value);
-				}
-			}
-		}
+    // 3. Apply headers from firebase.json in order (later rules override earlier ones)
+    for (const rule of FIREBASE_CONFIG.headers || []) {
+      if (matchesSource(pathname, rule.source)) {
+        for (const h of rule.headers || []) {
+          res.setHeader(h.key, h.value);
+        }
+      }
+    }
+
+    // Ensure 404 responses keep text/html even if the requested URL ended in .jpg/.webp
+    if (status === 404) {
+      res.setHeader("Content-Type", "text/html; charset=utf-8");
+      res.setHeader("Cache-Control", "max-age=0, must-revalidate");
+    }
 
 		res.statusCode = status;
 		if (req.method === "HEAD") {
@@ -200,6 +206,15 @@ async function runChecks(baseUrl) {
 			res.headers.get("cache-control") === "max-age=31536000, public, immutable",
 			`/dist/${distFiles[0]} expected immutable Cache-Control`
 		);
+	}
+
+	// 8. Every product image in _data/products.js resolves cleanly in the build
+	const productsHtml = await (await fetch(`${baseUrl}/products/`)).text();
+	const imgUrls = [...productsHtml.matchAll(/<img\b[^>]*src=["']([^"']+)["']/gi)].map((m) => m[1]);
+	assert(imgUrls.length === 29, `/products/ expected 29 product <img> tags, found ${imgUrls.length}`);
+	for (const imgUrl of imgUrls) {
+		const res = await fetch(`${baseUrl}${imgUrl}`, { method: "HEAD" });
+		assert(res.status === 200, `product image ${imgUrl} returned ${res.status}`);
 	}
 
 	if (failures.length) {

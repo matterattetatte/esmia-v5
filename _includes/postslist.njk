@@ -1,8 +1,29 @@
-<ol reversed class="postlist" style="--postlist-index: {{ (postslistCounter or postslist.length) + 1 }}">
+<div class="blog-grid">
 {%- for post in postslist | reverse %}
-	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
-	</li>
+  <article class="blog-card{% if post.url == url %} blog-card-active{% endif %}">
+    {% if post.data.image %}
+      <a href="{{ post.url }}" class="blog-card-image-link" tabindex="-1" aria-hidden="true">
+        {% image post.data.image, post.data.image_alt or post.data.title, "card", { class: "blog-card-image" } %}
+      </a>
+    {% endif %}
+    <div class="blog-card-content">
+      <div class="blog-card-meta">
+        <time class="blog-card-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+        {% if post.data.category %}
+          <span aria-hidden="true">·</span>
+          <span class="blog-card-category">{{ post.data.category | capitalize }}</span>
+        {% endif %}
+      </div>
+      <h2 class="blog-card-title">
+        <a href="{{ post.url }}" class="blog-card-link">{{ post.data.title or post.url }}</a>
+      </h2>
+      {% if post.data.description %}
+        <p class="blog-card-excerpt">{{ post.data.description }}</p>
+      {% endif %}
+      <p class="blog-card-footer">
+        <a href="{{ post.url }}" class="blog-card-readmore" aria-label="Läs artikel: {{ post.data.title }}">Läs artikel <span aria-hidden="true">→</span></a>
+      </p>
+    </div>
+  </article>
 {%- endfor %}
-</ol>
+</div>

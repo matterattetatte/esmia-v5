@@ -7,6 +7,8 @@ const ROUTES = [
 	"/products/",
 	"/news/",
 	"/news/nov-2025/newsletter/",
+	"/news/paella-catering-stockholm/",
+	"/news/spanska-delikatesser-guide/",
 	"/legal/",
 	"/legal/privacy/",
 	"/legal/cookies/",

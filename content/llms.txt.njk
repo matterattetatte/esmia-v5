@@ -41,8 +41,9 @@ Prices are as published on the product page. Where a unit is given it is per pie
 - {{ metadata.url }}/ — home, paella and tapas catering
 - {{ metadata.url }}/products/ — full product list with prices
 - {{ metadata.url }}/about/ — company background and contact
-- {{ metadata.url }}/news/ — latest news and inspiration
-- {{ metadata.url }}/legal/ — legal, privacy, cookies and terms
+- {{ metadata.url }}/news/ — latest news, catering guides and inspiration
+{% for post in collections.posts | reverse %}- {{ post.url | htmlBaseUrl(metadata.url) }} — {{ post.data.title }}
+{% endfor %}- {{ metadata.url }}/legal/ — legal, privacy, cookies and terms
 - {{ metadata.url }}/sitemap.xml — all indexable URLs
 
 ## Notes for agents

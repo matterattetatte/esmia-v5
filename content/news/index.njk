@@ -1,15 +1,21 @@
 ---js
-const title = "Nyheter & Inspiration";
-const description = "Senaste nytt, recept och inspiration kring spansk mat, tapas och paellacatering i Stockholm från Esmia HB.";
+const title = "Nyheter, Recept & Inspiration";
+const description = "Artiklar, guider och nyheter om äkta valenciansk paellacatering, spanska tapas, ibericoskinka och spanska ostar i Stockholm från Esmia HB.";
 const eleventyNavigation = {
 	key: "Nyheter",
 	order: 7
 };
 ---
+<style>{% include "css/news.css" %}</style>
 
-<section class="news-index" style="margin: 0 8rem;">
-<h1>News</h1>
+<section class="news-index">
+  <div class="news-index-header">
+    <h1>Nyheter &amp; Inspiration</h1>
+    <p class="news-index-lead">
+      Följ med bakom kulisserna när vi lagar valenciansk paella live på bröllop, trädgårdsfester och företagsevent i Stockholm – plus tips på hur du serverar jamón ibérico, manchego och spanska tapas som i Spanien.
+    </p>
+  </div>
 
-{% set postslist = collections.posts %}
-{% include "postslist.njk" %}
+  {% set postslist = collections.posts %}
+  {% include "postslist.njk" %}
 </section>

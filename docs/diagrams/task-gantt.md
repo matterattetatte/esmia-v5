@@ -2,7 +2,7 @@
 
 _Auto-generated from the draft tasks in `docs/draft_tasks/`. Do not edit by hand._
 
-Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNp9VUtu2zAQvcpAQIIUsGpR_sXeJXLSpHUSIzIKtMhmLNESa5k0SMqJEeQU3fYe3fcoPUlHlp2ogBRtZHL0Ht_MPI6fnUjF3Bk5CUprHyTQY4XNOEy1-sEjCzOx4pmQvIzFaPml0iu0AN_ocW9u3PG4jOGTMIfY0RyO4gdZBgzxCCXhE4GBuWMeCUNrU0Y9BmEq1u4UbQqHGBzDlcoNX3K-FjKBk6F_BH9-A2Nt5hc_YkXbH2AESNwb3gLf8_suY67XbQGL99Q-TESS2rSggnM0u0zgCrXkxsDfXz-JIFayCu-9wf_T7bthhIuFyg7cHVJobCHunj9qYYmk63VNoZxjzHUDf78ir0tV5hvBHyFIUUqewUJpOMtjYQ2c-N4uZb_NvOJtVaxqEx5UGHtwvcKEuifWZa6FGq1gEkzr5RDYP4D7MEuFjqkT2m7hc0jgSyUtXG0TwYmrlmDYUK-Oe8nR5pof2jzY1aWo152m8hD5BGW8Qr2srxTzKnmdwhe-nSskdWdRRM0T89KjcV54FOcNHKzCMYRAZSrX9JJWo7EwxQYXMP8NR9W_xQ3MVJJk9Em4FGtylVxSAjPUCbcNFJ0KBYMbyjNfw1fMBHV3C0HGUdJGLbRiYXI7yTWKst1B6NSQR7kuON7zGRs09KXrXkvLE43F1v6MDgQaHzMIc73AiFhmxQgwLQhQKikizOjYezVXTbmeVgR3YaIIcZ4bsbtlYZTyFRLB7Vm9B1nFQqz32tRjuFssyCd7fB3Sr1iE9SHLVuajfbLlLUq4bJDrs4ba9Gg2ZXS59HbPOajOj-AazvOYGk7TiJXTyGtTa9-bRn61lacQ5FZtdt4POeoofe3tSb8kbFMa79x1vzI92BCmGW5p9JBCuPAviPVwN0RW-CPMaSrVV8Avr73TchItYmdkdc5bzorT9C6WzvMLhdYovyu1OkS1ypPUGS0wM7TK18V_wVggWWn_ycs_oJ_s2A)** (pako/zlib-compressed, verified to round-trip).
+Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNp9VNtum0AQ_ZURUqJUMo2X-BL7LcFJk9ZJrGBVapWXMaxha9i1dhcnVpSv6Gv_o-_9lH5JB2MSKkF4gWU4hzMzZ-bZCVXEnbETo7T2QQJdVtiUw0yrHzy0MBcZT4XkZSxCyy-VztACfKPLvblxJ5Myhk_CVLGDBRxED7IMGOIRSsInAgNzJzwUhs6mjHYZBIlYuzO0CVQxOIQrlRu-4nwtZAx_f_2EMURK8g54XW_gMuZ2ex1g0Z7Eg6mIE5sUIDhHs9MMV6glN6YZ3n-D_6fQc4MQl0uVVtwnpMXYQsY9f9TCEkmv2zOFRo4R1y38g5q8HtWTbwR_BD9BKXkKS6XhLI-ENXDkdQ_gz2_wjlm3uFsVqQ_EhyRqU2cc1hj7cJ1hTH0S6zLXQo1WMPVnzXII7FXgAcwToSOqubZb-BwQ-FJJC1fbWHDiaiQYtdTrxL3kaHPNq4YOd3Up6nWnqTxEPkUZZahXzZVi3Vpep_CFbxcKSd1ZGFLzxKJ0Y5QXbsRFCwercYzAV6nKNd2k1WgszLDFBcx7w1H1b3EDcxXHKX0SrMSaXCVXlMAcdcxtC8VJjYLBDeWZr-ErpoK6uwU_5SjpRSO0ZmHmFXKNomx3EPprwMNcFxzv-YwNW_rSc6-l5bHG4tX-Hyfga3xMIcj1EkNimRfDbjrgo1RShJjSb-_VQrXleloT3IOpIsR5bsRuyoIw4RkSwe1ZswdZzUKs_9rUQ7hbLskne3wT0qtZhA0gTTPz0T7ZcopiLlvkeqylNn3aQikNl97uOYf1_eFfw3keUcPhaMR2o8m6x9RaeogU-bppOL16K0_Bz63a7LwfcNRh8trbI-ZVwz54b9i92vpgI5iluKXdQxLhwrsg2mo4RFoYJMhpLTWXwCvn3uk4sRaRM7Y65x0n47Soi6Pz_EKhNcrvSmVVVKs8TpzxElNDp3xdrP2JQPLS_pOXf3Ib5uk)** (pako/zlib-compressed, verified to round-trip).
 
 Regenerate whenever task metadata changes:
 
@@ -31,7 +31,7 @@ gantt
     axisFormat  %b %d
 
     section Gate 1-Decisions
-    01 Ship-Path Decision & Housekeeping (92% · 11/12 · doing) : active, 2026-11-04, 1d
+    01 Ship-Path Decision & Housekeeping ✓ : done, 2026-11-04, 1d
     02 Lighthouse Baseline Harness ✓ : done, 2026-11-05, 1d
     section Gate 2-Scaffold
     03 Hosting Rewrite, 404s & Headers ✓ : done, 2026-11-06, 1d
@@ -52,6 +52,6 @@ gantt
     16 llms.txt for Agents ✓ : done, 2026-11-21, 1d
     section Gate 5-Delivery
     17 Lighthouse CI Budget (91% · 10/11 · doing) : active, 2026-11-24, 1d
-    18 Cutover & Search Console (6% · 1/16 · todo) : active, 2026-11-26, 1d
+    18 Cutover & Search Console (12% · 2/16 · todo) : active, 2026-11-26, 1d
     19 Playwright E2E & Accessibility Suite ✓ : done, 2026-11-22, 2d
 ```

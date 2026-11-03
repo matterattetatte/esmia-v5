@@ -122,10 +122,14 @@ function parseArgs(argv) {
 	const paths = [];
 	let runs = 1;
 	let assert = false;
+	let baseUrl = null;
 	for (const arg of argv) {
 		const runsMatch = arg.match(/^--runs=(\d+)$/);
+		const baseMatch = arg.match(/^--base-url=(.+)$/);
 		if (runsMatch) {
 			runs = Math.max(1, Number(runsMatch[1]));
+		} else if (baseMatch) {
+			baseUrl = baseMatch[1].replace(/\/$/, "");
 		} else if (arg === "--assert") {
 			assert = true;
 		} else if (arg.startsWith("-")) {
@@ -140,7 +144,7 @@ function parseArgs(argv) {
 				paths.map((p) => [p.replace(/^\/|\/$/g, "").replace(/\//g, "-") || "home", p])
 			)
 		: DEFAULT_PAGES;
-	return { pages, runs, assert };
+	return { pages, runs, assert, baseUrl };
 }
 
 async function auditPage({ url, port, runs, chromePath }) {
@@ -207,17 +211,23 @@ function summarise(results) {
 }
 
 async function main() {
-	const { pages, runs, assert } = parseArgs(process.argv.slice(2));
+	const { pages, runs, assert, baseUrl } = parseArgs(process.argv.slice(2));
 	const chromePath = resolveChrome();
-	buildSite();
 	fs.mkdirSync(BASELINE_DIR, { recursive: true });
 
-	const port = await getFreePort(4173);
-	const base = `http://localhost:${port}`;
-	const server = spawn(path.join(ROOT, "node_modules", ".bin", "serve"), ["_site", "-l", String(port), "--no-clipboard"], {
-		cwd: ROOT,
-		stdio: "ignore",
-	});
+	let base = baseUrl;
+	let server = null;
+	let port = 0;
+
+	if (!base) {
+		buildSite();
+		port = await getFreePort(4173);
+		base = `http://localhost:${port}`;
+		server = spawn(path.join(ROOT, "node_modules", ".bin", "serve"), ["_site", "-l", String(port), "--no-clipboard"], {
+			cwd: ROOT,
+			stdio: "ignore",
+		});
+	}
 
 	const summaries = [];
 	try {
@@ -234,7 +244,7 @@ async function main() {
 			fs.writeFileSync(outFile, `${JSON.stringify(summary, null, "\t")}\n`);
 		}
 	} finally {
-		server.kill("SIGTERM");
+		if (server) server.kill("SIGTERM");
 	}
 
 	// Report

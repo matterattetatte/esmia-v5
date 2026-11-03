@@ -2,7 +2,7 @@
 
 _Auto-generated from the draft tasks in `docs/draft_tasks/`. Do not edit by hand._
 
-Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqFVttu4zYQ_ZWBFllkATsRZcm3AgUcZ7dJm-4aa6MPbfpASZREmBYNkkpqLPYr-tr_6Hs_pV_SoWypCq20frF9Zs5wLocjffESmTJv7mVCPicFVQY2t48l4OfiAtZS8BSoUvIZFjAcfgs3c7iBlO1ZmWqQJaKXsZDJlqUQH2DxrqXeSmMQFLxklnoFiglqkauhDbIAWqYYiirWWFrqUgqp9BxyxVgJqcQIf_0JsagY8BL2SqJBa4ulVBcYMlf0AEamEi5LaUAbLIOlp1x0FaN9X2DWCddclvqXR-87PBDI8LaBHr1fj94bn6DZJ7Au-H64oqaAxgnewp2sNNsytudlDpez4MImQcg1CepsJMLvOqECGyqAB54XprBUuKGa1S25o6q0Rfz9x-8tAXvqpKwTmmVSpE3GwXB9QjqnjOwpI8xNG5vWZ_asuGEDCP1Q25wZTZl6edLGDy0phJViT5w9w7KgZckEZFLBokq50XAZ-HV5wTXx7bftb7e4yEaI4H5HcwYrvj_WZc9TEh6WK-fAsXUfw6bgKsW-KnOA79fo_kGWBu4OOWfI_u9uZIyaCkffdGM0_HBCOudM7DmTumrbjU8Ki8djHlBuO6q2bh-m1n0KP7BDLClmtkgSHAuPBdakZFoleB9o7LJmljWrhVop_CqNotrAijoT3RAfPbF_H-kTbGSeC5zLesv3qIlyi2ltqMqZcUlWgoTAj5hvtYefKF5Cjv1aCkZLBF46W5Gh_jAJLTHr2gkjr1lSKcvqm_95b3lpGP4yqPOmveHw_l-wc6DVGxnBUtFnAetKZTTBqjbcCKYHsKSlLHlCBebwWcbyrDirPBLCg0Sfm0rz-hqsk4LtKFI-LhzhEKszErXTeAufsgxHemK89LUiI2MQYqevzG_mKOecleb_yk9RvU9MHZraI1wNR6QT3UqLTLrXeXkPN1WKE8RlQI7LwL_GyfUsA2KVRqawrIx8qiW5ZlQlRTu4y_ExwDUWcH7diJUcmcFK0APeb8wA3gfvMUojWC7ssNcVXv3-WnGz1RscF4YLhO0qcYHJCZg6HiRo77ULNB7tKdEJiFyPcSsJF4gcAJfoEZi0-8sByJlHE2PqerTAyAVCFziLMXaBiQvMHACXyxGYtcvDAdrEZp3UXzwvscudgTim6asmQjqVOqZu718zRa-ZEoGL7pZlx2dzxoWYv0kTlibTgTZKbtn8TRRN4yAbJPZRPn9D4ogF_hnZLugTO2azLG7ZJBpHid-w_TScUOKw68f9kZzVn5Yc-zFLooYchWM2oSfj0L4w4OsMPcwjCDsR68tQJ_TNSzSoa3TAUR8Y1ik5YNTnOe4DJ33gtA-c9YD4iOkBSR_YVxHpqwil0QP2VUT6KiKTvobiBjxvE2lL8gZernjqzY2q2MDbMbWj9q_35Sua9rT8WcpdY1WyygtvnlGh8V-1T1Got5ziRj-5fP0HJD1CfQ)** (pako/zlib-compressed, verified to round-trip).
+Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqFVttu4zYQ_ZWBgiyygJ0VZcm3AgUcZ7dJm-4aa6MPbfpASZREmBYNkoprLPYr-tr_6Hs_pV_SoWypCqO0frF9Zs5wLocjffESmTJv7mVCHpKCKgOb28cS8HN5CWspeApUKXmABQyH38LNHG4gZXtWphpkiehVLGSyZSnER1i8bam30hgEBS-ZpV6DYoJa5HpogyyAlimGooo1lpa6lEIqPYdcMVZCKjHCX39CLCoGvIS9kmjQ2mIp1QWGzBU9gpGphKtSGtAGy2DpORddxWjfF5h1wjWXpf7l0fsODwQyvG2gR-_Xk_fGJ2j2CawLvh-uqCmgcYI3cCcrzbaM7XmZw99__N6hBZYWwAPPC1NYN7ihmtXl31FV2oS7BOyfk55OaJZJkTbZBcP1GemcMrKnjDAPbWwKn9lBccMGEPqhtvkxmjKlndRCSwphpdgTZwdYFrQsmYBMKlhUKTcargL_0vYzeEd8-217-bYTIbIRIrjf0ZzBiu9PddnzlISH5co5cGzdx7ApuEqxh8oc4fs1un-QpYG7Y84Zsv-7GxmjpsIxN90YDT-ckc45E3vOpK7aduOTwuLxmAeU1o6qrduHqXWfwg_sGEuKmS2SBMfCY4E1KZlWCWqfxi5rZlmzWpSVwq_SKKoNrKgz0Q3x0RP795E-wUbmucC5rLd8j5oot5jWhqqcGZdk5UYI_Ij5Vnv4ieKF49ivpWC0ROC5sxUZCWwSWmLWtRNGXrOkUpbVN_-XveWlYfjLoKab9obD-3_BzoFWb2QES0UPAtaVymiCVW24EUwPYElLWfKECszhs4zli-Ks8kgIDxJ9birN62uwTgq2o0j5uHCEQ6zOSNRO4w18yjIc6Znx3NeKjIxBiJ2-Nr-Zk5xzVpr_Kz9F9T4xdWxqj3ANnJBOdCstMule5-U93FQpThCuZqS-LcR_h5Oza0ii_Dr3hVilkSksKyOfakmuGVVJ0Q7uigTNfRv33DdiNUdmsBL0iBccU4D3wXsM0yiWCzvtdYV3v79YXGP1usaN4QJhu0tcYHIGpo4HCdqL7QKNR3tKdAYi12PcasIFIgfALXoCJu0CcwDywqOJMXU9WmDkAqELvIgxdoGJC8wcALfLCZi128MB2sRmndSfPRyxy52BOKbpqyZCOpU6pm7vXzNFr5kSgZvulmWnB3HGhZhfpAlLk-lAGyW3bH4RRdM4yAaJfW7PL0gcscB_QbYb-syO2SyLWzaJxlHiN2w_DSeUOOz62X4iZ_WnJcd-zJKoIUfhmE3o2Ti0bwf47kKP8wjCTsT6MthqvnkOBn3gqA8M64wcMOrzHPeBkz5w2gfOekB8xPSAfRWRvopIX0WojB6wryLSVxGZnAbsoNOeNpG2JG_g5Yqn3tyoig28HVM7av96X76iaU_Ln6XcNVYlq7zw5hkVGv9V-xR1esspbvSzy9d_AMt4PPk)** (pako/zlib-compressed, verified to round-trip).
 
 Regenerate whenever task metadata changes:
 
@@ -32,7 +32,7 @@ flowchart TD
     %% Dotted line A -. related .- B: A and B are related
     %% Colors: green done · blue in progress · dashed gray todo (not started)
     subgraph decisions["Gate 1-Decisions"]
-    T01["01 Ship-Path Decision & Housekeeping (92% · 11/12 · doing)"]
+    T01["01 Ship-Path Decision & Housekeeping ✓"]
     T02["02 Lighthouse Baseline Harness ✓"]
     end
     subgraph scaffold["Gate 2-Scaffold"]
@@ -57,7 +57,7 @@ flowchart TD
     end
     subgraph delivery["Gate 5-Delivery"]
     T17["17 Lighthouse CI Budget (91% · 10/11 · doing)"]
-    T18["18 Cutover & Search Console (6% · 1/16 · todo)"]
+    T18["18 Cutover & Search Console (12% · 2/16 · todo)"]
     T19["19 Playwright E2E & Accessibility Suite ✓"]
     end
     T01 --> T03
@@ -94,7 +94,7 @@ flowchart TD
     classDef done fill:#dcedc8,stroke:#558b2f,color:#1b5e20
     classDef doing fill:#dbe9fb,stroke:#1565c0,color:#0d47a1
     classDef todo fill:#ffffff,stroke:#b0bec5,color:#546e7a,stroke-dasharray:5 4
-    class T01 doing;
+    class T01 done;
     class T02 done;
     class T03 done;
     class T04 todo;

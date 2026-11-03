@@ -53,15 +53,16 @@ function resolveChrome() {
 	]);
 
 	try {
-		for (const entry of fs.readdirSync(cacheDir)) {
-			if (!entry.includes(CHROME_VERSION)) continue;
-			const stack = [{ dir: path.join(cacheDir, entry), depth: 0 }];
-			while (stack.length) {
-				const { dir, depth } = stack.pop();
-				for (const child of fs.readdirSync(dir, { withFileTypes: true })) {
-					const full = path.join(dir, child.name);
-					if (child.isFile() && executableNames.has(child.name)) return full;
-					if (child.isDirectory() && depth < 4) stack.push({ dir: full, depth: depth + 1 });
+		const stack = [{ dir: cacheDir, depth: 0 }];
+		while (stack.length) {
+			const { dir, depth } = stack.pop();
+			for (const child of fs.readdirSync(dir, { withFileTypes: true })) {
+				const full = path.join(dir, child.name);
+				if (child.isFile() && executableNames.has(child.name) && full.includes(CHROME_VERSION)) {
+					return full;
+				}
+				if (child.isDirectory() && depth < 5) {
+					stack.push({ dir: full, depth: depth + 1 });
 				}
 			}
 		}

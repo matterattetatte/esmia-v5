@@ -4,10 +4,21 @@ import { defineConfig } from "@playwright/test";
 
 function resolvePinnedChrome() {
 	const cacheDir = path.join(import.meta.dirname, "chrome");
+	const executableNames = new Set([
+		"chrome",
+		"chrome.exe",
+		"Google Chrome for Testing",
+		"Google Chrome for Testing.exe",
+	]);
 	if (!fs.existsSync(cacheDir)) return undefined;
-	for (const entry of fs.readdirSync(cacheDir)) {
-		const candidate = path.join(cacheDir, entry, "chrome-linux64", "chrome");
-		if (fs.existsSync(candidate)) return candidate;
+	const stack = [{ dir: cacheDir, depth: 0 }];
+	while (stack.length) {
+		const { dir, depth } = stack.pop();
+		for (const child of fs.readdirSync(dir, { withFileTypes: true })) {
+			const full = path.join(dir, child.name);
+			if (child.isFile() && executableNames.has(child.name)) return full;
+			if (child.isDirectory() && depth < 5) stack.push({ dir: full, depth: depth + 1 });
+		}
 	}
 	return undefined;
 }

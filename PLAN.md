@@ -213,7 +213,7 @@ Kept in the awesome-list spirit: curated, dated, link-dense, one line per entry.
 |------|----------|-----|------|
 | 2026-11-03 | Messurability is ticket #1, not performance | Live domain returns one shell for every path; scores would describe the wrong site | `curl -sI https://esmia.se/robots.txt` |
 | 2026-11-03 | Eleventy build replaces the SPA at cutover, not in place | The SPA is a client-rendered CRA; no partial migration path adds value | `last-modified: 2024-05-04` |
-| 2026-11-03 | Structured data generated from `_data/products.js`, never hand-written | 40 products with prices; hand-maintained schema is stale within one price change | §2 G2 |
+| 2026-11-03 | Structured data generated from `_data/products.js`, never hand-written | 29 products with prices; hand-maintained schema is stale within one price change | §2 G2 |
 | 2026-11-03 | `llms.txt` is a template, not a static file | Same reason as above — one source of truth | §2 G4 |
 | 2026-11-03 | Adopted the AwesomeJournal draft-task + generated-diagram workflow | 19 drafts with metadata beat 40 prose tickets; the graph and Gantt regenerate from the same source, so they cannot drift | `docs/draft_tasks/` |
 | 2026-11-03 | Gates reuse `gate:2-scaffold`, not a new `gate:2-foundation` | The planner's gate map knows five tags; an unknown tag silently drops tasks into an "Other" bucket | `project_management/planner.py` GATE_TAG_TO_NAME |

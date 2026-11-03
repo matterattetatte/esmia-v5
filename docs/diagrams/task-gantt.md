@@ -2,7 +2,7 @@
 
 _Auto-generated from the draft tasks in `docs/draft_tasks/`. Do not edit by hand._
 
-Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqVlc9u2kAQxl9lZCkRlXDDmv_cgkmaNCRBMarUKpfBXuwtZhftrklQFKkP0XfpvY_SJ-kY48Q9hFAulj3mNzPffjN-ckIVcWfgxCitvZdAPytsymGi1XceWpiKJU-F5EUsQsvPlV6iBfhKP_f62h2Nihg-ClPGjmZwFN3LImCII5SET_RnYO6Ih8LQvSmiDQZBIlbuBG0CZQyO4UJlhi84XwkZQ613BL9_ATthXn61KlIfYABI4DWvg9fwOi5jbqNVBxbtuB6MRZzYJOfAEM22DbhALbkxUGPdLdJ7D9l-Rf7TiOcGIc7nKi3zNalkY_Nq7_iDFpYgrUbL5K1wjLg2B3fRqXTRopPga8EfwE9QSp7CXGk4zSJh8yYaJbGxl9itENtwucSYTlisCknyArWCsT8hoFeq0nkP6JXADkwToSM6QW038Dkg4LmSFi42seDE__PjJwzHt_7V2ehgCfpvqN50zznaTPPSPd2turnqt5pEptxjlNES9SKXh-2y9fclY42KOj244puZQurnNAzJKWJWTEOU5dOAM8J2yx5ae7Gsgu2Dr1KVabpIq9FYmGDuwn6JYntR3iuKTvoG1zBVcZzSK8FCrMjockGdT1HH3B5ObVaoDK5Js2wFXzAVZK4N-ClHSQ8ONRmrDB-dLjVqFEm3xVBxAQ8znXP_cxpY9w0rtNxLaXmsMX-0S9sEX-NDCkGm5xgSZZovM1MHH6WSIsSUKrlTM7UdnqKA5gnr7i2gV-mrBWNFlGFmxHaNBGHCl0jQm9PJwR1VzM3aL946htv5nBy8Q77CmvtgXsW8NLNpujQf7aMttkTM5eF28NgbQrdpZaf0qt7s0nSrm9W_hGEWke8OzlP1SQ_8zKr1dnADjjpMXoxT65S4vavIq2xL1odJihvavlQenHlnRC2nWKS5-YKMFjPUCkc3TtjexeB5xZZz6k6sReQMrM543Vly-sjlt87TM4VWKL8ptSyjWmVx4gzmmBq6y1b5J3MkkHy6e-X5L3LYQNY)** (pako/zlib-compressed, verified to round-trip).
+Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqVlc9O20AQxl9lZAmUSnHJOv9zIw4USoAIR5VacZnYG3sbZzfaXQcihNSH6Lv03kfpk3Qcx-AeCKkvlj3r3858-834yQlVxJ2BE6O09l4CXVbYlMNEq-88tDAVS54KyYtYhJafK71EC_CVLvf62h2Nihg-ClPGjmZwFN3LImCII5SET_QxMHfEQ2Ho2RTRBoMgESt3gjaBMgbHcKEywxecr4SModY7gt-_gJ0wL79bFakPMAAk8JrXwWt4HZcxt9GqA4t2XA_GIk5sknNgiGZbBlygltwYqLHuFum9h2y_Iv8pxHODEOdzlZb7NSllY_Ns7_iDFpYgrUbL5KVwjLg2B1fRqVTRopPga8EfwE9QSp7CXGk4zSJh8yIaJbGxl9itENtwucSYTlisCknyBLWCsT8hoFeq0nkP6JXADkwToSM6QW038Dkg4LmSFi42seDE__PjJwzHt_7V2ehgCfpvqN50zznaTPPSPd2turnqt5pEpr3HKKMl6sXh8rBGRZ4eXPHNTCEVdBqGZBUxK9ohyvJ2wBlxuyW2tRfLKtg--CpVmaabtBqNhQnmNuyXKLYX5b2iqJYbXMNUxXFKS4KFWJHT5YJKn6KOuT2c2qxQGVyTaNkKvmAqyF0b8FOOkl4cLGOl--h4qVCjSLothpILeJjpnPuf7cC6b3ih5V5Ky2ON-avdtk3wNT6kEGR6jiFRpvk0M3XwUSopQkwpkzs1U9vuKRJonrDu3gR6lbpaMFZEGWZGbOdIECZ8iQS9OZ0cXFHF3az94q1juJ3PycI75CusuQ_mVcxLTZumS_PRPtpiTMRcHm4Hj70hdJtmdkpL9Wa3Tbc6Wv1LGGYR-e7gfao-6YGfWbXedm7AUYfJi3FqnRK3dxZ5lXHJ-jBJcUPjl9KDM--MqGUXizQ3X5DRZIZa4ejGCX2wD-0VY86pO7EWkTOwOuN1Z8npL5c_Ok_PFFqh_KbUsoxqlcWJM5hjaugpW-X_zJFA8uluyfNfBl5A_Q)** (pako/zlib-compressed, verified to round-trip).
 
 Regenerate whenever task metadata changes:
 
@@ -39,7 +39,7 @@ gantt
     05 Image Pipeline & Hero LCP (12% · 2/16 · todo) : active, 2026-11-07, 2d
     06 Third-Party JS & Font Hygiene — BLOCKED (8% · 1/12 · todo) : active, 2026-11-09, 1d
     section Gate 3-Features
-    07 Heading Order & Landmarks (11% · 1/9 · todo) : active, 2026-11-10, 1d
+    07 Heading Order & Landmarks (10% · 1/10 · todo) : active, 2026-11-10, 1d
     08 Keyboard-Accessible Product Tabs (7% · 1/14 · todo) : active, 2026-11-11, 1d
     09 Colour Contrast Pass (9% · 1/11 · todo) : active, 2026-11-12, 1d
     10 Nav Toggle, Skip Link & Targets (9% · 1/11 · todo) : active, 2026-11-13, 1d

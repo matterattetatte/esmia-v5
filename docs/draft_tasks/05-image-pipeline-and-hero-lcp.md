@@ -66,7 +66,7 @@
 
 ## Notes
 
-- 40 product photos at 2–5 MB each suggests they were exported full-size from a camera; a one-off re-export at 1600px would help but is not required if the pipeline works
+- The product photos are 2–5 MB each, which suggests they were exported full-size from a camera; a one-off re-export at 1600px would help but is not required if the pipeline works
 - Keep `loading="lazy"` for below-the-fold images; only the hero changes
 
 ## Questions to Resolve

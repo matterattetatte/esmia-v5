@@ -13,6 +13,14 @@ export default {
 		"spanska specialiteter",
 		"paella"
 	],
+	foundingYear: "1993",
+	contact: {
+		email: "norberto@esmia.se",
+		phone: "+46707223191",
+		phoneDisplay: "070-722 31 91",
+		areaServed: "Stockholm",
+		country: "SE"
+	},
 	author: {
 		name: "Norberto Marti",
 		email: "norberto@esmia.se",

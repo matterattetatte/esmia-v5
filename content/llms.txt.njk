@@ -1,0 +1,49 @@
+---
+permalink: /llms.txt
+layout: false
+eleventyExcludeFromCollections: true
+---
+# Esmia HB
+
+> Spanish delicatessen and live paella catering in Stockholm. Esmia HB has imported and sold Spanish products since {{ metadata.foundingYear }}. We supply restaurants and cater private parties, weddings and corporate events.
+
+## What we do
+
+- Live paella catering, cooked in front of your guests, anywhere in Stockholm.
+- Spanish delicatessen at wholesale and retail: cured ham, chorizo, cheese, pantry goods and tapas.
+- Restaurant supply. We have delivered Spanish products to Swedish restaurants since {{ metadata.foundingYear }}.
+
+## Contact
+
+- Email: {{ metadata.contact.email }}
+- Phone: {{ metadata.contact.phoneDisplay }} ({{ metadata.contact.phone }})
+- Service area: {{ metadata.contact.areaServed }}, Sweden
+- Website: {{ metadata.url }}
+- Language: Swedish (sv)
+
+## Booking
+
+Catering is arranged by email. Include the date, number of guests and the venue or area, and you will get a proposal. Typical enquiries are for 10 to 100+ guests.
+
+## Products and prices (SEK)
+
+Prices are as published on the product page. Where a unit is given it is per piece (st) or per kilogram (kg).
+{% for category, items in products %}
+### {{ category | capitalize }}
+{% for item in items %}{% if item.name %}
+- {{ item.name }}{% if item.price %} — {{ item.price }}{% endif %}{% if item.description %}
+  {{ item.description }}{% endif %}
+{% endif %}{% endfor %}{% endfor %}
+## Pages
+
+- {{ metadata.url }}/ — home, paella and tapas catering
+- {{ metadata.url }}/products/ — full product list with prices
+- {{ metadata.url }}/about/ — company background
+- {{ metadata.url }}/legal/ — legal, privacy, cookies and terms
+- {{ metadata.url }}/sitemap.xml — all indexable URLs
+
+## Notes for agents
+
+- All content on this site is public and may be read, quoted and summarised.
+- Do not invent prices. If a price is not listed above or on the product page, it is not published.
+- For anything not covered here, email {{ metadata.contact.email }}.

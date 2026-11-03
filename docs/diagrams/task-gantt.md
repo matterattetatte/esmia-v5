@@ -2,7 +2,7 @@
 
 _Auto-generated from the draft tasks in `docs/draft_tasks/`. Do not edit by hand._
 
-Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqVlc9O20AQxl9lZAmUSnHjdf4BN3CgUAJEOKrUqpeJvbG3cXaj3XUgQkh9h_bY9-i9j8KTdBzH4EolTX2x12P_9pvxN-MHJ1Ixd46cBKW1nyXQYYXNOIy0-sIjC2Mx55mQvIzFaPmZ0nO0AB_pcK-u3MGgjOG9MFVsbwJ78WdZBgxxhJLwjl4G5g54JAytTRn1GISpWLgjtClUMdiHc5UbPuN8IWQCjUN_D379BMZazC8uYkW338ARILGXvAm-5_dcxlyv0wQWb9A-DEWS2rRAwQmadSZwjlpyY_4H2n2B_pGN74YRTqcqq3Zsk25jC8m3_E4LS5CO1zFFPhxjrg08_fhGO8RK1vm9mugO1Z4vBb-DIEUpeQZTpeE4j4UlzcwrNbeYV5ytitVfFfdrxC5czDGhbyoWZQUKNVrBMBgRsCyC32K9fwH9CtiDcSp0TN9M2xW8Dwl4pqSF81UiOPGfvn6Hk-FNcHk6gMZBJdjfyj98pcRt94yjzTWv_NJfl7Io8Y2mitLeQ5TxHPVs9_Iwr1aeA7jkq4lCSug4isgZYlI2QJwXDYAT4vYrbGcrltWwhxCoTOWaTtJqNBZGuHZdhWJbUf4LinK5xiWMVZJk9Eg4EwsytpxR6mPUCbe7U9s1KoMrKlq-gA-YCXLXCoKMo6QbO5ex1mz0eSlRo6h0awyJC3mU64JbeX9HL7D-K17ouBfS8kRjcWuzbRsCjXcZhLmeYkSUcTG_TBMClEqKCDNScqsmat09pYB2i_W3Cjio5dWBoSLKSW7EemyEUcrnSNDr49HOGdXczbrP3tqHm-mULLxBvsDa22B-zbzUtFk2N2_tvS3HRMLl7nbw2SuF7tKUzuhRvdps069P0uACTvKYfLfzPnWfHECQW7Vcd27IUUfps3EavQq3dRb5tXHJDmGU4YpmLcmDU_-UqFUXi6wwX5jTGIZG6WivRS9sQ_vlmHOaTqJF7BxZnfOmM-f0XyuWzsMjhRYoPyk1r6Ja5UnqHE0xM7TKF8VfciCQfLp55PE3N5M87A)** (pako/zlib-compressed, verified to round-trip).
+Open in **[Mermaid Live](https://mermaid.live/edit#pako:eNqNlc1um0AQx19lhJTIlUzN4m_fEtw0aZ3EClalVrmMYQ3b4F1rd3FiRXmKXvsevfdR-iQdjEmoZFvlAsswv52P_w7PTqRi7oycBKW19xLossJmHKZafeeRhZlY8kxIXtpitPxC6SVagK90udfX7nhc2vBJmMp2MoeT-F6WBkMcoSR8JGdg7phHwtDalFaPQZiKlTtFm0Jlg1O4VLnhD5yvhEygMfRP4PcvYKzF_OIhVvT6HYwAib3mTfA9v-cy5nqdJrB4h_ZhIpLUpgUKztFsM4FL1JIbA39-_iBArGTdvfvm_k_cvhtGuFiorGK3KUJji-Du-KMWliAdr2OKyDnGXB_g92rhdajKfC34IwQpSskzWCgNZ3ksrIEG88qUW8wr7lbFam_C_RqxC1dLTKh7YlXmWkSjFUyC6f5wyNmvnHswS4WOqRPabuBTSM4XSlq43CSCE2svYHigXm33gqPNNa_a3N_WpajXrabyEHyCMl6ifthfKebV8hrAZ76ZK6TozqKImifmpUbjvNAozg8wWI0xhEBlKtd0k1ajsTDFAypg_psfVf8G1zBTSZLRJ-GDWJGq5AMlMEOdcHsA0a4hGFxTnvkKvmAmqLsbCDKOkl7sda1JmNRO4RpF2W5daNeQR7kuGMd0xvoH-tJxr6Tlicbi1W6PNgQaHzMIc73AiCizYgSYJgQolRQRZrTtnZqrrSwHW1m2W6x_TJZsUEuiAxNFlPPciO3JC6OUL5GgN2dTIva3RH93tA8Sa1Jj3dfmn8LtYkF62jEbg-rUtI_B_Jq6WA-ybGne2ydbHsCEyyLTYUViR0nsQKW7NOky-lRvdtv069MouILzPCb5_Pc-dVUMIMitWm-PUchRR-mrTBq9Ctc7iqsNIjaEaYYbmmIUHnzwPxC1OmYiK6QW5jTgoFFOJK9FDsfQfjlUnKaTaBE7I6tz3nSWnP4NxdJ5fiHTCuU3pZaVVas8SZ3RAjNDq3xV_GnGAkmou09e_gK-Fgdn)** (pako/zlib-compressed, verified to round-trip).
 
 Regenerate whenever task metadata changes:
 
@@ -32,22 +32,22 @@ gantt
 
     section Gate 1-Decisions
     01 Ship-Path Decision & Housekeeping (92% · 11/12 · doing) : active, 2026-11-04, 1d
-    02 Lighthouse Baseline Harness (92% · 11/12 · doing) : active, 2026-11-05, 1d
+    02 Lighthouse Baseline Harness ✓ : done, 2026-11-05, 1d
     section Gate 2-Scaffold
     03 Hosting Rewrite, 404s & Headers ✓ : done, 2026-11-06, 1d
     04 Preview Channel for Audits (10% · 1/10 · todo) : active, 2026-11-07, 1d
-    05 Image Pipeline & Hero LCP (12% · 2/16 · todo) : active, 2026-11-07, 2d
-    06 Third-Party JS & Font Hygiene — BLOCKED (8% · 1/12 · todo) : active, 2026-11-09, 1d
+    05 Image Pipeline & Hero LCP ✓ : done, 2026-11-07, 2d
+    06 Third-Party JS & Font Hygiene ✓ : done, 2026-11-09, 1d
     section Gate 3-Features
-    07 Heading Order & Landmarks (10% · 1/10 · todo) : active, 2026-11-10, 1d
-    08 Keyboard-Accessible Product Tabs (7% · 1/14 · todo) : active, 2026-11-11, 1d
-    09 Colour Contrast Pass (9% · 1/11 · todo) : active, 2026-11-12, 1d
-    10 Nav Toggle, Skip Link & Targets (9% · 1/11 · todo) : active, 2026-11-13, 1d
-    11 Markup Validity Cleanup (10% · 1/10 · todo) : active, 2026-11-14, 1d
-    12 Console Clean & Security Headers (8% · 1/12 · todo) : active, 2026-11-17, 1d
+    07 Heading Order & Landmarks ✓ : done, 2026-11-10, 1d
+    08 Keyboard-Accessible Product Tabs ✓ : done, 2026-11-11, 1d
+    09 Colour Contrast Pass ✓ : done, 2026-11-12, 1d
+    10 Nav Toggle, Skip Link & Targets ✓ : done, 2026-11-13, 1d
+    11 Markup Validity Cleanup ✓ : done, 2026-11-14, 1d
+    12 Console Clean & Security Headers ✓ : done, 2026-11-17, 1d
     section Gate 4-Integration
     13 Crawl Surface, Titles, Canonical & Robots (18% · 3/17 · todo) : active, 2026-11-18, 1d
-    14 LocalBusiness Schema & NAP (8% · 1/12 · todo) : active, 2026-11-19, 1d
+    14 LocalBusiness Schema & NAP (17% · 2/12 · todo) : active, 2026-11-19, 1d
     15 Product & Offer Schema (8% · 1/13 · todo) : active, 2026-11-20, 1d
     16 llms.txt for Agents (9% · 1/11 · todo) : active, 2026-11-21, 1d
     section Gate 5-Delivery

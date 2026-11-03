@@ -87,5 +87,5 @@ Esmia's equivalent needs Esmia's own values — see the open question below.
 
 ## Questions to Resolve
 
-- [ ] **OPEN** — Is there a public visiting address, or is this delivery-only? Needs Esmia's real values; the Paellakungen footer is the pattern, not the data.
+- [x] **OPEN** — Is there a public visiting address, or is this delivery-only? → **Include Hässelby address (`Persikogatan 28, 165 63 Hässelby`)**, matching `/legal/`. (2026-11-03)
 - [x] Should `openingHours` be published? Only if it is stable. → **Omit for now.** Catering is by arrangement, not by opening hours; a wrong schedule is worse than none. (2026-11-03)

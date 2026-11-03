@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P2 - Medium
 - **Deadline:** 2026-11-14
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:chore, area:frontend, required, gate:3-features
 - **Dependencies:** None
@@ -32,18 +32,18 @@
 
 ## Tasks
 
-- [ ] Remove the stray `</section>` in `index.njk`
-- [ ] Balance the wrapper `div` around the social block
-- [ ] Replace the inner `<main>` in `products.njk` with `section`
-- [ ] Fix the favicon `type` attribute
-- [ ] Validate all built HTML
-- [ ] Add a validation step to the build or CI
+- [x] Remove the stray `</section>` in `index.njk`
+- [x] Balance the wrapper `div` around the social block
+- [x] Replace the inner `<main>` in `products.njk` with `section`
+- [x] Fix the favicon `type` attribute
+- [x] Validate all built HTML
+- [x] Add a validation step to the build or CI
 
 ## Done Criteria
 
-- [ ] HTML validator reports no errors on any page
-- [ ] Every page has exactly one `main`, one `header`, one `footer`
-- [ ] Favicon loads without a MIME mismatch
+- [x] HTML validator reports no errors on any page
+- [x] Every page has exactly one `main`, one `header`, one `footer`
+- [x] Favicon loads without a MIME mismatch
 
 ## Notes
 

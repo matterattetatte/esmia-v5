@@ -265,6 +265,9 @@ Kept in the awesome-list spirit: curated, dated, link-dense, one line per entry.
 | 2026-11-03 | Chrome pinned to **156.0.8078.80**, installed into gitignored `./chrome` | Scores must be comparable across machines and across weeks | `scripts/lighthouse.mjs` |
 | 2026-11-03 | Baselines commit the **summary**, not the raw LHR | A full LHR is ~2 MB per run and adds nothing to a diff | `docs/baselines/` |
 | 2026-11-03 | `/products/` perf variance discovered (51–69 across three runs) | A volatile score cannot be gated at 100; the budget must assert on `/` first | §1.1 |
+| 2026-11-03 | Facebook widget replaced with a static section + link to Facebook | Removes 62 KB of third-party JS and eliminates third-party contrast/target-size/link-name failures | `content/index.njk`, task 06 |
+| 2026-11-03 | Visiting address `Persikogatan 28, 165 63 Hässelby` confirmed for NAP & LocalBusiness | Matches `/legal/` Impressum; one source of truth in `_data/metadata.js` | task 14 |
+| 2026-11-03 | Product `Offer.availability` deferred to pre-cutover review | Omit `availability` in initial `Offer` schema rather than guessing stock state; revisit at task 18 | task 15 |
 
 ---
 

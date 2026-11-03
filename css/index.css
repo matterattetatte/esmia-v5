@@ -1,18 +1,20 @@
 :root {
-  --font-family: "Montserrat", -apple-system, system-ui, sans-serif; /* Headings: Montserrat */
-  --font-family-body: "Heebo", -apple-system, system-ui, sans-serif; /* Body: Heebo Light */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
   --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 
   /* Accent Colors (Spanish-inspired with Valencian blue) */
-  --color-primary: #D4A017;           /* Spanish Gold, inspired by the flag */
+  --color-primary: #D4A017;           /* Spanish Gold: 6.56:1 on #1A252F */
   --color-primary-alt: #003087;       /* Valencian Blue, from the regional flag */
   
   /* Accent Gradient (blend of Spanish and Valencian tones) */
   --color-accent-gradient: linear-gradient(90deg, #D4A017 10%, #003087 90%);
 
   /* Text Colors (adjusted for Spanish warmth) */
-  --color-text: #F4E4BC;              /* Warm off-white, inspired by Spanish architecture */
-  --color-text-muted: #A67B5B;        /* Muted earthy tone, reminiscent of Spanish terracotta */
+  --color-text: #F4E4BC;              /* Warm off-white: 12.19:1 on #1A252F */
+  --color-text-muted: #C49A78;        /* Warm terracotta: 6.26:1 on #1A252F, 4.18:1 on #2E4057 */
+  --text-color-link: #FFD60A;         /* Gold link: 10.61:1 on #1A252F */
+  --text-color-link-visited: #F4C430; /* Visited gold: 9.21:1 on #1A252F */
 
 
   --color-bg-rgb: 11, 6, 32;
@@ -123,18 +125,28 @@ main :first-child {
 
 #skip-link {
 	text-decoration: none;
-	background: var(--background-color);
-	color: var(--text-color);
-	padding: 0.5rem 1rem;
-	border: 1px solid var(--color-gray-90);
-	border-radius: 2px;
+	background: var(--color-primary);
+	color: #1A252F;
+	font-weight: 700;
+	padding: 0.75rem 1.25rem;
+	border: 2px solid #FFFFFF;
+	border-radius: 4px;
 }
 
-/* Prevent visually-hidden skip link fom pushing content around when focused */
-#skip-link.visually-hidden:focus {
-	position: absolute;
+/* Prevent visually-hidden skip link from pushing content around when focused */
+#skip-link.visually-hidden:focus,
+#skip-link.visually-hidden:focus-visible {
+	position: fixed;
 	top: 1rem;
 	left: 1rem;
+	clip: auto;
+	clip-path: none;
+	width: auto;
+	height: auto;
+	overflow: visible;
+	white-space: nowrap;
+	outline: 3px solid #FFFFFF;
+	outline-offset: 2px;
 	/* Ensure it is positioned on top of everything else when it is shown */
 	z-index: 999;
 }
@@ -144,7 +156,7 @@ main :first-child {
 	justify-content: space-between;
 	gap: .5em 1em;
 	list-style: "";
-	border-top: 1px dashed var(--color-gray-20);
+	border-top: 1px dashed var(--color-text-muted);
 	padding: 1em 0;
 }
 .links-nextprev > * {
@@ -190,6 +202,8 @@ main {
 	margin-top: 6rem;
 	margin-bottom: 2rem;
 	padding: 0 8rem;
+	hyphens: auto;
+	text-align: left;
 }
 
 @media (max-width: 1024px) {
@@ -312,7 +326,7 @@ header.scrolled {
 .postlist-date,
 .postlist-item:before {
 	font-size: 0.8125em; /* 13px /16 */
-	color: var(--color-gray-90);
+	color: var(--color-text-muted);
 }
 .postlist-date {
 	word-spacing: -0.5px;
@@ -359,23 +373,43 @@ header.scrolled {
 
 
 .nav-item a {
-	padding: 0 0.5rem;
+	padding: 0.5rem 0.75rem;
+	min-height: 44px;
+	display: inline-flex;
+	align-items: center;
   text-decoration: none;
   color: inherit;
 }
 
+.nav-item a:focus-visible,
+.home-link:focus-visible,
+footer a:focus-visible,
+.btn-reserva:focus-visible,
+.btn-secondary:focus-visible {
+	outline: 3px solid #FFD60A;
+	outline-offset: 3px;
+}
+
 .nav-toggle {
-min-width: 40px;
-min-height: 40px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
   display: none;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   cursor: pointer;
-  transform: translateX(-20px) translateY(-6px);
+}
+
+.nav-toggle:focus-visible {
+  outline: 3px solid #FFD60A;
+  outline-offset: 2px;
 }
 
 .nav-toggle .hamburger {
-  width: 30px;
+  display: block;
+  width: 28px;
   height: 3px;
   background: #FFD60A;
   position: relative;
@@ -385,7 +419,8 @@ min-height: 40px;
 .nav-toggle .hamburger::after {
   content: '';
   position: absolute;
-  width: 30px;
+  left: 0;
+  width: 28px;
   height: 3px;
   background: #FFD60A;
   transition: 0.3s;
@@ -434,7 +469,10 @@ footer.scrolled {
 }
 
 footer a {
-	text-decoration: none;
+	text-decoration: underline;
+	padding: 0.5rem 0.4rem;
+	display: inline-block;
+	min-height: 44px;
 }
 
 /* Tablet screens */
@@ -461,12 +499,13 @@ footer a {
 
 	.nav-item a {
 		padding: 1rem;
-		display: block;
+		display: flex;
+		justify-content: center;
 		width: 100%;
 	}
 
 	.nav-toggle {
-		display: block;
+		display: inline-flex;
 	}
 
 	.nav.open {

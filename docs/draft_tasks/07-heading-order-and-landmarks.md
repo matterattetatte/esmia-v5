@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P1 - High
 - **Deadline:** 2026-11-10
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:feature, area:frontend, required, gate:3-features
 - **Dependencies:** None
@@ -50,18 +50,18 @@ h3      Manchego
 
 ## Tasks
 
-- [ ] Skip `h3` output when `item.name` is empty (7 gallery-only entries)
-- [ ] Replace the inner `<main>` in `products.njk` with a `<section>`
-- [ ] Make each category an `h2`
-- [ ] Keep product names at `h3`
-- [ ] Audit every page for skipped levels
-- [ ] Confirm exactly one `main` per page
+- [x] Skip `h3` output when `item.name` is empty (7 gallery-only entries)
+- [x] Replace the inner `<main>` in `products.njk` with a `<section>`
+- [x] Make each category an `h2`
+- [x] Keep product names at `h3`
+- [x] Audit every page for skipped levels
+- [x] Confirm exactly one `main` per page
 
 ## Done Criteria
 
-- [ ] Lighthouse `heading-order` audit passes on all pages
-- [ ] No page has more than one `<main>`
-- [ ] Heading outline read aloud matches the visual grouping
+- [x] Lighthouse `heading-order` audit passes on all pages
+- [x] No page has more than one `<main>`
+- [x] Heading outline read aloud matches the visual grouping
 
 ## Notes
 

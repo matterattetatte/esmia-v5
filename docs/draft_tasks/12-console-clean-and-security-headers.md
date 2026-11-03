@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P1 - High
 - **Deadline:** 2026-11-17
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:feature, area:devops, required, gate:3-features
 - **Dependencies:** 03-hosting-rewrite-404s-headers.md, 06-third-party-js-and-fonts.md
@@ -47,20 +47,20 @@ Note that CSP effectiveness is not a scored Lighthouse audit; this is hardening,
 
 ## Tasks
 
-- [ ] Sweep all 15 routes for console errors and 404s
-- [ ] Fix the `new Image().src` load if it 404s
-- [ ] Confirm the `js` bundle URL resolves
-- [ ] Add `X-Frame-Options`/`frame-ancestors`
-- [ ] Add `X-Content-Type-Options` and `Referrer-Policy`
-- [ ] Record the CSP decision in this file
-- [ ] Re-check the console with the widget loaded
+- [x] Sweep all 15 routes for console errors and 404s
+- [x] Fix the `new Image().src` load if it 404s
+- [x] Confirm the `js` bundle URL resolves
+- [x] Add `X-Frame-Options`/`frame-ancestors`
+- [x] Add `X-Content-Type-Options` and `Referrer-Policy`
+- [x] Record the CSP decision in this file
+- [x] Re-check the console with the widget loaded
 
 ## Done Criteria
 
-- [ ] No console errors on any route, before or after scrolling to the embed
-- [ ] No request returns 404
-- [ ] Response headers include clickjacking mitigation, nosniff, referrer policy
-- [ ] CSP decision documented with the chosen trade-off
+- [x] No console errors on any route, before or after scrolling to the embed
+- [x] No request returns 404
+- [x] Response headers include clickjacking mitigation, nosniff, referrer policy
+- [x] CSP decision documented with the chosen trade-off
 
 ## Notes
 

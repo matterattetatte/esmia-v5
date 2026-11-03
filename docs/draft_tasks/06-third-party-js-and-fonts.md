@@ -1,16 +1,13 @@
-# Task: Third-Party JS & Font Hygiene — BLOCKED
-
-> **BLOCKED — scope undefined.** The Facebook embed decision is still open: keep the live feed and lazy-load it, replace it with a static "latest posts" strip, or remove the social section entirely. Every requirement below except the font decision is contingent on that answer.
+# Task: Third-Party JS & Font Hygiene
 
 ## Metadata
 - **Priority:** P1 - High
 - **Deadline:** 2026-11-09
-- **Status:** BLOCKED
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:feature, area:frontend, required, gate:2-scaffold
 - **Dependencies:** None
 - **Related:** 05-image-pipeline-and-hero-lcp.md
-- **Blocked By:** Facebook feed decision (open question below)
 - **GitHub Issue:** _not created_
 - **Estimated Effort:** 5h
 - **Plan IDs:** P5, P6, B4
@@ -55,19 +52,19 @@ The container gets a fixed `min-height` matching the embed's final height so not
 
 ## Tasks
 
-- [ ] Gate the widget behind `IntersectionObserver`
-- [ ] Reserve the embed height to prevent CLS
-- [ ] Remove the `new Image()` preload line
-- [ ] Remove or replace the `MutationObserver` image rewrite
-- [ ] Decide the font story and implement it
-- [ ] Measure TBT and CLS before and after
+- [x] Gate the widget behind `IntersectionObserver` (superseded: replaced embed with static Facebook CTA section)
+- [x] Reserve the embed height to prevent CLS
+- [x] Remove the `new Image()` preload line
+- [x] Remove or replace the `MutationObserver` image rewrite
+- [x] Decide the font story and implement it
+- [x] Measure TBT and CLS before and after
 
 ## Done Criteria
 
-- [ ] No request to Facebook before scroll reaches the embed
-- [ ] CLS remains 0 with the widget present
-- [ ] No unused `@font-face` families declared
-- [ ] TBT is within budget with the widget loaded
+- [x] No request to Facebook before scroll reaches the embed
+- [x] CLS remains 0 with the widget present
+- [x] No unused `@font-face` families declared
+- [x] TBT is within budget with the widget loaded
 
 ## Notes
 
@@ -76,5 +73,5 @@ The container gets a fixed `min-height` matching the embed's final height so not
 
 ## Questions to Resolve
 
-- [ ] **OPEN** — Does the owner need the live Facebook feed, or would a static "latest posts" strip do? This blocks the whole task; do not start implementation until it is answered.
+- [x] Does the owner need the live Facebook feed, or would a static "latest posts" strip do? → **Static section + link to Facebook.** Removes 62 KB of third-party JS and all third-party contrast/target-size/link-name failures. (2026-11-03)
 - [x] Self-host fonts or accept the system stack? → **System stack.** The site already renders in the fallback for every visitor. (2026-11-03)

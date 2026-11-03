@@ -1,27 +1,23 @@
 ---
-
+preloadImage: "background.webp"
 ---
 <style>{% include "css/banner.css" %}</style>
 
 <!-- HERO BANNER -->
 <section class="hero-banner">
   <div class="hero-overlay"></div>
-  
-  <!-- Replace with your best party photo (people + huge paella + sangría) -->
-  <img src="/images/background.webp" 
-       class="hero-image" 
-       alt="Autentisk spansk paella och tapas catering i Stockholm" 
-       fetchpriority="high">
+
+  {# The LCP image: eager and preloaded (see preloadImage in the front matter). #}
+  {% image "background.webp", "Autentisk spansk paella och tapas catering i Stockholm", "hero", { class: "hero-image" } %}
 
   <div class="hero-content">
     <div class="hero-text">
       <h1>
-        Paella & Tapas
+        Paella &amp; Tapas
       </h1>
       <p class="tagline">¡För din fest i Stockholm!</p>
-      <a href="mailto:norberto@esmia.se?subject=Bokning%20av%20catering&body=Hej!%0D%0A%0D%0AJag%20vill%20gärna%20boka%20catering%20av%20er...\n\n" 
-        class="btn-reserva" 
-        target="_blank">
+      <a href="mailto:norberto@esmia.se?subject=Bokning%20av%20catering&amp;body=Hej!%0D%0A%0D%0AJag%20vill%20gärna%20boka%20catering%20av%20er...%0A%0A"
+        class="btn-reserva">
         Boka nu
       </a>
     </div>
@@ -29,10 +25,6 @@
     <!-- Decorative Spanish flags top -->
     <div class="flag-left"></div>
     <div class="flag-right"></div>
-
-    <!-- Flamenco silhouettes -->
-    <div class="flamenco-left"></div>
-    <div class="flamenco-right"></div>
   </div>
 </section>
 
@@ -43,56 +35,25 @@
       <div class="welcome-text">
         <h2>¡Bienvenidos a la fiesta!</h2>
         <p>
-          Vi lagar äkta valenciansk paella live framför era gäster – precis som i Spanien! 
-          Tillsammans med kalla sangría-kannor och massor av tapas förvandlar vi varje tillställning 
+          Vi lagar äkta valenciansk paella live framför era gäster – precis som i Spanien!
+          Tillsammans med kalla sangría-kannor och massor av tapas förvandlar vi varje tillställning
           till en riktig spansk fiesta i Stockholm.
         </p>
-        <a href="/products" class="btn-secondary">Se vår meny</a>
+        <a href="/products/" class="btn-secondary">Se vår meny</a>
       </div>
       <div class="welcome-image">
-        <img src="/images/flamenco.webp" alt="Flamencodansare">
+        {% image "flamenco.webp", "Flamencodansare", "figure" %}
       </div>
     </div>
   </div>
 </section>
 
-<div class="follow-us">
+<section class="follow-us">
   <h2>Följ oss på Facebook!</h2>
-  <p>Se våra senaste uppdateringar på sociala medier.</p>
-<div class="sk-ww-facebook-page-posts" data-embed-id="25624561"></div>
-</div>
-
+  <p>Se våra senaste uppdateringar, bilder från catering och matglädje på vår Facebook-sida.</p>
+  <p>
+    <a href="https://www.facebook.com/people/MeAlegro-DeBerto/100057035546976/" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+      Besök oss på Facebook
+    </a>
+  </p>
 </section>
-<div>
-<script>
-// Preload your placeholder image early
-new Image().src = '/images/iframe-profile.webp';
-
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. Load the Facebook widget script only now
-  const script = document.createElement('script');
-  script.src = '/scripts/iframe-widget.js';
-  script.defer = true;           // still respectful
-  document.head.appendChild(script);
-
-  // 2. Replace Facebook profile/post images as soon as they appear
-  const replaceImages = () => {
-    document.querySelectorAll('img[alt="sk-header-picture"], img[alt="sk-post-userpic"]')
-      .forEach(img => {
-        if (!img.src.includes('/images/iframe-profile.webp')) {
-          img.src = '/images/iframe-profile.webp';
-          img.srcset = ''; // kill any Facebook srcset
-        }
-      });
-  };
-
-  // Run immediately (in case widget already injected something)
-  replaceImages();
-
-  // And keep running whenever new content is added (Facebook loads async)
-  const observer = new MutationObserver(replaceImages);
-  observer.observe(document.body, { childList: true, subtree: true });
-});
-</script>
-
-</div>

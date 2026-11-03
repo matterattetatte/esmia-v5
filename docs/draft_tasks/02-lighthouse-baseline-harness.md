@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P0 - Critical
 - **Deadline:** 2026-11-05
-- **Status:** DOING
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:testing, area:devops, required, gate:1-decisions
 - **Dependencies:** None
@@ -56,7 +56,7 @@ Baselines live under `docs/baselines/` and are committed, so score regressions a
 - [x] One command produces four scores for a given URL
 - [x] `docs/baselines/` contains committed JSON for both pages
 - [x] The baseline numbers are quoted in PLAN.md with the date they were taken
-- [ ] A second run of the same command reproduces the same scores within noise
+- [x] A second run of the same command reproduces the same scores within noise
 
 ## Notes
 

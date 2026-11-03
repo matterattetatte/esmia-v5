@@ -3,7 +3,7 @@
 ## Metadata
 - **Priority:** P0 - Critical
 - **Deadline:** 2026-11-08
-- **Status:** TODO
+- **Status:** DONE
 - **Assignee:** TBD
 - **Tags:** type:feature, area:frontend, required, gate:2-scaffold
 - **Dependencies:** None
@@ -46,23 +46,23 @@
 
 ## Tasks
 
-- [ ] Remove `addPassthroughCopy("content/images/**/*")`
-- [ ] Repoint product image paths so the transform resolves them
-- [ ] Restore `widths` and add `sizes`
-- [ ] Confirm AVIF output exists
-- [ ] Set the hero to `loading="eager"` and preload it
-- [ ] Add `width`/`height` to every transformed image
-- [ ] Re-measure page weight
-- [ ] Re-measure LCP
+- [x] Remove `addPassthroughCopy("content/images/**/*")`
+- [x] Repoint product image paths so the transform resolves them
+- [x] Restore `widths` and add `sizes`
+- [x] Confirm AVIF output exists
+- [x] Set the hero to `loading="eager"` and preload it
+- [x] Add `width`/`height` to every transformed image
+- [x] Re-measure page weight
+- [x] Re-measure LCP
 
 ## Done Criteria
 
-- [ ] `du -sh _site` is under 10 MB
-- [ ] `/products` transfers under 2.5 MB
-- [ ] Product grid emits `<picture>` with `srcset`
-- [ ] At least one `.avif` exists under `_site`
-- [ ] Hero is the LCP element in the trace and is not lazy
-- [ ] No layout shift attributable to images
+- [x] `du -sh _site` is under 10 MB
+- [x] `/products` transfers under 2.5 MB
+- [x] Product grid emits `<picture>` with `srcset`
+- [x] At least one `.avif` exists under `_site`
+- [x] Hero is the LCP element in the trace and is not lazy
+- [x] No layout shift attributable to images
 
 ## Notes
 

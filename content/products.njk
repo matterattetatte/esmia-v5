@@ -9,59 +9,115 @@ url: '/products'
   {% include "css/products.css" %}
 </style>
 
-<main class="products">
+<section class="products">
   <h1>Produkter</h1>
 
-  <div class="tab-container">
+  <div class="tab-container" role="tablist" aria-label="Produktkategorier">
     {% for category, items in products %}
-      <div class="tab" data-tab="{{ category }}">{{ category | capitalize }}</div>
+      <button
+        type="button"
+        class="tab{% if loop.first %} active{% endif %}"
+        role="tab"
+        id="tab-{{ category }}"
+        aria-controls="panel-{{ category }}"
+        aria-selected="{{ 'true' if loop.first else 'false' }}"
+        tabindex="{{ '0' if loop.first else '-1' }}"
+      >{{ category | capitalize }}</button>
     {% endfor %}
   </div>
 
   {% for category, items in products %}
-    <section id="{{ category }}" class="tab-content">
+    <section
+      class="tab-content{% if loop.first %} active{% endif %}"
+      role="tabpanel"
+      id="panel-{{ category }}"
+      aria-labelledby="tab-{{ category }}"
+      tabindex="0"
+      {% if not loop.first %}hidden{% endif %}
+    >
+      <h2 class="visually-hidden">{{ category | capitalize }}</h2>
+
       <div class="product-grid">
         {% for item in items %}
-          <article class="product-card">
-            {% if item.image %}
-              <img src="{{ item.image }}" alt="{{ item.name }}" class="product-image">
-            {% endif %}
-            <h3>{{ item.name }}</h3>
-            {% if item.price %}
-              <p><strong>{{ item.price }}</strong></p>
-            {% endif %}
-            {% if item.description %}
-              <p>{{ item.description }}</p>
-            {% endif %}
-          </article>
+          {% if item.name or item.image %}
+            <article class="product-card">
+              {% if item.image %}
+                {% image item.image, item.name or "", "card", { class: "product-image" } %}
+              {% endif %}
+              {% if item.name %}
+                <h3>{{ item.name }}</h3>
+              {% endif %}
+              {% if item.price %}
+                <p><strong>{{ item.price }}</strong></p>
+              {% endif %}
+              {% if item.description %}
+                <p>{{ item.description }}</p>
+              {% endif %}
+            </article>
+          {% endif %}
         {% endfor %}
       </div>
     </section>
   {% endfor %}
-</main>
+</section>
+
+<noscript>
+  <style>
+    /* Without JS the tab bar cannot switch panels, so show every category instead. */
+    .tab-container { display: none; }
+    .tab-content[hidden] { display: block !important; }
+  </style>
+</noscript>
 
 <script>
-  // Simple vanilla JS tab functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.tab-content');
+  (() => {
+    const tablist = document.querySelector('[role="tablist"]');
+    if (!tablist) return;
 
-    // Activate first tab by default
-    if (tabs.length > 0) {
-      tabs[0].classList.add('active');
-      contents[0].classList.add('active');
+    const tabs = [...tablist.querySelectorAll('[role="tab"]')];
+    const panels = tabs.map((tab) => document.getElementById(tab.getAttribute("aria-controls")));
+
+    function select(index, { moveFocus = false } = {}) {
+      tabs.forEach((tab, i) => {
+        const isSelected = i === index;
+        tab.setAttribute("aria-selected", String(isSelected));
+        tab.tabIndex = isSelected ? 0 : -1;
+        tab.classList.toggle("active", isSelected);
+        if (panels[i]) {
+          panels[i].hidden = !isSelected;
+          panels[i].classList.toggle("active", isSelected);
+        }
+      });
+      if (moveFocus) tabs[index].focus();
     }
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.getAttribute('data-tab');
-
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
-
-        tab.classList.add('active');
-        document.getElementById(target).classList.add('active');
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => select(i));
+      tab.addEventListener("keydown", (event) => {
+        let next;
+        switch (event.key) {
+          case "ArrowRight":
+            next = (i + 1) % tabs.length;
+            break;
+          case "ArrowLeft":
+            next = (i - 1 + tabs.length) % tabs.length;
+            break;
+          case "Home":
+            next = 0;
+            break;
+          case "End":
+            next = tabs.length - 1;
+            break;
+          default:
+            return;
+        }
+        event.preventDefault();
+        select(next, { moveFocus: true });
       });
     });
-  });
+
+    // Deep links such as /products#panel-ostar open the matching category.
+    const linked = panels.findIndex((panel) => panel && `#${panel.id}` === window.location.hash);
+    if (linked > -1) select(linked);
+  })();
 </script>

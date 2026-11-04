@@ -1,6 +1,6 @@
 ---
-title: "Om oss & Kontakt"
-description: "Esmia HB har sedan 1993 levererat spanska delikatesser till restauranger och paellacatering till fester och företagsevent i Stockholm. Kontakta Norberto."
+title: "Om oss & Kontakt – Spanska delikatesser sedan 1993"
+description: "Esmia HB har sedan 1993 levererat direktimporterade spanska delikatesser till restauranger och paellacatering till fester och företagsevent i Stockholm."
 eleventyNavigation:
   key: Om oss
   order: 2
@@ -9,10 +9,26 @@ url: '/about'
 <style>{% include "css/about.css" %}</style>
 <section class="about">
   <h1>UPPLEV <strong>SPANSKA SMAKER</strong> MED PASSION</h1>
-  <p>
-    Esmia HB har sedan starten {{ metadata.foundingYear }} sålt spanska delikatesser i {{ metadata.contact.areaServed }}.
-    Vi levererar produkter till restauranger och hanterar catering vid bröllop, fester och företagsevent för både små och stora sällskap.
+  <p class="about-lead">
+    Esmia HB har sedan starten {{ metadata.foundingYear }} importerat och sålt spanska delikatesser i {{ metadata.contact.areaServed }}.
+    Vi levererar utvalda charkuterier och ostar till restauranger och lagar äkta valenciansk paella live vid bröllop, fester och företagsevent för både små och stora sällskap.
   </p>
+
+  <div class="about-grid">
+    <article class="about-card">
+      <h2>Om kocken &amp; hantverket</h2>
+      <p>
+        Bakom grytorna står <strong>{{ metadata.author.name }}</strong>. Med rötterna i den spanska matkulturen och över tre decenniers erfarenhet av direktimport från spanska producenter lagar vi paella från grunden – med äkta <em>arroz bomba</em>, saffran, skaldjur och råvaror av restaurangkvalitet.
+      </p>
+    </article>
+
+    <article class="about-card">
+      <h2>Grossist &amp; Restaurangleverantör</h2>
+      <p>
+        Utöver live-catering levererar Esmia HB lufttorkad serranoskinka, 30 månaders jamón ibérico, chorizo, manchego och spanska kolonialvaror till restauranger, saluhallar och delikatessbutiker i Sverige.
+      </p>
+    </article>
+  </div>
 
   <h2>Kontakt &amp; Bokning</h2>
   <address class="nap-block">

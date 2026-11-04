@@ -19,7 +19,7 @@
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: -5px;
-  background: linear-gradient(to top, rgba(193,18,31,0.65) 0%, rgba(0,0,0,0.7) 100%);
+  background: linear-gradient(to top, rgba(193,18,31,0.65) 0%, rgba(0,0,0,0.75) 100%);
   z-index: 2;
 }
 
@@ -48,25 +48,39 @@
 
 .hero-text h1 {
   font-family: var(--font-family);
-  font-size: 6.5rem;
+  font-size: 6rem;
   line-height: 1;
   margin: 0;
-  text-shadow: 4px 4px 12px rgba(0,0,0,0.8);
+  text-shadow: 4px 4px 12px rgba(0,0,0,0.85);
   color: #FFD60A;
 }
 
-.hero-text .small {
-  font-size: 0.5em;
-  display: block;
+.tagline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.85);
   color: white;
 }
 
-.tagline {
-  font-size: 2.8rem;
+.hero-price-pill {
+  display: inline-block;
+  background: rgba(26, 37, 47, 0.9);
+  color: #FFD60A;
+  border: 1px solid #FFD60A;
+  border-radius: 999px;
+  padding: 0.45rem 1.25rem;
   font-weight: 700;
-  margin: 0.5rem 0 2rem;
-  text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
-  color: white;
+  font-size: 1.05rem;
+  margin: 0 0 1.75rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 /* #8A0018 on #FFD60A = 6.46:1 (on hover #ffe066 = 6.95:1) */
@@ -74,8 +88,8 @@
   background: #FFD60A;
   color: #8A0018 !important;
   font-weight: bold;
-  font-size: 1.4rem;
-  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
+  padding: 0.95rem 2.25rem;
   border-radius: 50px;
   text-decoration: none;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
@@ -87,9 +101,33 @@
 }
 
 .btn-reserva:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.5);
   background: #ffe066;
+}
+
+/* #FFFFFF on #1A252F = 15.3:1 */
+.btn-hero-outline {
+  background: #1A252F;
+  color: #FFFFFF !important;
+  border: 2px solid #FFD60A;
+  font-weight: bold;
+  font-size: 1.15rem;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-hero-outline:visited {
+  color: #FFFFFF !important;
+}
+
+.btn-hero-outline:hover,
+.btn-hero-outline:focus-visible {
+  background: #2E4057;
+  outline: 3px solid #FFD60A;
+  outline-offset: 2px;
 }
 
 /* ==== WELCOME SECTION ==== */
@@ -115,7 +153,7 @@
 
 .welcome-text h2 {
   font-family: var(--font-family);
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
   color: #FFD60A;
 }
@@ -145,9 +183,91 @@
   background: #ffe066;
 }
 
+/* ==== OCCASIONS & HOW IT WORKS & FAQ ==== */
+.occasions-section,
+.steps-section,
+.faq-section {
+  padding: 4rem 1.5rem;
+}
+
+.section-lead {
+  max-width: 720px;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--color-text);
+}
+
+.occasion-grid,
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.occasion-card,
+.step-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.occasion-card h3,
+.step-card h3 {
+  color: #FFD60A;
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: #FFD60A;
+  color: #1A252F;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+  max-width: 850px;
+  margin-top: 1.5rem;
+}
+
+.faq-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #FFD60A;
+  font-size: 1.1rem;
+  min-height: 32px;
+}
+
+.faq-item summary:focus-visible {
+  outline: 3px solid #FFD60A;
+  outline-offset: 2px;
+}
+
+.faq-item p {
+  margin-top: 0.75rem;
+  color: var(--color-text);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
-  .hero-text h1 { font-size: 4.5rem; }
-  .tagline { font-size: 2rem; }
+  .hero-text h1 { font-size: 4rem; }
+  .tagline { font-size: 1.8rem; }
   .welcome-content { flex-direction: column; text-align: center; }
 }

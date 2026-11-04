@@ -1,8 +1,43 @@
-#mission picture {
-    min-width: 50%;
+.about {
+  max-width: 960px;
+  margin: 0 auto;
 }
 
+.about-lead {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
 
-main {
-	padding: 2rem 4rem;
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.about-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.about-card h2 {
+  margin-top: 0;
+  color: #FFD60A;
+  font-size: 1.35rem;
+}
+
+.nap-block {
+  font-style: normal;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 520px;
+}
+
+.nap-block p {
+  margin: 0.4rem 0;
 }

@@ -216,6 +216,7 @@ if (llms) {
 		assert(llms.includes(fact), `llms.txt missing fact "${fact}"`);
 	}
 	assert(/\d+\s*kr\s*\/\s*(person|st|kg)/i.test(llms), "llms.txt missing published prices");
+	assert(/\[[^\]]+\]\([^)]+\)/.test(llms), "llms.txt must contain at least one Markdown link");
 	for (const url of [
 		"https://esmia.se/products/",
 		"https://esmia.se/about/",

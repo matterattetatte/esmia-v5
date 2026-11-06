@@ -38,13 +38,13 @@ Prices are as published on the product page. Where a unit is given it is per pie
 {% endif %}{% endfor %}{% endfor %}
 ## Pages
 
-- {{ metadata.url }}/ — home, paella and tapas catering
-- {{ metadata.url }}/products/ — full product list with prices
-- {{ metadata.url }}/about/ — company background and contact
-- {{ metadata.url }}/news/ — latest news, catering guides and inspiration
-{% for post in collections.posts | reverse %}- {{ post.url | htmlBaseUrl(metadata.url) }} — {{ post.data.title }}
-{% endfor %}- {{ metadata.url }}/legal/ — legal, privacy, cookies and terms
-- {{ metadata.url }}/sitemap.xml — all indexable URLs
+- [Home]({{ metadata.url }}/) — home, paella and tapas catering
+- [Products]({{ metadata.url }}/products/) — full product list with prices
+- [About]({{ metadata.url }}/about/) — company background and contact
+- [News]({{ metadata.url }}/news/) — latest news, catering guides and inspiration
+{% for post in collections.posts | reverse %}- [{{ post.data.title }}]({{ post.url | htmlBaseUrl(metadata.url) }}) — news article
+{% endfor %}- [Legal]({{ metadata.url }}/legal/) — legal, privacy, cookies and terms
+- [Sitemap]({{ metadata.url }}/sitemap.xml) — all indexable URLs
 
 ## Notes for agents
 

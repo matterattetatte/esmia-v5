@@ -1,6 +1,6 @@
 {
 	"url": "http://localhost:4173/",
-	"fetchedAt": "2026-11-06T19:24:19.579Z",
+	"fetchedAt": "2026-11-06T19:56:02.264Z",
 	"lighthouseVersion": "12.8.2",
 	"chromeVersion": "Chrome/156.0.0.0",
 	"formFactor": "mobile",
@@ -13,7 +13,7 @@
 	},
 	"perRun": [
 		{
-			"performance": 100,
+			"performance": 97,
 			"accessibility": 100,
 			"best-practices": 100,
 			"seo": 100
@@ -32,12 +32,12 @@
 		}
 	],
 	"metrics": {
-		"fcpMs": 861,
-		"lcpMs": 1000,
-		"tbtMs": 0,
+		"fcpMs": 1290,
+		"lcpMs": 1425,
+		"tbtMs": 177,
 		"cls": 0,
-		"siMs": 861,
-		"totalByteWeight": 234492
+		"siMs": 1578,
+		"totalByteWeight": 123490
 	},
 	"failingAudits": []
 }

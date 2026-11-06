@@ -121,14 +121,13 @@ export default function registerImages(eleventyConfig) {
 		if (!file) return "";
 
 		const metadata = await metadataFor(file, preset.widths);
-		const links = FORMATS.map((format) => {
-			const entries = metadata[format];
-			if (!entries) return "";
-			const srcset = entries.map((entry) => `${entry.url} ${entry.width}w`).join(", ");
-			return `<link rel="preload" as="image" type="${entries[0].sourceType || `image/${format}`}" imagesrcset="${srcset}" imagesizes="${preset.sizes}">`;
-		});
+		const format = FORMATS.find((name) => metadata[name]?.length);
+		if (!format) return "";
 
-		return links.filter(Boolean).join("\n\t\t");
+		const entries = metadata[format];
+		const srcset = entries.map((entry) => `${entry.url} ${entry.width}w`).join(", ");
+		const priority = preset.fetchpriority ? ` fetchpriority="${preset.fetchpriority}"` : "";
+		return `<link rel="preload" as="image" type="${entries[0].sourceType || `image/${format}`}" imagesrcset="${srcset}" imagesizes="${preset.sizes}"${priority}>`;
 	});
 
 	eleventyConfig.addAsyncShortcode("imageUrl", async (src, presetName = "card") => {

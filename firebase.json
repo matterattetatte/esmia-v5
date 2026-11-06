@@ -63,6 +63,15 @@
         ]
       },
       {
+        "source": "/img/gen/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000, public, immutable"
+          }
+        ]
+      },
+      {
         "source": "/robots.txt",
         "headers": [
           {

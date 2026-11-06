@@ -14,6 +14,10 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  /* Promote the full-bleed hero to its own layer. Without this the scale and
+     paint of a 1024px photo into a 100vh box lands on the main thread after
+     first paint, which is what shows up as blocking time. */
+  transform: translateZ(0);
 }
 
 .hero-overlay {

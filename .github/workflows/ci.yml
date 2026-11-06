@@ -27,6 +27,9 @@ jobs:
       - name: Build & validate HTML + JSON-LD + titles
         run: npm run build
 
+      - name: Verify agentic-search readiness (llms.txt, robots, sitemap, JSON-LD)
+        run: npm run verify:agentic
+
       - name: Verify hosting headers, status codes, redirects & 404
         run: npm run verify:hosting
 

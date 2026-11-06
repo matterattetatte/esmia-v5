@@ -11,6 +11,7 @@
 		"start": "npx @11ty/eleventy --serve --quiet",
 		"test:e2e": "npx playwright test",
 		"verify:hosting": "node scripts/verify-hosting.mjs",
+		"verify:agentic": "node scripts/verify-agentic.mjs",
 		"lighthouse": "node scripts/lighthouse.mjs",
 		"lighthouse:assert": "node scripts/lighthouse.mjs --runs=3 --assert",
 		"lighthouse:chrome": "npx @puppeteer/browsers install chrome@156.0.8078.80 --path ./chrome",

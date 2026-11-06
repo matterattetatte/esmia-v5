@@ -15,7 +15,8 @@ the environment that ships.
 | Production deploy | `npm run deploy` (`npm run build && firebase deploy`) |
 | Lighthouse audit | `npm run lighthouse -- --runs=3` (writes `docs/baselines/home.json` & `docs/baselines/products.json`) |
 | Lighthouse CI gate | `npm run lighthouse:assert` (asserts 100/100/100/100 + page-weight budgets) |
-| Playwright + axe | `npm run test:e2e` (13 E2E + axe accessibility tests across all routes) |
+| Agentic readiness gate | `npm run verify:agentic` (asserts llms.txt, robots.txt, sitemap coverage, canonicals, and JSON-LD) |
+| Playwright + axe | `npm run test:e2e` (15 E2E + axe accessibility tests across all routes) |
 | Config | [`firebase.json`](firebase.json) · [`lighthouserc.json`](lighthouserc.json) · [`playwright.config.js`](playwright.config.js) |
 | Scorecards | [`docs/baselines/home.json`](docs/baselines/home.json) · [`docs/baselines/products.json`](docs/baselines/products.json) |
 

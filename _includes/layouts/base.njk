@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="{{ metadata.language }}">
 	<head>
-		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+		{#- 	PNG icons instead of the 32 KB multi-resolution .ico, which browsers
+			downloaded on every page view for a 16px image. #}
+		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 

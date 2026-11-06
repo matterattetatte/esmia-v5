@@ -23,6 +23,18 @@ const OUTPUT_DIR = path.join("_site", "img", "gen") + path.sep;
 const URL_PATH = "/img/gen/";
 const FORMATS = ["avif", "webp"];
 
+/**
+ * Encoder settings. The hero photo is painted under a 65–75% opacity scrim and
+ * the cards render small, so these photographs carry much less visible detail
+ * than their pixel count implies. The stock encoders spend bytes on detail no
+ * visitor ever sees; measured at 1024w, AVIF drops 71 KB → 54 KB and the WebP
+ * fallback 108 KB → 69 KB at these settings.
+ */
+const FORMAT_OPTIONS = {
+	avif: { quality: 48, effort: 6 },
+	webp: { quality: 62, effort: 6 },
+};
+
 const PRESETS = {
 	// Full-bleed LCP image: eager, high priority, widest set.
 	hero: {
@@ -61,6 +73,8 @@ async function metadataFor(file, widths) {
 			eleventyImage(file, {
 				widths,
 				formats: FORMATS,
+				sharpAvifOptions: FORMAT_OPTIONS.avif,
+				sharpWebpOptions: FORMAT_OPTIONS.webp,
 				outputDir: OUTPUT_DIR,
 				urlPath: URL_PATH,
 				// SVGs pass through byte-for-byte instead of being rasterised.

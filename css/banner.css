@@ -265,6 +265,19 @@
   color: var(--color-text);
 }
 
+/* The hero fills the viewport, so everything below it starts off-screen. Let
+   the browser skip style, layout and paint for those sections until they are
+   scrolled into view; `auto` intrinsic size remembers the rendered height, so
+   nothing shifts on later navigation or when scrolling back up. */
+.welcome-section,
+.occasions-section,
+.steps-section,
+.faq-section,
+.follow-us {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 640px;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .hero-text h1 { font-size: 4rem; }

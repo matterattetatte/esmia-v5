@@ -1,6 +1,6 @@
 {
 	"url": "http://localhost:4173/products/",
-	"fetchedAt": "2026-11-06T19:56:33.447Z",
+	"fetchedAt": "2026-11-06T21:24:17.641Z",
 	"lighthouseVersion": "12.8.2",
 	"chromeVersion": "Chrome/156.0.0.0",
 	"formFactor": "mobile",
@@ -32,12 +32,12 @@
 		}
 	],
 	"metrics": {
-		"fcpMs": 825,
-		"lcpMs": 1095,
+		"fcpMs": 829,
+		"lcpMs": 979,
 		"tbtMs": 0,
 		"cls": 0,
-		"siMs": 825,
-		"totalByteWeight": 156554
+		"siMs": 829,
+		"totalByteWeight": 140027
 	},
 	"failingAudits": []
 }

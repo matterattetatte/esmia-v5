@@ -1,6 +1,6 @@
 {
 	"url": "http://localhost:4173/",
-	"fetchedAt": "2026-11-06T21:23:47.931Z",
+	"fetchedAt": "2026-11-07T06:04:17.821Z",
 	"lighthouseVersion": "12.8.2",
 	"chromeVersion": "Chrome/156.0.0.0",
 	"formFactor": "mobile",
@@ -32,12 +32,12 @@
 		}
 	],
 	"metrics": {
-		"fcpMs": 834,
-		"lcpMs": 1444,
+		"fcpMs": 816,
+		"lcpMs": 1442,
 		"tbtMs": 0,
 		"cls": 0,
-		"siMs": 834,
-		"totalByteWeight": 110466
+		"siMs": 816,
+		"totalByteWeight": 110836
 	},
 	"failingAudits": []
 }

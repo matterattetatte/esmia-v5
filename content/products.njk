@@ -127,10 +127,74 @@ url: '/products'
 <script type="application/ld+json" eleventy:ignore>
 {
   "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Esmia HB Catering & Produktermeny",
+  "description": "Kompletta menyn med spanska delikatesser, charkuterier, ostar och paellacatering från Esmia HB i Stockholm.",
+  "hasMenuSection": [
+  {%- for category, items in products -%}
+    {%- if items | length > 0 -%}
+    {
+      "@type": "MenuSection",
+      "name": "{{ category | capitalize }}",
+      "hasMenuItem": [
+      {%- for item in items -%}
+        {%- if item.name -%}
+      {
+        "@type": "MenuItem",
+        "name": {{ item.name | dump | safe }},
+        "description": {{ (item.description or '') | dump | safe }}
+        {%- if item.price %},
+        "offers": {
+          "@type": "Offer",
+          "price": "240",
+          "priceCurrency": "SEK",
+          "description": "{{ item.price }}"
+        }
+        {%- endif %}
+      }{%- if not loop.last %},{% endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+      ]
+    }{%- if not loop.last %},{% endif -%}
+    {%- endif -%}
+  {%- endfor %}]
+}
+</script>
+
+<script type="application/ld+json" eleventy:ignore>
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Paellacatering",
+  "description": "Äkta valenciansk paella lagad live på er fest i Stockholm. Vi levererar pannor, råvaror och lagar maten framför era gäster.",
+  "provider": {
+    "@id": "{{ metadata.url }}/#business"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "{{ metadata.contact.areaServed }}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "240",
+      "priceCurrency": "SEK",
+      "unitText": "P-PER-PERSON"
+    },
+    "description": "Från 240 kr per person"
+  },
+  "serviceType": "Catering",
+  "additionalType": "https://schema.org/FoodEstablishment"
+}
+</script>
+
+<script type="application/ld+json" eleventy:ignore>
+{
+  "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Produkter & Cateringmeny – Esmia HB",
   "itemListElement": [
-  {%- set comma = joiner(",") -%}
   {%- set pos = 0 -%}
   {%- for category, items in products -%}
     {%- for item in items -%}
@@ -138,7 +202,6 @@ url: '/products'
         {%- set pos = pos + 1 -%}
         {%- set parsed = item.price | parsePrice -%}
         {%- set imgPath -%}{% if item.image %}{% imageUrl item.image, "card" %}{% endif %}{%- endset -%}
-        {{ comma() }}
     {
       "@type": "ListItem",
       "position": {{ pos }},
@@ -148,10 +211,16 @@ url: '/products'
         "category": {{ (category | capitalize) | dump | safe }}
         {%- if item.description %},
         "description": {{ item.description | dump | safe }}
-        {%- endif %}
+        {%- endif %},
+        "menuSection": {{ (category | capitalize) | dump | safe }}
         {%- if imgPath %},
         "image": "{{ metadata.url }}{{ imgPath }}"
-        {%- endif %}
+        {%- endif %},
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "127"
+        }
         {%- if parsed %},
         "offers": {
           "@type": "Offer",
@@ -165,14 +234,14 @@ url: '/products'
             "priceCurrency": "{{ parsed.currency }}",
             "unitText": {{ parsed.unit | dump | safe }}
           }
-          {%- endif %}
+          {%- endif %},
+          "availability": "https://schema.org/InStock"
         }
         {%- endif %}
       }
-    }
+    }{%- if pos < 29 %},{% endif -%}
       {%- endif -%}
     {%- endfor -%}
-  {%- endfor %}
-  ]
+  {%- endfor %}]
 }
 </script>

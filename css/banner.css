@@ -5,9 +5,17 @@
   overflow: hidden;
   color: white;
   text-align: center;
+  /* The hero is a <section>, so the global `section { padding: 3rem 5rem }`
+     would inset the photo by 8rem and leave a phone with ~130px of usable
+     width. The hero manages its own padding on .hero-content. */
+  padding: 0;
 }
 
-.hero-image {
+/* The global `img[width][height] { height: auto }` rule carries two attribute
+   selectors, so it scores (0,2,1) and beats a plain class pair. Matching the
+   element as well gives this (0,2,2) and lets the photo fill the banner instead
+   of collapsing to its own aspect ratio. */
+.hero-banner picture > img.hero-image {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   width: 100%;
@@ -18,26 +26,53 @@
      paint of a 1024px photo into a 100vh box lands on the main thread after
      first paint, which is what shows up as blocking time. */
   transform: translateZ(0);
+  /* Subtle slow zoom for visual interest */
+  animation: heroZoom 20s ease-in-out infinite alternate;
 }
 
+@keyframes heroZoom {
+  from { transform: translateZ(0) scale(1); }
+  to { transform: translateZ(0) scale(1.05); }
+}
+
+/* A dark scrim that keeps the headline legible without flattening the photo:
+   warm carmesí glow at the bottom, heavier where the buttons sit. */
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: -5px;
-  background: linear-gradient(to top, rgba(193,18,31,0.65) 0%, rgba(0,0,0,0.75) 100%);
+  background:
+    radial-gradient(70% 55% at 50% 105%, rgba(140, 18, 32, 0.55), rgba(140, 18, 32, 0) 70%),
+    linear-gradient(to top, rgba(9, 17, 27, 0.94) 0%, rgba(9, 17, 27, 0.55) 55%, rgba(9, 17, 27, 0.72) 100%);
   z-index: 2;
 }
 
-/* Spanish flags decoration */
+/* Spanish flags decoration with subtle float animation */
 .flag-left, .flag-right {
   position: absolute;
   top: 20px;
-  width: 80px;
-  height: 50px;
+  width: 90px;
+  height: 56px;
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6"><rect fill="%23AA151B" width="9" height="6"/><rect fill="%23F1BF00" y="1.5" width="9" height="3"/></svg>') center/contain no-repeat;
   z-index: 4;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  animation: flagWave 4s ease-in-out infinite;
 }
-.flag-left  { left: 20px; transform: rotate(-15deg); }
-.flag-right { right: 20px; transform: rotate(15deg); }
+.flag-left  { left: 20px; transform: rotate(-12deg); animation-delay: 0s; }
+.flag-right { right: 20px; transform: rotate(12deg); animation-delay: 0.5s; }
+
+@keyframes flagWave {
+  0%, 100% { transform: rotate(-12deg) translateY(0); }
+  50% { transform: rotate(-15deg) translateY(-5px); }
+}
+
+.flag-right {
+  animation-name: flagWaveRight;
+}
+
+@keyframes flagWaveRight {
+  0%, 100% { transform: rotate(12deg) translateY(0); }
+  50% { transform: rotate(15deg) translateY(-5px); }
+}
 
 .hero-content {
   position: relative;
@@ -47,34 +82,48 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
+/* Fluid so the headline never has to be clipped or hyphenated on a phone:
+   "Paella & Tapas" used to break as "Ta-pas" and hang off the left edge. */
 .hero-text h1 {
-  font-family: var(--font-family);
-  font-size: 6rem;
-  line-height: 1;
+  font-family: var(--font-family-heading);
+  font-size: clamp(2.5rem, 8.5vw, 6rem);
+  line-height: 1.05;
   margin: 0;
-  color: #FFD60A;
+  color: var(--color-primary);
+  hyphens: none;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  letter-spacing: -0.02em;
 }
 
 .tagline {
-  font-size: 2.5rem;
+  font-size: clamp(1.15rem, 3.2vw, 2.5rem);
   font-weight: 700;
   margin: 0.5rem 0 1rem;
   color: white;
+  hyphens: none;
+  text-wrap: balance;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.4);
 }
 
 .hero-price-pill {
   display: inline-block;
-  background: rgba(26, 37, 47, 0.9);
-  color: #FFD60A;
-  border: 1px solid #FFD60A;
+  background: rgba(11, 22, 34, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--color-primary);
+  border: 1px solid rgba(245, 194, 66, 0.4);
   border-radius: 999px;
-  padding: 0.45rem 1.25rem;
+  padding: 0.5rem 1.5rem;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: clamp(0.9rem, 2.4vw, 1.05rem);
   margin: 0 0 1.75rem;
+  max-width: 100%;
+  text-wrap: balance;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .hero-cta-group {
@@ -85,40 +134,74 @@
   align-items: center;
 }
 
-/* #8A0018 on #FFD60A = 6.46:1 (on hover #ffe066 = 6.95:1) */
+/* Ink on saffron = 11.19:1 (13.39:1 on the lighter hover gold) */
 .btn-reserva {
-  background: #FFD60A;
-  color: #8A0018 !important;
-  font-weight: bold;
-  font-size: 1.3rem;
-  padding: 0.95rem 2.25rem;
+  background: var(--color-primary);
+  color: var(--color-ink) !important;
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 1rem 2.5rem;
   border-radius: 50px;
   text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  transition: all 0.3s;
+  box-shadow: 0 8px 25px rgba(245, 194, 66, 0.3), 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-family: var(--font-family-heading);
+  letter-spacing: 0.02em;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle shine effect on button */
+.btn-reserva::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-reserva:hover::before {
+  left: 100%;
 }
 
 .btn-reserva:visited {
-  color: #8A0018 !important;
+  color: var(--color-ink) !important;
 }
 
 .btn-reserva:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
-  background: #ffe066;
+  box-shadow: 0 12px 35px rgba(245, 194, 66, 0.4), 0 6px 15px rgba(0,0,0,0.4);
+  background: var(--color-primary-hover);
 }
 
-/* #FFFFFF on #1A252F = 15.3:1 */
+/* Pulsing effect for primary CTA to draw attention */
+@keyframes pulse {
+  0% { box-shadow: 0 8px 25px rgba(245, 194, 66, 0.3), 0 0 0 0 rgba(245, 194, 66, 0.4); }
+  70% { box-shadow: 0 8px 25px rgba(245, 194, 66, 0.3), 0 0 0 15px rgba(245, 194, 66, 0); }
+  100% { box-shadow: 0 8px 25px rgba(245, 194, 66, 0.3), 0 0 0 0 rgba(245, 194, 66, 0); }
+}
+
+.btn-reserva {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* #FFFFFF on the page navy = 19.0:1 */
 .btn-hero-outline {
-  background: #1A252F;
+  background: rgba(11, 22, 34, 0.8);
+  backdrop-filter: blur(4px);
   color: #FFFFFF !important;
-  border: 2px solid #FFD60A;
-  font-weight: bold;
-  font-size: 1.15rem;
+  border: 2px solid var(--color-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
   padding: 0.9rem 2rem;
   border-radius: 50px;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-family: var(--font-family-heading);
+  letter-spacing: 0.02em;
 }
 
 .btn-hero-outline:visited {
@@ -127,19 +210,36 @@
 
 .btn-hero-outline:hover,
 .btn-hero-outline:focus-visible {
-  background: #2E4057;
-  outline: 3px solid #FFD60A;
+  background: var(--color-surface);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  outline: 3px solid var(--color-primary);
   outline-offset: 2px;
 }
 
 /* ==== WELCOME SECTION ==== */
 .welcome-section {
-  background: #9E0E19; /* #FFFFFF on #9E0E19 = 7.45:1, #FFD60A on #9E0E19 = 5.48:1 */
+  background: linear-gradient(135deg, var(--color-crimson) 0%, #6B0E18 100%);
   color: white;
-  padding: 80px 20px;
+  padding: 70px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-.container { max-width: 1200px; margin: 0 auto; }
+/* Subtle pattern overlay for depth */
+.welcome-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.03"><path d="M0 0 L100 100 M100 0 L0 100" stroke="%23F5C242" stroke-width="0.5"/></svg>');
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.container { max-width: 1200px; margin: 0 auto; position: relative; }
 
 .welcome-content {
   display: flex;
@@ -154,117 +254,398 @@
 }
 
 .welcome-text h2 {
-  font-family: var(--font-family);
-  font-size: 3.5rem;
+  font-family: var(--font-family-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 1rem;
-  color: #FFD60A;
+  color: var(--color-primary);
+  line-height: 1.15;
+}
+
+.welcome-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 1.5rem;
+}
+
+.welcome-image {
+  flex: 0 0 350px;
 }
 
 .welcome-image img {
   max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  border: 3px solid rgba(245, 194, 66, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.welcome-image img:hover {
+  transform: scale(1.02) rotate(1deg);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
 .btn-secondary {
   display: inline-block;
   margin-top: 1.5rem;
-  background: #FFD60A;
-  color: #8A0018 !important;
-  padding: 0.8rem 2rem;
+  background: var(--color-primary);
+  color: var(--color-ink) !important;
+  padding: 0.85rem 2rem;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  font-family: var(--font-family-heading);
 }
 
 .btn-secondary:visited {
-  color: #8A0018 !important;
+  color: var(--color-ink) !important;
 }
 
 .btn-secondary:hover {
-  background: #ffe066;
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 194, 66, 0.3);
 }
 
 /* ==== OCCASIONS & HOW IT WORKS & FAQ ==== */
 .occasions-section,
 .steps-section,
 .faq-section {
-  padding: 4rem 1.5rem;
+  padding: 5rem 5rem;
 }
 
 .section-lead {
   max-width: 720px;
   font-size: 1.1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   color: var(--color-text);
+  line-height: 1.6;
 }
 
 .occasion-grid,
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .occasion-card,
 .step-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card shine effect on hover */
+.occasion-card::before,
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(245, 194, 66, 0.05), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.occasion-card:hover::before,
+.step-card:hover::before {
+  left: 100%;
+}
+
+.occasion-card:hover,
+.step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  border-color: rgba(245, 194, 66, 0.3);
 }
 
 .occasion-card h3,
 .step-card h3 {
-  color: #FFD60A;
+  color: var(--color-primary);
   margin-top: 0;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+  transition: color 0.2s ease;
+}
+
+.occasion-card:hover h3,
+.step-card:hover h3 {
+  color: var(--color-primary-hover);
+}
+
+.occasion-card p,
+.step-card p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.occasion-card a,
+.step-card a {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245, 194, 66, 0.3);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.occasion-card a:hover,
+.step-card a:hover {
+  border-bottom-color: var(--color-primary);
 }
 
 .step-number {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
-  background: #FFD60A;
-  color: #1A252F;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+  color: var(--color-ink);
   font-weight: 800;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(245, 194, 66, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step-card:hover .step-number {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(245, 194, 66, 0.4);
 }
 
 .faq-list {
   display: grid;
   gap: 1rem;
   max-width: 850px;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .faq-item {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .faq-item summary {
   cursor: pointer;
   font-weight: 700;
-  color: #FFD60A;
+  color: var(--color-primary);
   font-size: 1.1rem;
   min-height: 32px;
+  list-style: none;
+  position: relative;
+  padding-right: 2rem;
+  transition: color 0.2s ease;
+}
+
+/* Custom marker for FAQ items */
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(245, 194, 66, 0.15);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  transition: transform 0.3s ease, background 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+  background: var(--color-primary);
+  color: var(--color-ink);
+}
+
+.faq-item summary:hover {
+  color: var(--color-primary-hover);
 }
 
 .faq-item summary:focus-visible {
-  outline: 3px solid #FFD60A;
+  outline: 3px solid var(--color-primary);
   outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .faq-item p {
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   color: var(--color-text);
+  line-height: 1.7;
+}
+
+.faq-item strong {
+  color: var(--color-primary);
+}
+
+/* ==== SEASONAL SECTION ==== */
+.seasonal-section {
+  padding: 5rem 5rem;
+  background: var(--color-surface);
+}
+
+.seasonal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.season-card {
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.season-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.season-card h2 {
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  margin: 0.75rem 0 1rem;
+  line-height: 1.2;
+}
+
+.season-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.season-card.summer {
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFF3CD 100%);
+  border: 1px solid rgba(245, 194, 66, 0.4);
+  color: #3D2E0A;
+}
+
+.season-card.summer .season-badge {
+  background: #F5C242;
+  color: #3D2E0A;
+}
+
+.season-card.summer h2 {
+  color: #3D2E0A;
+}
+
+.season-card.summer .season-events {
+  color: #5A4A1A;
+}
+
+.season-card.summer .btn-season {
+  background: #F5C242;
+  color: #3D2E0A;
+  margin-top: 1.5rem;
+}
+
+.season-card.summer .btn-season:hover {
+  background: #E5B030;
+}
+
+.season-card.winter {
+  background: linear-gradient(135deg, #1E2128 0%, #2A2F38 100%);
+  color: #F0EDE8;
+}
+
+.season-card.winter .season-badge {
+  background: #F5C242;
+  color: #1E2128;
+}
+
+.season-card.winter h2 {
+  color: #FFFFFF;
+}
+
+.season-card.winter .season-events {
+  color: rgba(240, 237, 232, 0.8);
+}
+
+.season-card.winter .btn-season {
+  background: #F5C242;
+  color: #1E2128;
+  margin-top: 1.5rem;
+}
+
+.season-card.winter .btn-season:hover {
+  background: #E5B030;
+}
+
+.season-events {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1.5rem;
+}
+
+.season-events li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.season-events li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  top: 0.1em;
+}
+
+.season-events span {
+  font-weight: 600;
+}
+
+.btn-season {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  transition: background 0.2s, transform 0.2s;
+  font-family: var(--font-family-heading);
+  font-size: 1rem;
+}
+
+.btn-season:hover {
+  transform: translateY(-1px);
+}
+
+.btn-season--alt {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-season--alt:hover {
+  background: var(--color-primary);
+  color: var(--color-ink);
 }
 
 /* The hero fills the viewport, so everything below it starts off-screen. Let
@@ -275,14 +656,54 @@
 .occasions-section,
 .steps-section,
 .faq-section,
-.follow-us {
+.follow-us,
+.seasonal-section {
   content-visibility: auto;
   contain-intrinsic-size: auto 640px;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .hero-text h1 { font-size: 4rem; }
-  .tagline { font-size: 1.8rem; }
   .welcome-content { flex-direction: column; text-align: center; }
+  .welcome-image { flex: 0 0 250px; margin: 0 auto; }
+  .hero-cta-group { gap: 0.75rem; }
+  .occasions-section,
+  .steps-section,
+  .faq-section {
+    padding: 4rem 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-price-pill {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+  
+  .btn-reserva,
+  .btn-hero-outline {
+    font-size: 1rem;
+    padding: 0.8rem 1.75rem;
+  }
+  
+  .occasion-card,
+  .step-card {
+    padding: 1.5rem;
+  }
+
+  .seasonal-section {
+    padding: 4rem 2rem;
+  }
+
+  .seasonal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .season-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .season-events {
+    grid-template-columns: 1fr;
+  }
 }

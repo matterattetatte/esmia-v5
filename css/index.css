@@ -1,30 +1,40 @@
 :root {
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-family-heading: 'Playfair Display', Georgia, serif;
   --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 
-  /* Accent. One gold for the whole site: it is the value headings and buttons
-     already use, and the only one clearing 4.5:1 on both backgrounds. */
-  --color-primary: #FFD60A;           /* 11.02:1 on #1A252F, 7.49:1 on #2E4057 */
+  /* Saffron gold: the accent for headings, links and buttons. Warmer and less
+     citric than a pure yellow, and it still clears 4.5:1 on every surface. */
+  --color-primary: #F5C242;           /* 11.00:1 on #0B1622, 9.70:1 on #142233 */
+  --color-primary-hover: #FFD769;     /* Lifted gold for hover: 13.17:1 on #0B1622 */
 
-  /* Text Colors (adjusted for Spanish warmth) */
-  --color-text: #F4E4BC;              /* Warm off-white: 12.19:1 on #1A252F */
-  --color-text-muted: #D2A986;        /* Warm terracotta: 4.91:1 on #2E4057 (was 4.15:1) */
-  --text-color-link: #FFD60A;         /* Gold link: 10.61:1 on #1A252F */
-  --text-color-link-visited: #F4C430; /* Visited gold: 9.21:1 on #1A252F */
+  /* Text Colors */
+  --color-text: #F5EFE3;              /* Warm ivory: 15.92:1 on #0B1622 */
+  --color-text-muted: #A9B6C7;        /* Cool slate: 8.86:1 on #0B1622, 7.81:1 on surface */
+  --text-color-link: #F5C242;         /* Saffron link, same as --color-primary */
+  --text-color-link-visited: #D9A73C; /* Dimmed saffron: 8.28:1 on #0B1622 */
 
-
-  --color-bg-rgb: 26, 37, 47;         /* same colour as --color-bg, for rgba() */
-  /* Background & Surface Colors (Spanish night sky with Valencian influence) */
-  --color-bg: #1A252F;                /* Dark blue-gray, evoking a Spanish night */
-  --color-surface: #2E4057;           /* Deeper blue, inspired by Valencian sea */
+  --color-bg-rgb: 11, 22, 34;         /* same colour as --color-bg, for rgba() */
+  /* Background & Surface Colors: deep Spanish night sky. */
+  --color-bg: #0B1622;                /* Near-black navy, so the hero photo carries the page */
+  --color-surface: #142233;           /* Card / panel blue, one step up from the page */
+  --color-surface-hover: #1C3150;     /* Hover state for tabs and flat controls */
 
   /* Icon / Element Colors */
-  --color-icon: #F4E4BC;              /* Warm off-white for icons */
+  --color-icon: #F5EFE3;              /* Ivory icons match body copy */
 
-  /* Borders & Shadows. Every card is drawn on --color-surface, where the old
-     #8B4513 measured 1.49:1 against a 3:1 minimum, so card edges vanished. */
-  --color-border: #B08050;            /* 3.04:1 on #2E4057, 4.48:1 on #1A252F */
-  --color-shadow: rgba(139, 69, 19, 0.25); /* Soft shadow from border color */
+  /* Carmesí red for the banded section and the hero wash. */
+  --color-crimson: #8C1220;           /* White 9.45:1, saffron 5.70:1 */
+  --color-ink: #1A1206;               /* Text on top of gold: 11.19:1 */
+
+  /* Borders & Shadows. Every card is drawn on --color-surface, so the border
+     has to clear 3:1 against that panel, not just against the page. */
+  --color-border: #4C7095;            /* 3.11:1 on #142233, 3.52:1 on #0B1622 */
+  --color-shadow: rgba(3, 9, 16, 0.45); /* Cool shadow, one tone under the page */
+
+  /* Horizontal gutter for page content. The hero cancels it to go full-bleed,
+     so the breakpoints below only have to change this one value. */
+  --main-pad: 8rem;
 }
 
 /* Global stylesheet */
@@ -89,15 +99,16 @@ p:last-child {
 	margin-bottom: 0;
 }
 p {
-	line-height: 1.5;
+	line-height: 1.6;
 }
 
 li {
-	line-height: 1.5;
+	line-height: 1.6;
 }
 
 a[href] {
 	color: var(--text-color-link);
+	transition: color 0.2s ease;
 }
 a[href]:visited {
 	color: var(--text-color-link-visited);
@@ -110,7 +121,7 @@ main :first-child {
 #skip-link {
 	text-decoration: none;
 	background: var(--color-primary);
-	color: #1A252F;
+	color: var(--color-ink);
 	font-weight: 700;
 	padding: 0.75rem 1.25rem;
 	border: 2px solid #FFFFFF;
@@ -140,14 +151,19 @@ main :first-child {
 	justify-content: space-between;
 	gap: .5em 1em;
 	list-style: "";
-	border-top: 1px dashed var(--color-text-muted);
-	padding: 1em 0;
+	border-top: 1px solid rgba(245, 194, 66, 0.3);
+	padding: 1.5em 0;
 }
 .links-nextprev > * {
 	flex-grow: 1;
 }
 .links-nextprev-next {
 	text-align: right;
+}
+
+.links-nextprev a {
+	color: var(--color-primary);
+	font-weight: 600;
 }
 
 table {
@@ -180,38 +196,42 @@ pre:not([class*="language-"]) {
 }
 code {
 	word-break: break-all;
+	background: var(--color-surface);
+	padding: 0.1em 0.4em;
+	border-radius: 4px;
+	font-size: 0.9em;
 }
 
 main {
 	margin-top: 6rem;
 	margin-bottom: 2rem;
-	padding: 0 8rem;
+	padding: 0 var(--main-pad);
 	hyphens: auto;
 	text-align: left;
 }
 
 @media (max-width: 1024px) {
-	main {
-		padding: 0 4rem;
+	:root {
+		--main-pad: 4rem;
 	}
 }
 
 @media (max-width: 768px) {
-	main {
-		padding: 0 2rem;
+	:root {
+		--main-pad: 2rem;
 	}
 }
 
 @media (max-width: 480px) {
-	main {
-		padding: 0 1rem;
+	:root {
+		--main-pad: 1rem;
 	}
 }
 
 /* Header */
 header {
   color: var(--color-primary);
-	padding: 2rem 8rem;
+	padding: 1.5rem 5rem;
     position: fixed;
 	top: 0;
 	left: 0;
@@ -220,16 +240,28 @@ header {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	z-index: 10;
+	z-index: 100;
 	width: 100%;
 
-  background: transparent; 
-  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
+  background: rgba(11, 22, 34, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(245, 194, 66, 0.1);
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out, padding 0.3s ease-in-out; /* Smooth transition */
 }
+
+/* Brand mark with serif font */
 .home-link {
 	flex-grow: 1;
-	font-size: 1em; /* 16px /16 */
-	font-weight: 700;
+	font-size: 1.25rem;
+	font-weight: 900;
+	font-family: var(--font-family-heading);
+	color: var(--color-primary);
+	letter-spacing: 0.02em;
+	transition: color 0.3s ease, transform 0.3s ease;
+}
+.home-link:hover {
+	color: var(--color-primary-hover);
 }
 .home-link:link:not(:hover) {
 	text-decoration: none;
@@ -242,55 +274,84 @@ header {
 	padding: 0;
 	margin: 0;
 	list-style: none;
-	text-transform: uppercase;
 }
 
 
 /* Background style when scrolling */
 header.scrolled {
-  background: var(--color-bg);
-  box-shadow: 0 2px 4px var(--color-primary);
+  background: rgba(11, 22, 34, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border-bottom-color: rgba(245, 194, 66, 0.2);
 }
 
 .nav-item {
 	display: inline-block;
 	position: relative; /* for pseudo-element */
+	margin: 0 0.25rem;
 }
 
 .nav-item a[href] {
 	text-decoration: none;
-  	color: var(--color-primary);
+ 	color: var(--color-primary);
 	position: relative;
+	transition: color 0.2s ease;
+	font-weight: 600;
 }
 
-/* Underline effect */
+.nav-item a[href]:hover {
+	color: var(--color-primary-hover);
+}
+
+/* Underline effect - animated sliding indicator */
 .nav-item a[href]::after {
 	content: '';
 	position: absolute;
-	left: 0;
-	bottom: -12px; /* distance from text */
-	width: 100%;
-	height: 4px; /* thickness of the line */
-	background-color: var(--color-primary);
+	left: 0.5rem;
+	right: 0.5rem;
+	bottom: -4px; /* distance from text */
+	width: auto;
+	height: 2px; /* thickness of the line */
+	background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
 	opacity: 0; /* hidden by default */
-	transform: opacity(0);
-	transform-origin: center;
+	transform: scaleX(0);
+	transform-origin: left;
 	transition: opacity 0.3s ease, transform 0.3s ease;
+	border-radius: 1px;
 }
 
 .nav-item a[href]:hover::after,
 .nav-item a[href].active::after {
 	opacity: 1;
-	transform: opacity(0);
+	transform: scaleX(1);
 }
 /* Active page */
 .nav-item a[href][aria-current="page"]::after {
 	opacity: 1;
+	transform: scaleX(1);
+}
+
+/* Nav item spacing for visual separation */
+.nav-item:first-child {
+	margin-left: 0;
+}
+
+/* Fancy decorative divider after nav on larger screens */
+@media (min-width: 769px) {
+	.nav::after {
+		content: '';
+		display: inline-block;
+		width: 1px;
+		height: 1.2em;
+		background: rgba(245, 194, 66, 0.3);
+		margin: 0 0.75rem;
+	}
+	.nav:last-child::after {
+		display: none;
+	}
 }
 
 .follow-us {
-	min-width: 50%;
-	padding: 1rem 8rem;
+	padding: 1rem 5rem;
 }
 
 /* Posts list */
@@ -303,7 +364,16 @@ header.scrolled {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
-	margin-bottom: 1em;
+	margin-bottom: 1.25em;
+	padding: 1rem;
+	background: var(--color-surface);
+	border-radius: 8px;
+	border: 1px solid var(--color-border);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.postlist-item:hover {
+	transform: translateX(4px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .postlist-date,
@@ -313,14 +383,19 @@ header.scrolled {
 }
 .postlist-date {
 	word-spacing: -0.5px;
+	min-width: 70px;
 }
 .postlist-link {
 	font-size: 1.1875em; /* 19px /16 */
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
 	text-underline-position: from-font;
-	text-underline-offset: 0;
+	text-underline-offset: 3px;
 	text-decoration-thickness: 1px;
+	transition: color 0.2s ease;
+}
+.postlist-link:hover {
+	color: var(--color-primary-hover);
 }
 .postlist-item-active .postlist-link {
 	font-weight: bold;
@@ -333,6 +408,11 @@ header.scrolled {
 	justify-content: center;
 	text-transform: capitalize;
 	font-style: italic;
+	background: rgba(245, 194, 66, 0.15);
+	color: var(--color-primary);
+	padding: 0.15em 0.6em;
+	border-radius: 4px;
+	font-size: 0.85em;
 }
 .postlist-item > .post-tag {
 	align-self: center;
@@ -349,6 +429,7 @@ header.scrolled {
 }
 .post-metadata time {
 	margin-right: 1em;
+	color: var(--color-text-muted);
 }
 
 
@@ -369,8 +450,9 @@ header.scrolled {
 footer a:focus-visible,
 .btn-reserva:focus-visible,
 .btn-secondary:focus-visible {
-	outline: 3px solid #FFD60A;
+	outline: 3px solid var(--color-primary);
 	outline-offset: 3px;
+	border-radius: 4px;
 }
 
 .nav-toggle {
@@ -380,22 +462,30 @@ footer a:focus-visible,
   display: none;
   align-items: center;
   justify-content: center;
-  background: none;
-  border: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-toggle:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--color-primary);
 }
 
 .nav-toggle:focus-visible {
-  outline: 3px solid #FFD60A;
+  outline: 3px solid var(--color-primary);
   outline-offset: 2px;
 }
 
 .nav-toggle .hamburger {
   display: block;
-  width: 28px;
-  height: 3px;
-  background: #FFD60A;
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
   position: relative;
+  transition: background 0.3s;
 }
 
 .nav-toggle .hamburger::before,
@@ -403,121 +493,258 @@ footer a:focus-visible,
   content: '';
   position: absolute;
   left: 0;
-  width: 28px;
-  height: 3px;
-  background: #FFD60A;
-  transition: 0.3s;
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-toggle .hamburger::before {
-  top: -8px;
+  top: -7px;
 }
 
 .nav-toggle .hamburger::after {
-  top: 8px;
+  top: 7px;
+}
+
+/* Hamburger animation when menu is open */
+.nav-toggle[aria-expanded="true"] .hamburger {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger::after {
+  transform: rotate(-45deg);
+  top: 0;
 }
 
 .flex {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 section {
-	padding: 3rem 8rem;
+	padding: 4rem 5rem;
 }
 
 [aria-hidden="true"] {
   visibility: hidden;
 }
 
-h1, h2 {
+/* Typography: headings use the elegant serif font */
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-family-heading);
 	color: var(--color-primary);
+	line-height: 1.2;
+	font-weight: 700;
+	letter-spacing: -0.01em;
 }
 
+h1 {
+	font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+	font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+	margin-bottom: 1rem;
+}
+
+h3 {
+	font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+}
+
+/* Body text improvements */
+main p {
+	margin-bottom: 1.25rem;
+	font-size: 1.05rem;
+	color: var(--color-text);
+}
+
+main p:last-child {
+	margin-bottom: 0;
+}
+
+/* Link styling within content */
+main a[href] {
+	color: var(--color-primary);
+	text-decoration: none;
+	border-bottom: 1px solid rgba(245, 194, 66, 0.4);
+	transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+main a[href]:hover {
+	border-bottom-color: var(--color-primary);
+	color: var(--color-primary-hover);
+}
+
+main a[href]:visited {
+	color: var(--text-color-link-visited);
+}
 
 footer {
- padding: 0.5rem 10%;
-  background: transparent;
+ padding: 2rem 5rem;
+  background: rgba(11, 22, 34, 0.95);
+  border-top: 1px solid rgba(245, 194, 66, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-}
-
-
-footer.scrolled {
-  background: rgba(var(--color-bg-rgb), 0.3);
-  box-shadow: 0 -2px 4px var(--color-primary);
+  gap: 0.75rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
 }
 
 footer a {
-	text-decoration: underline;
-	padding: 0.5rem 0.4rem;
-	display: inline-block;
-	min-height: 44px;
+	text-decoration: none;
+	color: var(--color-text-muted);
+	padding: 0.25rem 0.4rem;
+	transition: color 0.2s ease;
 }
 
-/* Tablet screens */
+footer a:hover {
+	color: var(--color-primary);
+}
+
+footer a:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+/* Footer typography */
+.footer-nap {
+	color: var(--color-text-muted);
+	font-size: 0.9rem;
+}
+
+footer p:last-child {
+	color: var(--color-text-muted);
+	font-size: 0.85rem;
+}
+
+/* Responsive spacing */
 @media (max-width: 1024px) {
-
+	header {
+		padding: 1rem 3rem;
+	}
+	footer {
+		padding: 2rem 3rem;
+	}
+	section {
+		padding: 3rem 3rem;
+	}
 }
 
-/* Small tablet screens */
 @media (max-width: 768px) {
 	header {
-		padding: 1rem 1rem;
+		padding: 0.75rem 1rem;
+	}
+
+	.flex {
+		flex-wrap: wrap;
+	}
+	
+	.home-link {
+		font-size: 1.1rem;
 	}
 
 	.nav {
 		display: none;
 		flex-direction: column;
 		width: 100%;
+		gap: 0;
+	}
+
+	/* Remove decorative divider on mobile */
+	.nav::after {
+		display: none;
 	}
 
 	.nav-item {
 		margin: 0;
 		text-align: center;
+		border-bottom: 1px solid rgba(245, 194, 66, 0.1);
+	}
+	
+	.nav-item:last-child {
+		border-bottom: none;
 	}
 
 	.nav-item a {
-		padding: 1rem;
+		padding: 0.875rem 1rem;
 		display: flex;
 		justify-content: center;
 		width: 100%;
+		color: var(--color-text);
+	}
+	
+	.nav-item a:hover {
+		color: var(--color-primary);
 	}
 
 	.nav-toggle {
 		display: inline-flex;
+		position: relative;
+		z-index: 101;
 	}
 
 	.nav.open {
 		display: flex;
 		position: absolute;
 		width: 100vw;
-		min-height: 30vh;
+		min-height: 60vh;
 		left: 0;
-		top: 0;
-		padding-top: 5rem;
+		top: 100%;
+		padding-top: 1rem;
 		background: var(--color-bg);
-		box-shadow: 0 2px 4px var(--color-shadow);
-		animation: slideDown 0.2s ease-in-out;
+		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+		animation: slideDown 0.3s ease-out;
 	}
 
-	#mission .flex {
-		flex-wrap: wrap;
+	/* Mobile nav item styling */
+	.nav.open .nav-item a {
+		color: var(--color-text);
+		padding: 0.875rem 1.5rem;
+	}
+	
+	.nav.open .nav-item a:hover {
+		color: var(--color-primary);
 	}
 }
 
 /* Mobile screens */
 @media (max-width: 480px) {
-
+	header {
+		padding: 0.5rem 0.75rem;
+	}
+	
+	footer {
+		padding: 1.5rem 1rem;
+	}
+	
+	section {
+		padding: 2rem 1rem;
+	}
+	
+	.home-link {
+		font-size: 1rem;
+	}
+	
+	/* Adjust nav on very small screens */
+	.nav.open .nav-item a {
+		padding: 0.75rem 1rem;
+		font-size: 0.95rem;
+	}
 }
 
 
 @keyframes slideDown {
   from {
-    transform: translateY(-5%); /* Start from above */
+    transform: translateY(-10px); /* Start from above */
     opacity: 0; /* Fully transparent */
   }
   to {
@@ -526,3 +753,36 @@ footer a {
   }
 }
 
+/* Entrance animation for hero elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation delays for children */
+.hero-content > * {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+.hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+.hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

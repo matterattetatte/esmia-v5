@@ -5,8 +5,7 @@ The static site for Esmia HB (Spanish delicatessen and paella catering), built w
 ## Deployment
 
 **Firebase Hosting is the single deploy target.** `firebase.json` is the only hosting config in the
-repository — `netlify.toml` and `vercel.json` were deleted so that the environment being audited is
-the environment that ships.
+repository.
 
 | | |
 |---|---|
@@ -20,37 +19,42 @@ the environment that ships.
 | Config | [`firebase.json`](firebase.json) · [`lighthouserc.json`](lighthouserc.json) · [`playwright.config.js`](playwright.config.js) |
 | Scorecards | [`docs/baselines/home.json`](docs/baselines/home.json) · [`docs/baselines/products.json`](docs/baselines/products.json) |
 
-### Rollback
+## Features
 
-Two ways back, fastest first:
+- **Zero-JavaScript static output** — content is pre-rendered HTML, no client-side JS required
+- **Performance-focused** — four-hundos Lighthouse score target, 0 CLS, minimal TBT
+- **Accessible** — skip link, keyboard-navigable tabs, focus-visible states, semantic HTML
+- **Dark Spanish-themed design** — saffron gold accents, crimson red highlights, deep navy background
+- **Fluid typography** — clamp-based scaling for headlines that never clip on mobile
+- **Responsive** — mobile-first with hamburger menu, grid layouts that adapt to viewport
 
-```bash
-# 1. Instant: restore the previous Firebase release (no build, ~seconds)
-firebase hosting:rollback
+### SEO & AI Search
 
-# 2. From git: the annotated tag marks the last state before the static site took over
-#    the catch-all rewrite. Check it out, build, deploy.
-git checkout spa-pre-cutover
-npm ci && npm run deploy
-```
+- **Structured data** (JSON-LD):
+  - `FoodEstablishment` / `LocalBusiness` — business info, contact, founding date, geo coordinates
+  - `BreadcrumbList` — on all non-home pages
+  - `FAQPage` — on homepage
+  - `ItemList` / `Product` + `Offer` — on products page
+  - `Menu` — on products page (structured menu data for AI search)
+  - `Service` — catering services listed
+- **llms.txt** — plain-text site summary for AI agents at `/llms.txt`
+- **Semantic HTML** — proper heading hierarchy, landmark regions, aria attributes
+- **Unique titles & descriptions** — per-page meta tags
+- **Canonical URLs** — self-referencing on every page
+- ** robots.txt** — with sitemap reference and AI crawler policy
 
-The React SPA that `esmia.se` served before this build **is not in this repository**, so the tag
-marks the repo's pre-cutover state rather than the SPA source. For the SPA itself, Firebase keeps
-its own release history — roll back there, not in git.
+### Content Sections
 
-### Redirect map
-
-Client-side routes from the SPA era are redirected permanently in [`firebase.json`](firebase.json).
-`/about` and `/products` keep their paths and need no redirect.
-
-| Old route | New route | Status |
-|---|---|---|
-| `/home` | `/` | 301 |
-| `/contact` | `/about/` | 301 |
+- **Hero banner** — full-bleed paella photo with overlay, CTA buttons, fluid typography
+- **Welcome section** — introduction with flamenco image
+- **Occasions grid** — wedding, corporate, garden party, restaurant/wholesale
+- **How it works** — 3-step process (request → menu → live cooking)
+- **FAQ** — collapsible questions with structured data
+- **Products** — tabbed categories with product cards and prices
+- **About** — company history, chef bio, contact details
+- **News** — blog articles with recipes and inspiration
 
 ## Getting Started
-
-* [Want a more generic/detailed getting started guide?](https://www.11ty.dev/docs/getting-started/)
 
 1. Make a directory and navigate to it:
 
@@ -65,7 +69,7 @@ cd my-blog-name
 git clone https://github.com/11ty/eleventy-base-blog.git .
 ```
 
-_Optional:_ Review `eleventy.config.js` and `_data/metadata.js` to configure the site’s options and data.
+_Optional:_ Review `eleventy.config.js` and `_data/metadata.js` to configure the site's options and data.
 
 3. Install dependencies
 
@@ -89,69 +93,99 @@ npx @11ty/eleventy --serve
 
 Or you can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the internals.
 
-## Features
+## Development
 
-- Using [Eleventy v3](https://github.com/11ty/eleventy/releases/tag/v3.0.0) with zero-JavaScript output.
-	- Content is exclusively pre-rendered (this is a static site).
-	- Can easily [deploy to a subfolder without changing any content](https://www.11ty.dev/docs/plugins/html-base/)
-	- All URLs are decoupled from the content’s location on the file system.
-	- Configure templates via the [Eleventy Data Cascade](https://www.11ty.dev/docs/data-cascade/)
-- **Performance focused**: four-hundos Lighthouse score out of the box!
-	- _0 Cumulative Layout Shift_
-	- _0ms Total Blocking Time_
-- Local development live reload provided by [Eleventy Dev Server](https://www.11ty.dev/docs/dev-server/).
-- Content-driven [navigation menu](https://www.11ty.dev/docs/plugins/navigation/)
-- Fully automated [Image optimization](https://www.11ty.dev/docs/plugins/image/)
-	- Zero-JavaScript output.
-	- Support for modern image formats automatically (e.g. AVIF and WebP)
-	- Processes images on-request during `--serve` for speedy local builds.
-	- Prefers `<img>` markup if possible (single image format) but switches automatically to `<picture>` for multiple image formats.
-	- Automated `<picture>` syntax markup with `srcset` and optional `sizes`
-	- Includes `width`/`height` attributes to avoid [content layout shift](https://web.dev/cls/).
-	- Includes `loading="lazy"` for native lazy loading without JavaScript.
-	- Includes [`decoding="async"`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/decoding)
-	- Images can be co-located with blog post files.
-- Per page CSS bundles [via `eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle).
-- Built-in [syntax highlighter](https://www.11ty.dev/docs/plugins/syntaxhighlight/) (zero-JavaScript output).
-- Draft content: use `draft: true` to mark any template as a draft. Drafts are **only** included during `--serve`/`--watch` and are excluded from full builds. This is driven by the `addPreprocessor` configuration API in `eleventy.config.js`. Schema validator will show an error if non-boolean value is set in data cascade.
-- Blog Posts
-	- Automated next/previous links
-	- Accessible deep links to headings
-- Generated Pages
-	- Home, Archive, and About pages.
-	- `sitemap.xml`
-	- Zero-maintenance tag pages ([View on the Demo](https://eleventy-base-blog.netlify.app/tags/))
-	- Content not found (404) page
+### Local preview
 
-## Demos
+```bash
+npm run start
+```
 
-- [Netlify](https://eleventy-base-blog.netlify.app/)
-- [Vercel](https://demo-base-blog.11ty.dev/)
-- [Cloudflare Pages](https://eleventy-base-blog-d2a.pages.dev/)
-- [Remix on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
-- [GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
+This starts the Eleventy dev server with live reload. The site is available at `http://localhost:8080`.
 
-## Deploy this to your own site
+### Running tests
 
-This project deploys to Firebase Hosting only — see [Deployment](#deployment). The upstream template's
-other deploy targets (Netlify, Vercel, GitHub Pages) are not used here.
+```bash
+# E2E + accessibility tests
+npm run test:e2e
 
-### Implementation Notes
+# Lighthouse audit (writes baseline files)
+npm run lighthouse -- --runs=3
 
-- `content/about/index.md` is an example of a content page.
-- `content/news/` has the blog posts but really they can live in any directory. They need only the `posts` tag to be included in the blog posts [collection](https://www.11ty.dev/docs/collections/).
-- Use the `eleventyNavigation` key (via the [Eleventy Navigation plugin](https://www.11ty.dev/docs/plugins/navigation/)) in your front matter to add a template to the top level site navigation. This is in use on `content/index.njk` and `content/about/index.md`.
-- Content can be in _any template format_ (blog posts needn’t exclusively be markdown, for example). Configure your project’s supported templates in `eleventy.config.js` -> `templateFormats`.
-- The `public` folder in your input directory will be copied to the output folder (via `addPassthroughCopy` in the `eleventy.config.js` file). This means `./public/css/*` will live at `./_site/css/*` after your build completes.
-- This project uses three [Eleventy Layouts](https://www.11ty.dev/docs/layouts/):
-	- `_includes/layouts/base.njk`: the top level HTML structure
-	- `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
-	- `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
-- `_includes/postslist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `content/index.njk` has an example of how to use it.
+# Lighthouse CI assertion (fails on regression)
+npm run lighthouse:assert
 
-#### Content Security Policy
+# Agentic readiness check
+npm run verify:agentic
+```
+
+### Project structure
+
+```
+├── _data/              # Global data files (metadata.js)
+├── _includes/
+│   └── layouts/        # Base, home, post layouts
+├── content/            # Page content (njk, md)
+│   ├── news/           # Blog articles
+│   └── legal/          # Legal pages
+├── css/                # Per-page CSS bundles
+│   ├── index.css       # Home page styles
+│   ├── products.css    # Products page styles
+│   ├── about.css       # About page styles
+│   ├── banner.css      # Hero banner styles
+│   └── ...
+├── public/             # Static assets (copied to _site/)
+├── scripts/            # Build/validation scripts
+└── _site/              # Build output (gitignored)
+```
+
+### Content Security Policy
 
 If your site enforces a [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) (as public-facing sites should), you have a few choices (pick one):
 
 1. In `base.njk`, remove `<style>{% getBundle "css" %}</style>` and uncomment `<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">`
 2. Configure the server with the CSP directive `style-src: 'unsafe-inline'` (less secure).
+
+### Deployment
+
+This project deploys to Firebase Hosting only — see [Deployment](#deployment). The upstream template's other deploy targets (Netlify, Vercel, GitHub Pages) are not used here.
+
+#### Rollback
+
+Two ways back, fastest first:
+
+```bash
+# 1. Instant: restore the previous Firebase release (no build, ~seconds)
+firebase hosting:rollback
+
+# 2. From git: the annotated tag marks the last state before the static site took over
+#    the catch-all rewrite. Check it out, build, deploy.
+git checkout spa-pre-cutover
+npm ci && npm run deploy
+```
+
+The React SPA that `esmia.se` served before this build **is not in this repository**, so the tag marks the repo's pre-cutover state rather than the SPA source. For the SPA itself, Firebase keeps its own release history — roll back there, not in git.
+
+## Redirects
+
+Client-side routes from the SPA era are redirected permanently in [`firebase.json`](firebase.json).
+
+| Old route | New route | Status |
+|---|---|---|
+| `/home` | `/` | 301 |
+| `/contact` | `/about/` | 301 |
+
+## Tech Stack
+
+- **Generator:** [Eleventy v3](https://www.11ty.dev/)
+- **Hosting:** Firebase Hosting
+- **Images:** `@11ty/eleventy-img` (AVIF/WebP, lazy loading, srcset)
+- **Syntax highlighting:** Prism.js (zero-JS output)
+- **Navigation:** Eleventy Navigation plugin
+- **CSS:** Per-page bundles via `eleventy-plugin-bundle`
+- **Icons:** Inline SVG (no icon font)
+- **Fonts:** Google Fonts (Playfair Display + Nunito)
+
+## License
+
+MIT

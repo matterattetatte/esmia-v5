@@ -27,6 +27,12 @@
   --color-crimson: #8C1220;           /* White 9.45:1, saffron 5.70:1 */
   --color-ink: #1A1206;               /* Text on top of gold: 11.19:1 */
 
+  /* Conversion-focused accents: gold CTA on ink, crimson for urgent contact surfaces. */
+  --color-cta: #F5C242;               /* Solid gold button background */
+  --color-cta-text: #1A1206;          /* Ink text on gold CTA */
+  --color-cta-hover: #FFD769;         /* Lifted gold on hover */
+  --color-accent-urgent: #8C1220;     /* Crimson contact strip / phone badge */
+
   /* Borders & Shadows. Every card is drawn on --color-surface, so the border
      has to clear 3:1 against that panel, not just against the page. */
   --color-border: #4C7095;            /* 3.11:1 on #142233, 3.52:1 on #0B1622 */
@@ -539,7 +545,7 @@ section {
 /* Typography: headings use the elegant serif font */
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-family-heading);
-	color: var(--color-primary);
+	color: var(--color-text);
 	line-height: 1.2;
 	font-weight: 700;
 	letter-spacing: -0.01em;
@@ -617,8 +623,19 @@ footer a:focus-visible {
 
 /* Footer typography */
 .footer-nap {
-	color: var(--color-text-muted);
-	font-size: 0.9rem;
+	color: var(--color-text);
+	font-size: 1rem;
+	font-weight: 600;
+}
+.footer-nap a[href^="tel:"] {
+	display: inline-block;
+	background: var(--color-cta);
+	color: var(--color-cta-text) !important;
+	padding: 0.35rem 0.9rem;
+	border-radius: 50px;
+	font-weight: 700;
+	margin-left: 0.5rem;
+	text-decoration: none;
 }
 
 footer p:last-child {
@@ -775,6 +792,59 @@ footer p:last-child {
 .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
 .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
 .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+
+/* Contact strip: crimson urgent surface to drive conversions */
+.contact-strip {
+  background: var(--color-accent-urgent);
+  color: #FFFFFF;
+  padding: 2.5rem 5rem;
+  text-align: center;
+}
+.contact-strip-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.contact-strip-text {
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  margin: 0;
+}
+.btn-contact-strip {
+  display: inline-block;
+  background: var(--color-cta);
+  color: var(--color-cta-text) !important;
+  font-weight: 700;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.btn-contact-strip:hover {
+  background: var(--color-cta-hover);
+  transform: translateY(-2px);
+}
+.btn-contact-strip-outline {
+  display: inline-block;
+  background: transparent;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  padding: 0.85rem 2rem;
+  border: 2px solid #FFFFFF;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn-contact-strip-outline:hover {
+  background: #FFFFFF;
+  color: var(--color-accent-urgent) !important;
+}
 
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {

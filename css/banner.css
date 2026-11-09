@@ -136,8 +136,8 @@
 
 /* Ink on saffron = 11.19:1 (13.39:1 on the lighter hover gold) */
 .btn-reserva {
-  background: var(--color-primary);
-  color: var(--color-ink) !important;
+  background: var(--color-cta);
+  color: var(--color-cta-text) !important;
   font-weight: 700;
   font-size: 1.25rem;
   padding: 1rem 2.5rem;
@@ -174,7 +174,7 @@
 .btn-reserva:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 35px rgba(245, 194, 66, 0.4), 0 6px 15px rgba(0,0,0,0.4);
-  background: var(--color-primary-hover);
+  background: var(--color-cta-hover);
 }
 
 /* Pulsing effect for primary CTA to draw attention */

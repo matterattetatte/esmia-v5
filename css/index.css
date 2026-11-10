@@ -341,20 +341,6 @@ header.scrolled {
 	margin-left: 0;
 }
 
-/* Fancy decorative divider after nav on larger screens */
-@media (min-width: 769px) {
-	.nav::after {
-		content: '';
-		display: inline-block;
-		width: 1px;
-		height: 1.2em;
-		background: rgba(245, 194, 66, 0.3);
-		margin: 0 0.75rem;
-	}
-	.nav:last-child::after {
-		display: none;
-	}
-}
 
 .follow-us {
 	padding: 1rem 5rem;
@@ -676,10 +662,6 @@ footer p:last-child {
 		gap: 0;
 	}
 
-	/* Remove decorative divider on mobile */
-	.nav::after {
-		display: none;
-	}
 
 	.nav-item {
 		margin: 0;

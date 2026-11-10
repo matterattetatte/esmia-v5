@@ -552,6 +552,7 @@
   color: #3D2E0A;
 }
 
+.season-card.summer p,
 .season-card.summer .season-events {
   color: #5A4A1A;
 }
@@ -580,8 +581,9 @@
   color: #FFFFFF;
 }
 
+.season-card.winter p,
 .season-card.winter .season-events {
-  color: rgba(240, 237, 232, 0.8);
+  color: rgba(240, 237, 232, 0.9);
 }
 
 .season-card.winter .btn-season {

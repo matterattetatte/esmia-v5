@@ -4,8 +4,7 @@ The static site for Esmia HB (Spanish delicatessen and paella catering), built w
 
 ## Deployment
 
-**Firebase Hosting is the single deploy target.** `firebase.json` is the only hosting config in the
-repository.
+**Firebase Hosting is the single deploy target** (project: `esmia-hb`, see `.firebaserc`). `firebase.json` is the only hosting config in the repository and serves the built static site from `_site/`.
 
 | | |
 |---|---|
@@ -18,6 +17,23 @@ repository.
 | Playwright + axe | `npm run test:e2e` (15 E2E + axe accessibility tests across all routes) |
 | Config | [`firebase.json`](firebase.json) · [`lighthouserc.json`](lighthouserc.json) · [`playwright.config.js`](playwright.config.js) |
 | Scorecards | [`docs/baselines/home.json`](docs/baselines/home.json) · [`docs/baselines/products.json`](docs/baselines/products.json) |
+
+### Deploying (for a new machine/agent)
+
+Run from the project root (`/home/matias/Projects/Esmia`). The npm scripts above assume a globally installed `firebase` CLI; if it is not installed, use `npx` instead (no global install or `sudo` required):
+
+```bash
+# 1. Authenticate once (opens a browser; use --no-localhost in headless sessions)
+npx --yes firebase-tools login
+
+# 2. Build and deploy to production
+npm run build && npx --yes firebase-tools deploy
+
+# (optional) Preview channel instead of production
+npm run build && npx --yes firebase-tools hosting:channel:deploy lh-audit --expires 7d
+```
+
+Prerequisites: Node/npm installed and Firebase access to the `esmia-hb` project. Deploy publishes `_site/` as-is, so always build first. `firebase login` is interactive and must be completed by a human/user session.
 
 ## Features
 
